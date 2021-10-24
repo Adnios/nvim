@@ -1,0 +1,15 @@
+- repo: nvim-telescope/telescope-fzy-native.nvim
+  on_source: telescope.nvim
+
+- repo: nvim-lua/popup.nvim
+  on_source: telescope.nvim
+
+- repo: nvim-lua/plenary.nvim
+  on_source: telescope.nvim
+
+- repo: nvim-telescope/telescope.nvim
+  on_cmd: Telescope
+  hook_source: |
+    lua <<EOF
+    require('config.telescope')
+    EOF

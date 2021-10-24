@@ -1,0 +1,141 @@
+{
+    "coc.preferences.enableFloatHighlight": true,
+    "coc.preferences.snippetStatusText": "Ⓢ ",
+    "coc.preferences.extensionUpdateCheck": "weekly",
+    "suggest.detailMaxLength": 60,
+    "suggest.noselect": false,
+    "suggest.enablePreselect": false,
+    "suggest.triggerAfterInsertEnter": false,
+    "suggest.timeout": 5000,
+    "suggest.enablePreview": true,
+    "suggest.floatEnable": true,
+    "suggest.detailField": "preview",
+    "suggest.snippetIndicator": "",
+    "suggest.triggerCompletionWait": 100,
+    "suggest.echodocSupport": true,
+    "suggest.completionItemKindLabels": {
+        "default": "",
+        "text": "",
+        "method": "",
+        "function": "ƒ",
+        "constructor": "",
+        "field": "料",
+        "variable": "",
+        "class": "",
+        "interface": "",
+        "module": "",
+        "property": "",
+        "unit": "",
+        "value": "",
+        "enum": "",
+        "keyword": "",
+        "snippet": "",
+        "color": "",
+        "file": "",
+        "reference": "渚",
+        "folder": "",
+        "enumMember": "",
+        "constant": "",
+        "struct": "פּ",
+        "event": "鬒",
+        "operator": "Ψ",
+        "typeParameter": ""
+    },
+    //diagnostic
+    //"diagnostic.signOffset": 9999999,
+    "diagnostic.highlightOffset": 9999999,
+    //"diagnostic.errorSign": "",
+    //"diagnostic.warningSign": "●",
+    //"diagnostic.infoSign": "●",
+    "diagnostic.refreshOnInsertMode": false,
+    //"diagnostic.signOffset": 1,
+    "diagnostic.errorSign": "×",
+    "diagnostic.warningSign": "»",
+    "diagnostic.infoSign": "ღ",
+    "diagnostic.hintSign": "ஐ",
+    "diagnostic.displayByAle": false,
+    //"diagnostic.refreshOnInsertMode": false,
+    "diagnostic.checkCurrentLine": true,
+    "diagnostic.virtualTextPrefix": " ❯❯❯ ",
+    "diagnostic.virtualText": false,
+
+    "codeLens.enable": true,
+    "list.previewHighlightGroup": "Statement",
+    "signature.target": "float",
+    //"yank.enableCompletion": false,
+    //"picgo.picBed.current": "gitee",
+
+    //git
+    "git.enableGutters": true,
+    "git.branchCharacter":"\uf408",
+    "git.addGBlameToBufferVar": true,
+    "git.addGBlameToVirtualText": true,
+    "git.virtualTextPrefix": " ❯❯❯ ",
+    "git.addedSign.hlGroup": "GitGutterAdd",
+    "git.changedSign.hlGroup": "GitGutterChange",
+    "git.removedSign.hlGroup": "GitGutterDelete",
+    "git.topRemovedSign.hlGroup": "GitGutterDelete",
+    "git.changeRemovedSign.hlGroup": "GitGutterChangeDelete",
+    "git.addedSign.text": "▋",
+    "git.changedSign.text": "▋",
+    "git.removedSign.text": "▋",
+    "git.topRemovedSign.text": "▔",
+    "git.changeRemovedSign.text": "▋",
+    "git.enableGlobalStatus": false,
+
+    // coc-tabnine
+    "tabnine.priority": 0,
+    "tabnine.disable_filetypes": ["cpp","lua"],
+    "tabnine.limit": 3,
+
+    // coc-lua
+    //"Lua.runtime.version": "Lua 5.3",
+
+    // coc-spell-checker
+    "cSpell.language": "en",
+    "cSpell.maxNumberOfProblems": 100,
+    "cSpell.numSuggestions": 8,
+    "cSpell.minWordLength": 4,
+    "cSpell.enabledLanguageIds": [
+        "markdown",
+        "tex"
+    ],
+    "cSpell.spellCheckDelayMs": 50,
+
+    //"clangd.path": "/home/scrutiny/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd",
+    "languageserver": {
+        "latex": {
+            "command": "$HOME/.config/coc/extensions/coc-texlab-data/texlab",
+            "ignoredRootPaths": ["~"],
+            "filetypes": ["tex", "bib", "plaintex", "context"]
+        }
+
+        // "ccls": {
+        //     "command": "ccls",
+        //     "filetypes": [
+        //         "h",
+        //         "c",
+        //         "cuda",
+        //         "cc",
+        //         "cpp",
+        //         "c++",
+        //         "objc",
+        //         "objcpp"
+        //     ],
+        //     "rootPatterns": [
+        //         ".ccls",
+        //         "compile_commands.json",
+        //         ".git/",
+        //         ".hg/"
+        //     ],
+        //     "initializationOptions": {
+        //         "cache": {
+        //             "directory": "/tmp/ccls"
+        //         },
+        //         "client": {
+        //             "snippetSupport": true
+        //         }
+        //     }
+        // }
+    }
+}

@@ -1,0 +1,174 @@
+- repo: glepnir/zephyr-nvim
+  hook_source: colorscheme zephyr
+
+- repo: kyazdani42/nvim-web-devicons
+
+# for wilder
+- repo: ryanoasis/vim-devicons
+
+- repo: Akin909/nvim-bufferline.lua
+  depends: nvim-web-devicons
+  hook_add: |
+    lua <<EOF
+    require('bufferline').setup {
+      options = {
+        right_mouse_command = 'vert sbuffer %d',
+        show_close_icon = false,
+        ---based on https://github.com/kovidgoyal/kitty/issues/957
+        separator_style = os.getenv 'KITTY_WINDOW_ID' and 'slant' or 'padded_slant',
+        diagnostics = 'coc',
+        -- diagnostics_indicator = diagnostics_indicator,
+        -- custom_filter = custom_filter,
+        offsets = {
+          {
+            filetype = 'undotree',
+            text = 'Undotree',
+            highlight = 'PanelHeading',
+            padding = 1,
+          },
+          {
+            filetype = 'NvimTree',
+            text = 'Explorer',
+            highlight = 'PanelHeading',
+            padding = 1,
+          },
+          {
+            filetype = 'DiffviewFiles',
+            text = 'Diff View',
+            highlight = 'PanelHeading',
+            padding = 1,
+          },
+          {
+            filetype = 'flutterToolsOutline',
+            text = 'Flutter Outline',
+            highlight = 'PanelHeading',
+          },
+          {
+            filetype = 'packer',
+            text = 'Packer',
+            highlight = 'PanelHeading',
+            padding = 1,
+          },
+        },
+      },
+    }
+    EOF
+
+- repo: glepnir/galaxyline.nvim
+  hook_source: |
+    lua <<EOF
+    require('internal.eviline')
+    EOF
+
+- repo: glepnir/dashboard-nvim
+  hook_source: |
+    let g:dashboard_preview_command = 'cat'
+    let g:dashboard_preview_pipeline = 'lolcat'
+    let g:dashboard_preview_file = getenv('HOME') . '/.config/nvim/static/pokemon.txt'
+    let g:dashboard_preview_file_height = 14
+    let g:dashboard_preview_file_width = 80
+    let g:dashboard_default_executive ='telescope'
+    let g:dashboard_custom_section = {
+      \ 'last_session'        :{
+          \ 'description': ['  Recently laset session                  SPC s l'],
+          \ 'command': 'SessionLoad'},
+      \ 'find_history'        :{
+          \ 'description': ['  Recently opened files                   SPC c h'],
+          \ 'command': 'DashboardFindHistory'},
+      \ 'find_file'           :{
+          \ 'description': ['  Find  File                              SPC c f'],
+          \ 'command': 'DashboardFindFile'},
+      \ 'new_file'            :{
+          \ 'description': ['  New   File                              SPC d n'],
+          \ 'command': 'DashboardNewFile'},
+      \ 'find_word'           :{
+          \ 'description': ['  Find  word                              SPC c a'],
+          \ 'command': 'DashboardFindWord'},
+      \}
+
+- repo: kyazdani42/nvim-tree.lua
+  hook_source: |
+    lua << EOF
+    local tree_cb = require'nvim-tree.config'.nvim_tree_callback
+    require('nvim-tree').setup {
+        gitignore = true,
+        ignore = {'.git', 'node_modules', '.cache'},
+        open_on_tab = false,
+        disable_netrw = true,
+        hijack_netrw = true,
+        auto_close = true,
+        update_cwd = true,
+        highlight_opened_files = true,
+        auto_ignore_ft = {'startify', 'dashboard'},
+        update_focused_file = {
+            enable = true,
+            update_cwd = true,
+            ignore_list = {}
+        },
+        view = {
+            width = 30,
+            side = 'left',
+            auto_resize = false,
+            mappings = {
+                custom_only = true,
+                -- list of mappings to set on the tree manually
+                list = {
+                    {
+                        key = {"<CR>", "o", "<2-LeftMouse>"},
+                        cb = tree_cb("edit")
+                    }, {key = {"<2-RightMouse>", "<C-]>"}, cb = tree_cb("cd")},
+                    {key = "<C-v>", cb = tree_cb("vsplit")},
+                    {key = "<C-x>", cb = tree_cb("split")},
+                    {key = "<C-t>", cb = tree_cb("tabnew")},
+                    {key = "<", cb = tree_cb("prev_sibling")},
+                    {key = ">", cb = tree_cb("next_sibling")},
+                    {key = "P", cb = tree_cb("parent_node")},
+                    {key = "<BS>", cb = tree_cb("close_node")},
+                    {key = "<S-CR>", cb = tree_cb("close_node")},
+                    {key = "<Tab>", cb = tree_cb("preview")},
+                    {key = "K", cb = tree_cb("first_sibling")},
+                    {key = "J", cb = tree_cb("last_sibling")},
+                    {key = "I", cb = tree_cb("toggle_ignored")},
+                    {key = "H", cb = tree_cb("toggle_dotfiles")},
+                    {key = "R", cb = tree_cb("refresh")},
+                    {key = "a", cb = tree_cb("create")},
+                    {key = "d", cb = tree_cb("remove")},
+                    {key = "r", cb = tree_cb("rename")},
+                    {key = "<C-r>", cb = tree_cb("full_rename")},
+                    {key = "x", cb = tree_cb("cut")},
+                    {key = "c", cb = tree_cb("copy")},
+                    {key = "p", cb = tree_cb("paste")},
+                    {key = "y", cb = tree_cb("copy_name")},
+                    {key = "Y", cb = tree_cb("copy_path")},
+                    {key = "gy", cb = tree_cb("copy_absolute_path")},
+                    {key = "[c", cb = tree_cb("prev_git_item")},
+                    {key = "]c", cb = tree_cb("next_git_item")},
+                    {key = "-", cb = tree_cb("dir_up")},
+                    {key = "s", cb = tree_cb("system_open")},
+                    {key = "q", cb = tree_cb("close")},
+                    {key = "g?", cb = tree_cb("toggle_help")}
+                }
+            }
+        }
+    }
+    EOF
+
+- repo: folke/zen-mode.nvim
+  on_map: { n: <Plug> }
+  hook_source: |
+    lua <<EOF
+    require('zen-mode').setup {}
+    EOF
+
+- repo: Yggdroot/indentLine
+  on_event: BufReadPre
+  hook_source: |
+    let g:indentLine_enabled = 1
+    let g:indentLine_char='┆'
+    let g:indentLine_fileTypeExclude = ['defx', 'denite', 'dashboard', 'tagbar', 'vista_kind', 'vista', 'rnvimr']
+    let g:indentLine_concealcursor = 'niv'
+    let g:indentLine_setConceal = 0
+    let g:indentLine_showFirstIndentLevel =1
+    autocmd! FileType dashboard let g:indentLine_enabled = 0
+      \| autocmd BufLeave <buffer> let g:indentLine_enabled = 1
+
