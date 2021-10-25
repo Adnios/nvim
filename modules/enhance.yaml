@@ -50,7 +50,6 @@
 - repo: lukas-reineke/indent-blankline.nvim
   hook_source: |
     lua <<EOF
-    vim.cmd('highlight IndentBlanklineContextChar guifg=#928374 gui=nocombine')
     require("indent_blankline").setup {
         char = "│",
         show_foldtext = false,
@@ -70,6 +69,7 @@
             "import"
         }
     }
+    vim.cmd('highlight IndentBlanklineContextChar guifg=#7987A0 gui=nocombine')
     -- because lazy load indent-blankline so need readd this autocmd
     vim.cmd('autocmd CursorMoved * IndentBlanklineRefresh')
     EOF
