@@ -1,43 +1,33 @@
-- repo: glepnir/zephyr-nvim
-  hook_source: colorscheme zephyr
-
-- repo: sainnhe/edge
-  if: 0
+- repo: NTBBloodbath/doom-one.nvim
   hook_source: |
-    let g:edge_style = 'aura'
-    let g:edge_enable_italic = 1
-    let g:edge_disable_italic_comment = 1
-    let g:edge_show_eob = 1
-    let g:edge_better_performance = 1
-    colorscheme edge
-
-- repo: hoob3rt/lualine.nvim
-  if: 0
-  depends: nvim-gps
-  hook_source: |
+    colorscheme doom-one
     lua <<EOF
-    require('config.lualine')
-    EOF
-
-- repo: SmiteshP/nvim-gps
-  if: 0
-  depends: nvim-treesitter
-  on_source: lualine.nvim
-  hook_source: |
-    lua <<EOF
-    require("nvim-gps").setup({
-        icons = {
-            ["class-name"] = ' ', -- Classes and class-like objects
-            ["function-name"] = ' ', -- Functions
-            ["method-name"] = ' ' -- Methods (functions inside class-like objects)
+    require('doom-one').setup({
+        cursor_coloring = false,
+        terminal_colors = false,
+        italic_comments = false,
+        enable_treesitter = true,
+        transparent_background = false,
+        pumblend = {
+            enable = true,
+            transparency_amount = 20,
         },
-        languages = { -- You can disable any language individually here
-            ["c"] = true,
-            ["cpp"] = true,
-            ["lua"] = true,
-            ["python"] = true
+        plugins_integrations = {
+            neorg = true,
+            barbar = true,
+            bufferline = false,
+            gitgutter = false,
+            gitsigns = true,
+            telescope = false,
+            neogit = true,
+            nvim_tree = true,
+            dashboard = true,
+            startify = true,
+            whichkey = true,
+            indent_blankline = true,
+            vim_illuminate = true,
+            lspsaga = false,
         },
-        separator = ' > '
     })
     EOF
 
