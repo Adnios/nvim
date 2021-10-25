@@ -50,8 +50,10 @@
 - repo: lukas-reineke/indent-blankline.nvim
   hook_source: |
     lua <<EOF
+    vim.cmd('highlight IndentBlanklineContextChar guifg=#928374 gui=nocombine')
     require("indent_blankline").setup {
         char = "│",
+        show_foldtext = false,
         show_first_indent_level = true,
         filetype_exclude = {
             "startify", "dashboard", "dotooagenda", "log", "fugitive",
@@ -77,7 +79,7 @@
 - repo: gelguy/wilder.nvim
   on_event: 'CmdlineEnter'
   build: ":UpdateRemotePlugins"
-  hook_post_source: source $HOME/.config/nvim/vimscript/wilder.vim
+  hook_post_source: source $HOME/.config/nvim/vimplugins/wilder.vim
 
 - repo: roxma/nvim-yarp
   on_source: gelguy/wilder.nvim

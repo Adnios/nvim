@@ -11,5 +11,5 @@
   on_cmd: Telescope
   hook_source: |
     lua <<EOF
-    require('config.telescope')
+    require('plugins.telescope')
     EOF

@@ -1,6 +1,46 @@
 - repo: glepnir/zephyr-nvim
   hook_source: colorscheme zephyr
 
+- repo: sainnhe/edge
+  if: 0
+  hook_source: |
+    let g:edge_style = 'aura'
+    let g:edge_enable_italic = 1
+    let g:edge_disable_italic_comment = 1
+    let g:edge_show_eob = 1
+    let g:edge_better_performance = 1
+    colorscheme edge
+
+- repo: hoob3rt/lualine.nvim
+  if: 0
+  depends: nvim-gps
+  hook_source: |
+    lua <<EOF
+    require('config.lualine')
+    EOF
+
+- repo: SmiteshP/nvim-gps
+  if: 0
+  depends: nvim-treesitter
+  on_source: lualine.nvim
+  hook_source: |
+    lua <<EOF
+    require("nvim-gps").setup({
+        icons = {
+            ["class-name"] = ' ', -- Classes and class-like objects
+            ["function-name"] = ' ', -- Functions
+            ["method-name"] = ' ' -- Methods (functions inside class-like objects)
+        },
+        languages = { -- You can disable any language individually here
+            ["c"] = true,
+            ["cpp"] = true,
+            ["lua"] = true,
+            ["python"] = true
+        },
+        separator = ' > '
+    })
+    EOF
+
 - repo: kyazdani42/nvim-web-devicons
 
 # for wilder
@@ -55,9 +95,9 @@
     EOF
 
 - repo: glepnir/galaxyline.nvim
-  hook_source: |
+  hook_post_source: |
     lua <<EOF
-    require('internal.eviline')
+    require('plugins.eviline')
     EOF
 
 - repo: glepnir/dashboard-nvim
@@ -159,16 +199,3 @@
     lua <<EOF
     require('zen-mode').setup {}
     EOF
-
-- repo: Yggdroot/indentLine
-  on_event: BufReadPre
-  hook_source: |
-    let g:indentLine_enabled = 1
-    let g:indentLine_char='┆'
-    let g:indentLine_fileTypeExclude = ['defx', 'denite', 'dashboard', 'tagbar', 'vista_kind', 'vista', 'rnvimr']
-    let g:indentLine_concealcursor = 'niv'
-    let g:indentLine_setConceal = 0
-    let g:indentLine_showFirstIndentLevel =1
-    autocmd! FileType dashboard let g:indentLine_enabled = 0
-      \| autocmd BufLeave <buffer> let g:indentLine_enabled = 1
-
