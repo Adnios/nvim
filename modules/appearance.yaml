@@ -27,6 +27,8 @@
 
 - repo: Th3Whit3Wolf/onebuddy
   depends: colorbuddy.vim
+  hook_add: |
+    let g:onebuddy_disable_italics = v:true
   hook_source: |
     colorscheme onebuddy
 
