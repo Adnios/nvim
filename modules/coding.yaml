@@ -12,7 +12,7 @@
   on_event: BufReadPre
 
 - repo: neoclide/coc.nvim
-  on_event: BufRead
+# on_event: BufRead
   merged: 0
   rev: 'release'
   hook_source: |
@@ -41,8 +41,8 @@
     set nowritebackup
     nmap <silent> gd <Plug>(coc-definition)
     nmap <silent> gr <Plug>(coc-references)
-    " nmap <silent> gcS :<C-u>CocList -I grep<cr>
-    " nmap <silent> gcf :<C-u>CocList files<cr>
+    nnoremap <leader>ca :<C-u>CocList -I grep<cr>
+    nnoremap <leader>cf :<C-u>CocList files<cr>
     nnoremap <leader>? :CocSearch <C-R>=expand("<cword>")<CR><CR>
     nnoremap <silent> K :call <SID>show_documentation()<CR>
     function! s:show_documentation()
