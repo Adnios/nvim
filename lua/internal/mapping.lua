@@ -46,7 +46,6 @@ end
 
 function mapping:load_plugin_define()
   self.plugin = {
-    ["n|gb"]             = map_cr("BufferLinePick"):with_noremap():with_silent(),
     -- dein
     ["n|<Leader>tr"]     = map_cr("call dein#recache_runtimepath()"):with_noremap(),
     -- Plugin nvim-tree

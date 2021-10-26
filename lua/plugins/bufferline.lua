@@ -113,3 +113,6 @@ require('bufferline').setup {
     -- },
   },
 }
+
+-- gb has been used by comment
+vim.api.nvim_set_keymap('n', '<leader><leader>', '<cmd>BufferLinePick<CR>', { noremap = true, silent = true })
