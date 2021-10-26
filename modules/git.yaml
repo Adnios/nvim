@@ -1,0 +1,12 @@
+- repo: lewis6991/gitsigns.nvim
+  depends: plenary.nvim
+  hook_source: |
+    lua <<EOF
+    require ('plugins.gitsigns')
+    EOF
+
+- repo: TimUntersberger/neogit
+  hook_source: |
+    lua <<EOF
+    require ('plugins.neogit')
+    EOF
