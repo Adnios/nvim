@@ -108,34 +108,33 @@
             "command": "$HOME/.config/coc/extensions/coc-texlab-data/texlab",
             "ignoredRootPaths": ["~"],
             "filetypes": ["tex", "bib", "plaintex", "context"]
+        },
+        "ccls": {
+            "command": "ccls",
+            "filetypes": [
+                "h",
+                "c",
+                "cuda",
+                "cc",
+                "cpp",
+                "c++",
+                "objc",
+                "objcpp"
+            ],
+            "rootPatterns": [
+                ".ccls",
+                "compile_commands.json",
+                ".git/",
+                ".hg/"
+            ],
+            "initializationOptions": {
+                "cache": {
+                    "directory": "/tmp/ccls"
+                },
+                "client": {
+                    "snippetSupport": true
+                }
+            }
         }
-
-        // "ccls": {
-        //     "command": "ccls",
-        //     "filetypes": [
-        //         "h",
-        //         "c",
-        //         "cuda",
-        //         "cc",
-        //         "cpp",
-        //         "c++",
-        //         "objc",
-        //         "objcpp"
-        //     ],
-        //     "rootPatterns": [
-        //         ".ccls",
-        //         "compile_commands.json",
-        //         ".git/",
-        //         ".hg/"
-        //     ],
-        //     "initializationOptions": {
-        //         "cache": {
-        //             "directory": "/tmp/ccls"
-        //         },
-        //         "client": {
-        //             "snippetSupport": true
-        //         }
-        //     }
-        // }
     }
 }
