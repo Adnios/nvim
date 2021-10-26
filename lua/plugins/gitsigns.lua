@@ -28,6 +28,7 @@ require('gitsigns').setup {
         -- ['n <leader>hR'] = '<cmd>lua require"gitsigns".reset_buffer()<CR>',
         -- ['n <leader>hp'] = '<cmd>lua require"gitsigns".preview_hunk()<CR>',
         ['n <leader>gb'] = '<cmd>lua require"gitsigns".blame_line(true)<CR>',
+        ['n <leader>gt'] = '<cmd>Gitsigns toggle_current_line_blame<CR>',
 
         -- Text objects
         -- ['o ih'] = ':<C-U>lua require"gitsigns".text_object()<CR>',
