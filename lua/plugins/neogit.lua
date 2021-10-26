@@ -48,7 +48,7 @@ neogit.setup {
 
 neogit.config.use_magit_keybindings()
 
-vim.api.nvim_set_keymap('n', '<leader>go', '<cmd>Neogit<CR>', {noremap=false, silent=true})
-vim.api.nvim_set_keymap('n', '<leader>gc', '<cmd>Neogit commit<CR>', {noremap=false, silent=true})
+vim.api.nvim_set_keymap('n', '<leader>gn', '<cmd>Neogit<CR>', {noremap=false, silent=true})
+-- vim.api.nvim_set_keymap('n', '<leader>gc', '<cmd>Neogit commit<CR>', {noremap=false, silent=true})
 -- vim.api.nvim_set_keymap('n', '<leader>go', 'Neogit kind="split"', {noremap=false, silent=true})
 -- vim.api.nvim_set_keymap('n', '<leader>gc', 'Neogit commit', {noremap=false, silent=true})
