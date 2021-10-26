@@ -10,3 +10,6 @@
     lua <<EOF
     require ('plugins.neogit')
     EOF
+
+- repo: sindrets/diffview.nvim
+  on_source: neogit
