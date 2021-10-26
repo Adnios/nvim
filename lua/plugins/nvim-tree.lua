@@ -45,15 +45,16 @@ end
 
 
 highlight("NvimTreeRootFolder", colors.purple, nil, 'bold', nil)
-highlight("NvimTreeNormal ", colors.bright_blue, nil, nil, nil)
+-- highlight("NvimTreeNormal ", colors.bright_blue, nil, nil, nil)
 highlight("NvimTreeGitDirty", colors.yellow, nil, nil, nil)
 highlight("NvimTreeGitNew", colors.bright_green, nil, nil, nil)
-highlight("NvimTreeImageFile", colors.pink, nil, nil, nil)
-highlight("NvimTreeFolderIcon", colors.purple, nil, nil, nil)
-highlight("NvimTreeIndentMarker", colors.nontext, nil, nil, nil)
-highlight("NvimTreeEmptyFolderName", colors.comment, nil, nil, nil)
-highlight("NvimTreeFolderName", colors.bright_blue, nil, nil, nil)
-highlight("NvimTreeSpecialFile", colors.pink, nil, 'underline', nil)
+-- highlight("NvimTreeImageFile", colors.pink, nil, nil, nil)
+-- highlight("NvimTreeFolderIcon", colors.purple, nil, nil, nil)
+-- highlight("NvimTreeIndentMarker", colors.nontext, nil, nil, nil)
+-- highlight("NvimTreeEmptyFolderName", colors.comment, nil, nil, nil)
+-- highlight("NvimTreeFolderName", colors.bright_blue, nil, nil, nil)
+-- highlight("NvimTreeSpecialFile", colors.pink, nil, 'underline', nil)
+
 -- vim.cmd('highlight NvimTreeRootFolder guifg=#7987A0 gui=bold')
 -- vim.cmd('highlight NvimTreeRootFolder guifg=LightMagenta gui=bold,italic')
 -- vim.cmd('highlight NvimTreeGitDirty guifg=#F1FA8C, gui=bold,italic')
