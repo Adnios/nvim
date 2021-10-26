@@ -2,4 +2,4 @@
 
 ## TODO
 
-- [] `accelerated_jk` has existing bug in macro.
+- [ ] `accelerated_jk` has existing bug in macro.
