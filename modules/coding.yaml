@@ -8,8 +8,12 @@
     au FileType markdown let b:delimitMate_nesting_quotes = ["`"]
     au FileType cpp let b:delimitMate_matchpairs = "(:),[:],{:}"
 
-- repo: tomtom/tcomment_vim
+- repo: numToStr/Comment.nvim
   on_event: BufReadPre
+  hook_source: |
+    lua << EOF
+    require('Comment').setup()
+    EOF
 
 - repo: neoclide/coc.nvim
 # on_event: BufRead
