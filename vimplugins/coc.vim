@@ -32,6 +32,8 @@ set nowritebackup
 " show commit contains current position
 " nmap gm <Plug>(coc-git-commit)
 
+nmap <silent> [c :call CocAction('diagnosticNext')<cr>
+nmap <silent> ]c :call CocAction('diagnosticPrevious')<cr>
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gr <Plug>(coc-references)
 nnoremap <leader>ca :<C-u>CocList -I grep<cr>

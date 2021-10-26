@@ -104,8 +104,14 @@
   on_event: BufRead
 
 - repo: PHSix/faster.nvim
+  if: 0
   hook_source: |
     lua <<EOF
     vim.api.nvim_set_keymap('n', 'j', '<Plug>(faster_move_gj)', {noremap=false, silent=true})
     vim.api.nvim_set_keymap('n', 'k', '<Plug>(faster_move_gk)', {noremap=false, silent=true})
     EOF
+
+- repo: rhysd/accelerated-jk
+  hook_source: |
+    nmap j <Plug>(accelerated_jk_gj)
+    nmap k <Plug>(accelerated_jk_gk)
