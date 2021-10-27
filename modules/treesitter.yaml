@@ -1,5 +1,4 @@
 - repo: nvim-treesitter/nvim-treesitter
-  on_event: FileType
   hook_post_update: ':TSUpdate'
   on_cmd: [ TSUpdate, TSInstall, TSInstallInfo, TSModuleInfo, TSConfigInfo ]
   hook_source: |

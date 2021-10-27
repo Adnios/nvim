@@ -53,19 +53,6 @@ function mapping:load_plugin_define()
     ["n|<Leader>F"]      = map_cr('NvimTreeFindFile'):with_noremap():with_silent(),
     -- Plugin MarkdownPreview
     ["n|<Leader>om"]     = map_cu('MarkdownPreview'):with_noremap():with_silent(),
-    -- Plugin Telescope
-    ["n|<Leader>bb"]     = map_cu('Telescope buffers'):with_noremap():with_silent(),
-    ["n|<Leader>fa"]     = map_cu('DashboardFindWord'):with_noremap():with_silent(),
-    ["n|<Leader>fb"]     = map_cu('DashboardJumpMark'):with_noremap():with_silent(),
-    ["n|<Leader>ff"]     = map_cu('DashboardFindFile'):with_noremap():with_silent(),
-    ["n|<Leader>fg"]     = map_cu('Telescope git_files'):with_noremap():with_silent(),
-    ["n|<Leader>fw"]     = map_cu('Telescope grep_string'):with_noremap():with_silent(),
-    ["n|<Leader>fh"]     = map_cu('DashboardFindHistory'):with_noremap():with_silent(),
-    ["n|<Leader>fl"]     = map_cu('Telescope loclist'):with_noremap():with_silent(),
-    ["n|<Leader>fc"]     = map_cu('Telescope git_commits'):with_noremap():with_silent(),
-    ["n|<Leader>ft"]     = map_cu('Telescope help_tags'):with_noremap():with_silent(),
-    ["n|<Leader>,"]      = map_cr('Telescope buffers'):with_noremap():with_silent(),
-    ["n|<Leader>."]      = map_cr('DashboardFindFile'):with_noremap():with_silent(),
 
     -- Plugin QuickRun
     ["n|<Leader>R"]     = map_cr("<cmd> lua require'internal.selfunc'.run_command()"):with_noremap():with_silent(),

@@ -5,10 +5,8 @@
   on_source: telescope.nvim
 
 - repo: nvim-lua/plenary.nvim
-  on_source: telescope.nvim
 
 - repo: nvim-telescope/telescope.nvim
-  on_cmd: Telescope
   hook_source: |
     lua <<EOF
     require('plugins.telescope')

@@ -8,7 +8,7 @@
 - repo: sindrets/diffview.nvim
 
 - repo: TimUntersberger/neogit
-  hook_source: |
-    lua <<EOF
-    require ('plugins.neogit')
-    EOF
+  depends:
+    - plenary.nvim
+    - diffview.nvim
+  hook_source: lua require ('plugins.neogit')

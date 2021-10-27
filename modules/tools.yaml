@@ -1,5 +1,4 @@
 - repo: kevinhwang91/rnvimr
-  on_cmd: RnvimrToggle
   hook_source: |
     let g:rnvimr_enable_ex = 1
     let g:rnvimr_enable_bw = 1
@@ -11,7 +10,6 @@
     highlight link RnvimrNormal CursorLine
 
 - repo: liuchengxu/vista.vim
-  on_cmd: [Vista, Vista!, Vista!!]
   hook_source: |
     let g:vista#renderer#enable_icon = 1
     let g:vista_disable_statusline = 1
@@ -39,7 +37,6 @@
                 \  }
 
 - repo: akinsho/nvim-toggleterm.lua
-  on_cmd: ToggleTerm
   hook_source: |
     lua <<EOF
     local large_screen = vim.o.columns > 200

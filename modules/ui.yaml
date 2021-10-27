@@ -1,27 +1,3 @@
-- repo: folke/tokyonight.nvim
-  if: 0
-  hook_source: |
-    " storm, night, day "
-    let g:tokyonight_style = "storm"
-    let g:tokyonight_italic_comments = 0
-    let g:tokyonight_italic_functions = 0
-    let g:tokyonight_italic_keywords = 0
-    let g:tokyonight_italic_variables = 0
-    let g:tokyonight_sidebars = [ "qf", "vista_kind", "terminal", "packer" ]
-    let g:tokyonight_transparent_sidebar = 1
-    let g:tokyonight_colors = {
-      \ 'fg_gutter' : '#707cb2', 
-      \ 'comment' : '#928374',
-      \ 'dark5' : '#709db2',
-      \ 'hint': 'orange',
-      \ 'error': '#ff0000'
-    \ }
-    " augroup MyColors
-    "   autocmd!
-    "   autocmd ColorScheme * highlight LineNr guifg=#5081c0   | highlight CursorLineNR guifg=#FFba00
-    " augroup END
-    colorscheme tokyonight
-
 - repo: tjdevries/colorbuddy.vim
   on_source: onebuddy
 
@@ -39,16 +15,10 @@
 
 - repo: Akin909/nvim-bufferline.lua
   depends: nvim-web-devicons
-  hook_add: |
-    lua <<EOF
-    require('plugins.bufferline')
-    EOF
+  hook_add: lua require('plugins.bufferline')
 
 - repo: glepnir/galaxyline.nvim
-  hook_post_source: |
-    lua <<EOF
-    require('plugins.eviline')
-    EOF
+  hook_post_source: lua require('plugins.eviline')
 
 - repo: glepnir/dashboard-nvim
   hook_source: |
@@ -77,14 +47,7 @@
       \}
 
 - repo: kyazdani42/nvim-tree.lua
-  hook_source: |
-    lua << EOF
-    require('plugins.nvim-tree')
-    EOF
+  hook_source: lua require('plugins.nvim-tree')
 
 - repo: folke/zen-mode.nvim
-  on_map: { n: <Plug> }
-  hook_source: |
-    lua <<EOF
-    require('zen-mode').setup {}
-    EOF
+  hook_source: lua require('zen-mode').setup {}

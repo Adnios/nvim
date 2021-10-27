@@ -1,5 +1,4 @@
 - repo: Raimondi/delimitMate
-  on_event: InsertEnter
   hook_source: |
     let g:delimitMate_expand_cr = 0
     let g:delimitMate_expand_space = 1
@@ -9,14 +8,9 @@
     au FileType cpp let b:delimitMate_matchpairs = "(:),[:],{:}"
 
 - repo: numToStr/Comment.nvim
-  on_event: BufReadPre
-  hook_source: |
-    lua << EOF
-    require('Comment').setup()
-    EOF
+  hook_source: lua require('Comment').setup()
 
 - repo: neoclide/coc.nvim
-# on_event: BufRead
   merged: 0
   rev: 'release'
   hook_source: source $HOME/.config/nvim/vimplugins/coc.vim
