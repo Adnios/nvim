@@ -76,10 +76,10 @@ function options:load_options()
     equalalways    = false;
     laststatus     = 2;
     display        = "lastline";
-    -- showbreak      = "↳  ";
-    listchars      = "tab:»·,nbsp:+,trail:▫,extends:→,precedes:←";
+    showbreak      = "↪";
+    -- listchars      = "tab:»·,eol:↲,nbsp:+,trail:▫,extends:→,precedes:←";
+    listchars      = "tab:» ,nbsp:+,trail:▫,extends:→,precedes:←";
     -- listchars      = "tab:¦ ,nbsp:+,trail:▫,extends:→,precedes:←";
-    -- listchars      = "tab:¦ ,trail:▫";
     pumblend       = 10;
     winblend       = 10;
   }
