@@ -38,4 +38,3 @@ neogit.setup {
 
 neogit.config.use_magit_keybindings()
 
-vim.api.nvim_set_keymap('n', '<leader>gn', '<cmd>Neogit<CR>', {noremap=false, silent=true})

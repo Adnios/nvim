@@ -8,7 +8,9 @@
 - repo: sindrets/diffview.nvim
 
 - repo: TimUntersberger/neogit
+  on_cmd: Neogit
   depends:
     - plenary.nvim
     - diffview.nvim
+  hook_add: nmap <leader>gn :Neogit<CR>
   hook_source: lua require ('plugins.neogit')

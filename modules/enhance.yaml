@@ -33,6 +33,7 @@
     EOF
 
 - repo: itchyny/vim-cursorword
+  on_event: [BufReadPre,BufNewFile]
   hook_source: |
     augroup user_plugin_cursorword
       autocmd!
@@ -99,6 +100,7 @@
   hook_source: let g:rainbow_active = 1
 
 - repo: junegunn/vim-peekaboo
+  on_event: BufRead
 
 - repo: rhysd/accelerated-jk
   hook_source: |
