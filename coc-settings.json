@@ -55,7 +55,9 @@
     "diagnostic.virtualText": false,
     "diagnostic.separateRelatedInformationAsDiagnostics": true,
 
-    "codeLens.enable": true,
+    // disable coc-ccls "ref"
+    "codeLens.enable": false,
+
     "list.previewHighlightGroup": "Statement",
     "signature.target": "float",
     //"yank.enableCompletion": false,
@@ -108,22 +110,8 @@
         },
         "ccls": {
             "command": "ccls",
-            "filetypes": [
-                "h",
-                "c",
-                "cuda",
-                "cc",
-                "cpp",
-                "c++",
-                "objc",
-                "objcpp"
-            ],
-            "rootPatterns": [
-                ".ccls",
-                "compile_commands.json",
-                ".git/",
-                ".hg/"
-            ],
+            "filetypes": ["h", "c", "cuda", "cc", "cpp", "c++", "objc", "objcpp"],
+            "rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
             "initializationOptions": {
                 "cache": {
                     "directory": "/tmp/ccls"
