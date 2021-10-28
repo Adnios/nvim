@@ -42,6 +42,7 @@
         "typeParameter": ""
     },
     //diagnostic
+    "diagnostic.enable": true,
     "diagnostic.errorSign": "",
     "diagnostic.warningSign": "",
     "diagnostic.infoSign": "",
