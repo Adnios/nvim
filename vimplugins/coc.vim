@@ -10,6 +10,7 @@ let g:coc_global_extensions = [
             \ 'coc-gitignore',
             \ 'coc-tabnine',
             \ 'coc-json',
+            \ 'coc-diagnostic',
             \ 'coc-highlight',
             \ 'coc-lists',
             \ 'coc-lua',
