@@ -3,7 +3,6 @@ vim.g.nvim_tree_indent_markers = 1
 vim.g.nvim_tree_group_empty = 1
 vim.g.nvim_tree_git_hl = 1
 vim.g.nvim_tree_width_allow_resize = 1
-vim.g.nvim_tree_ignore = { '.DS_Store', 'fugitive:', '.git' }
 vim.g.nvim_tree_highlight_opened_files = 1
 vim.g.nvim_tree_root_folder_modifier = table.concat { ":t:gs?$?/..", string.rep(" ", 1000), "?:gs?^??" }
 
@@ -94,7 +93,7 @@ require('nvim-tree').setup {
     auto_close = true,
     update_cwd = true,
     highlight_opened_files = true,
-    auto_ignore_ft = {'startify', 'dashboard'},
+    ignore_ft_on_setup = {'startify', 'dashboard'},
     update_focused_file = {
         enable = true,
         update_cwd = true,
