@@ -3,8 +3,11 @@ cmap <expr> <Tab> wilder#in_context() ? wilder#next() : "\<Tab>"
 cmap <expr> <S-Tab> wilder#in_context() ? wilder#previous() : "\<S-Tab>"
 set wildcharm=<Tab>
 
-" Enable cmdline completion (for Neovim only)
-call wilder#set_option('modes', ['/', '?', ':', '-'])
+# enable cmdline by pressing <Tab>
+call wilder#setup({
+      \ 'modes': [':', '/', '?'],
+      \ 'enable_cmdline_enter': 0,
+      \ })
 
 " call wilder#set_option('noselect', 0)
 

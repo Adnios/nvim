@@ -14,6 +14,7 @@
   hook_add: |
     set background=light
     colorscheme edge
+    let g:edge_enable_italic = 0
 
 - repo: kyazdani42/nvim-web-devicons
 
@@ -25,7 +26,8 @@
   hook_add: lua require('plugins.bufferline')
 
 - repo: glepnir/galaxyline.nvim
-  hook_post_source: lua require('plugins.eviline')
+  # hook_post_source: lua require('plugins.eviline')
+  hook_post_source: lua require('plugins.eviline-light')
 
 - repo: glepnir/dashboard-nvim
   hook_source: |

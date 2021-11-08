@@ -4,8 +4,8 @@ local condition = require('galaxyline.condition')
 local gls = gl.section
 -- Color table for highlights
 local colors = {
-  bg = '#202328',
-  fg = '#bbc2cf',
+  bg = '#dde2e7',
+  fg = '#4b505b',
   yellow = '#ECBE7B',
   cyan = '#008080',
   darkblue = '#081633',
