@@ -54,6 +54,7 @@
     "diagnostic.virtualTextPrefix": " ❯❯❯ ",
     "diagnostic.virtualText": false,
     "diagnostic.separateRelatedInformationAsDiagnostics": true,
+    "diagnostic.level": "hint",
 
     // disable coc-ccls "ref"
     "codeLens.enable": false,
