@@ -43,10 +43,10 @@ local highlight = function(group, fg, bg, attr, sp)
 end
 
 
-highlight("NvimTreeRootFolder", colors.purple, nil, 'bold', nil)
+-- highlight("NvimTreeRootFolder", colors.purple, nil, 'bold', nil)
 -- highlight("NvimTreeNormal ", colors.bright_blue, nil, nil, nil)
-highlight("NvimTreeGitDirty", colors.yellow, nil, nil, nil)
-highlight("NvimTreeGitNew", colors.bright_green, nil, nil, nil)
+-- highlight("NvimTreeGitDirty", colors.yellow, nil, nil, nil)
+-- highlight("NvimTreeGitNew", colors.bright_green, nil, nil, nil)
 -- highlight("NvimTreeImageFile", colors.pink, nil, nil, nil)
 -- highlight("NvimTreeFolderIcon", colors.purple, nil, nil, nil)
 -- highlight("NvimTreeIndentMarker", colors.nontext, nil, nil, nil)

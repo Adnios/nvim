@@ -1,12 +1,19 @@
 - repo: tjdevries/colorbuddy.vim
+  if: 0
   on_source: onebuddy
 
 - repo: Th3Whit3Wolf/onebuddy
+  if: 0
   depends: colorbuddy.vim
   hook_add: |
     let g:onebuddy_disable_italics = v:true
   hook_source: |
     colorscheme onebuddy
+
+- repo: sainnhe/edge
+  hook_add: |
+    set background=light
+    colorscheme edge
 
 - repo: kyazdani42/nvim-web-devicons
 

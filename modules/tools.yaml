@@ -46,4 +46,3 @@
       direction = large_screen and "vertical" or "horizontal"
     }
     EOF
-
