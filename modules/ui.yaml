@@ -13,8 +13,9 @@
 - repo: sainnhe/edge
   hook_add: |
     set background=light
-    colorscheme edge
     let g:edge_enable_italic = 0
+    let g:edge_disable_italic_comment = 1
+    colorscheme edge
 
 - repo: kyazdani42/nvim-web-devicons
 
