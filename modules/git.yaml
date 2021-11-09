@@ -1,4 +1,5 @@
 - repo: lewis6991/gitsigns.nvim
+  on_event: VimEnter
   depends: plenary.nvim
   hook_source: |
     lua <<EOF
@@ -6,6 +7,7 @@
     EOF
 
 - repo: sindrets/diffview.nvim
+  on_cmd: [ DiffviewOpen, DiffviewFileHistory ]
 
 - repo: TimUntersberger/neogit
   on_cmd: Neogit

@@ -46,3 +46,9 @@
       direction = large_screen and "vertical" or "horizontal"
     }
     EOF
+
+- repo: kyazdani42/nvim-tree.lua
+  hook_source: lua require('plugins.nvim-tree')
+
+- repo: folke/zen-mode.nvim
+  hook_source: lua require('zen-mode').setup {}

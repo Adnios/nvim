@@ -13,6 +13,7 @@
   hook_source: lua require('Comment').setup()
 
 - repo: neoclide/coc.nvim
+  on_event: VimEnter
   merged: 0
   rev: 'release'
   hook_source: source $HOME/.config/nvim/vimplugins/coc.vim

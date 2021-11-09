@@ -7,6 +7,7 @@
 - repo: nvim-lua/plenary.nvim
 
 - repo: nvim-telescope/telescope.nvim
+  on_event: VimEnter
   hook_source: |
     lua <<EOF
     require('plugins.telescope')
