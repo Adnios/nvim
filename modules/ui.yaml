@@ -1,7 +1,9 @@
 - repo: tjdevries/colorbuddy.vim
+  # if: 0
   on_source: onebuddy
 
 - repo: Th3Whit3Wolf/onebuddy
+  # if: 0
   depends: colorbuddy.vim
   hook_add: |
     let g:onebuddy_disable_italics = v:true
@@ -11,7 +13,6 @@
 - repo: sainnhe/edge
   if: 0
   hook_source: |
-    set background=light
     let g:edge_style = 'aura'
     let g:edge_enable_italic = 0
     let g:edge_disable_italic_comment = 1
@@ -27,6 +28,7 @@
   hook_add: lua require('plugins.bufferline')
 
 - repo: glepnir/galaxyline.nvim
+  on_event: FileType
   hook_post_source: lua require('plugins.eviline')
   # hook_post_source: lua require('plugins.eviline-light')
 

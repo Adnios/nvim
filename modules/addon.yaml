@@ -1,4 +1,5 @@
 - repo: airblade/vim-rooter
+  on_event: BufRead
   hook_source: |
     let g:rooter_patterns = ['.git', 'Makefile', '*.sln', 'build/env.sh']
 
@@ -7,6 +8,7 @@
   hook_add: let g:suda_smart_edit = 1
 
 - repo: thinca/vim-quickrun
+  on_cmd: QuickRun
   hook_source: |
     let g:quickrun_config = {
       \   "_" : {

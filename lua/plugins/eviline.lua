@@ -3,7 +3,7 @@ local colors = require('galaxyline.theme').default
 local condition = require('galaxyline.condition')
 local gls = gl.section
 -- Color table for highlights
-local colors = {
+--[[ local colors = {
   bg = '#202328',
   fg = '#bbc2cf',
   yellow = '#ECBE7B',
@@ -15,7 +15,7 @@ local colors = {
   magenta = '#c678dd',
   blue = '#51afef',
   red = '#ec5f67'
-}
+} --]]
 
 gl.short_line_list = {'NvimTree','vista','dbui','packer'}
 
