@@ -28,7 +28,6 @@
   hook_add: lua require('plugins.bufferline')
 
 - repo: glepnir/galaxyline.nvim
-  on_event: FileType
   hook_post_source: lua require('plugins.eviline')
   # hook_post_source: lua require('plugins.eviline-light')
 

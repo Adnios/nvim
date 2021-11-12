@@ -86,14 +86,14 @@ gls.left[7] = {
 gls.left[8] = {
   DiagnosticError = {
     provider = 'DiagnosticError',
-    icon = '  ',
+    icon = '🔥',
     highlight = {colors.red,colors.bg}
   }
 }
 gls.left[9] = {
   DiagnosticWarn = {
     provider = 'DiagnosticWarn',
-    icon = '  ',
+    icon = '🐛',
     highlight = {colors.yellow,colors.bg},
   }
 }
@@ -101,7 +101,7 @@ gls.left[9] = {
 gls.left[10] = {
   DiagnosticHint = {
     provider = 'DiagnosticHint',
-    icon = '  ',
+    icon = '🌿',
     highlight = {colors.cyan,colors.bg},
   }
 }
@@ -109,7 +109,7 @@ gls.left[10] = {
 gls.left[11] = {
   DiagnosticInfo = {
     provider = 'DiagnosticInfo',
-    icon = '  ',
+    icon = '💡',
     highlight = {colors.blue,colors.bg},
   }
 }
