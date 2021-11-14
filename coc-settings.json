@@ -43,14 +43,31 @@
     },
     //diagnostic
     "diagnostic.enable": true,
-    "diagnostic.errorSign": "🔥",
-    "diagnostic.warningSign": "🐛",
-    "diagnostic.infoSign": "💡",
-    "diagnostic.hintSign": "🌿",
-    //"diagnostic.errorSign": "",
-    //"diagnostic.warningSign": "",
-    //"diagnostic.infoSign": "",
-    //"diagnostic.hintSign": "",
+    "diagnostic.floatConfig": {
+            "border": true,
+            "highlight": "Normal",
+            "maxWidth": 100,
+            "focusable": false
+    },
+    "diagnostic.signPriority": 20,
+    "diagnostic.enableHighlightLineNumber": false,
+    "diagnostic.locationlistUpdate": false,
+    "hover.floatConfig": {
+            "border": true,
+            "highlight": "Normal",
+            "maxWidth": 100,
+            "focusable": false
+    },
+    "signature.floatConfig": {
+            "border": true,
+            "highlight": "Normal",
+            "maxWidth": 100,
+            "focusable": false
+    },
+    "diagnostic.errorSign": "",
+    "diagnostic.warningSign": "",
+    "diagnostic.infoSign": "",
+    "diagnostic.hintSign": "",
     "diagnostic.highlightOffset": 9999999,
     "diagnostic.refreshOnInsertMode": true,
     "diagnostic.displayByAle": false,

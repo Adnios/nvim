@@ -3,7 +3,6 @@ local global = require 'domain.global'
 local dein = require 'domain.dein'
 local autocmd = require 'internal.event'
 local fs = require 'publibs.plfs'
-local vim = vim
 
 -- Create cache dir and subs dir
 local createdir = function ()
