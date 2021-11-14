@@ -76,6 +76,7 @@
     "diagnostic.virtualText": false,
     "diagnostic.separateRelatedInformationAsDiagnostics": true,
     "diagnostic.level": "hint",
+    "diagnostic.enableMessage": "jump",
 
     // disable coc-ccls "ref"
     "codeLens.enable": false,
