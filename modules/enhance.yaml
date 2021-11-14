@@ -32,15 +32,31 @@
     }
     EOF
 
+# - repo: itchyny/vim-cursorword
+#   on_event: [BufReadPre,BufNewFile]
+#   hook_source: |
+#     augroup user_plugin_cursorword
+#       autocmd!
+#       autocmd FileType defx,denite,fern,clap,vista let b:cursorword = 0
+#       autocmd WinEnter * if &diff || &pvw | let b:cursorword = 0 | endif
+#       autocmd InsertEnter * let b:cursorword = 0
+#       autocmd InsertLeave * let b:cursorword = 1
+#     augroup END
 - repo: itchyny/vim-cursorword
-  on_event: [BufReadPre,BufNewFile]
+  on_event: FileType
+  hook_add: let g:cursorword = 0
   hook_source: |
     augroup user_plugin_cursorword
       autocmd!
-      autocmd FileType defx,denite,fern,clap,vista let b:cursorword = 0
+      autocmd FileType json,yaml,markdown,nginx,dosini,conf,text
+        \ let b:cursorword = 1
       autocmd WinEnter * if &diff || &pvw | let b:cursorword = 0 | endif
-      autocmd InsertEnter * let b:cursorword = 0
-      autocmd InsertLeave * let b:cursorword = 1
+      autocmd InsertEnter * if get(b:, 'cursorword', 0) == 1
+        \| let b:cursorword = 0
+        \| endif
+      autocmd InsertLeave * if get(b:, 'cursorword', 1) == 0
+        \| let b:cursorword = 1
+        \| endif
     augroup END
 
 - repo: hrsh7th/vim-eft
