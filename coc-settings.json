@@ -2,8 +2,9 @@
     "coc.preferences.enableFloatHighlight": true,
     "coc.preferences.snippetStatusText": "Ⓢ ",
     "coc.preferences.extensionUpdateCheck": "weekly",
+
     "suggest.detailMaxLength": 60,
-    "suggest.noselect": false,
+    "suggest.noselect": true,
     "suggest.enablePreselect": false,
     "suggest.triggerAfterInsertEnter": false,
     "suggest.timeout": 5000,
