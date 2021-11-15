@@ -78,7 +78,7 @@
     "diagnostic.level": "hint",
     "diagnostic.virtualTextPrefix": " ❯❯❯ ",
     "diagnostic.virtualText": true,
-    "diagnostic.refreshOnInsertMode": true,
+    "diagnostic.refreshOnInsertMode": false,
     // jump will show messages
     "diagnostic.enableMessage": "never",
     //"diagnostic.messageTarget": "echo",

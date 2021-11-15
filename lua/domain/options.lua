@@ -77,8 +77,8 @@ function options:load_options()
     laststatus     = 2;
     display        = "lastline";
     -- showbreak      = "↪";
-    -- listchars      = "tab:»·,eol:↲,nbsp:+,trail:▫,extends:→,precedes:←";
-    listchars      = "tab:» ,nbsp:+,trail:▫,extends:→,precedes:←";
+    listchars      = "tab:»·,eol:↲,nbsp:+,trail:▫,extends:→,precedes:←";
+    -- listchars      = "tab:» ,nbsp:+,trail:▫,extends:→,precedes:←";
     -- listchars      = "tab:¦ ,nbsp:+,trail:▫,extends:→,precedes:←";
     pumblend       = 10;
     winblend       = 10;
