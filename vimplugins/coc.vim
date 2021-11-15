@@ -33,8 +33,15 @@ set nowritebackup
 " show commit contains current position
 " nmap gm <Plug>(coc-git-commit)
 
-nmap <silent> [c :call CocAction('diagnosticNext')<cr>
-nmap <silent> ]c :call CocAction('diagnosticPrevious')<cr>
+" nmap <silent> [c :call CocAction('diagnosticNext')<cr>
+" nmap <silent> ]c :call CocAction('diagnosticPrevious')<cr>
+nmap <silent> [c <Plug>(coc-diagnostic-prev)
+nmap <silent> ]c <Plug>(coc-diagnostic-next)
+nmap <silent> [e <Plug>(coc-diagnostic-prev-error)
+nmap <silent> ]e <Plug>(coc-diagnostic-next-error)
+
+nnoremap <leader>cd :CocDiagnostics<CR>
+
 nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>rf <Plug>(coc-refactor)
 nmap <silent> gd <Plug>(coc-definition)

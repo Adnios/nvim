@@ -47,7 +47,8 @@
             "border": true,
             "highlight": "Normal",
             "maxWidth": 100,
-            "focusable": false
+            "focusable": false,
+            "winblend": 30
     },
     "diagnostic.signPriority": 20,
     "diagnostic.enableHighlightLineNumber": false,
@@ -56,13 +57,15 @@
             "border": true,
             "highlight": "Normal",
             "maxWidth": 100,
-            "focusable": false
+            "focusable": false,
+            "winblend": 30
     },
     "signature.floatConfig": {
             "border": true,
             "highlight": "Normal",
             "maxWidth": 100,
-            "focusable": false
+            "focusable": false,
+            "winblend": 30
     },
     "diagnostic.enableSign": false,
     "diagnostic.errorSign": "",
@@ -77,14 +80,14 @@
     "diagnostic.separateRelatedInformationAsDiagnostics": true,
     "diagnostic.level": "hint",
     // jump will show messages
-    //"diagnostic.enableMessage": "jump",
-    "diagnostic.messageTarget": "echo",
-    "diagnostic.checkCurrentLine": true,
+    "diagnostic.enableMessage": "jump",
+    //"diagnostic.messageTarget": "echo",
+    "diagnostic.checkCurrentLine": false,
     "diagnostic.messageDelay": 100,
+    // https://github.com/neoclide/coc.nvim/blob/master/doc/coc.txt
 
     // disable coc-ccls "ref"
     "codeLens.enable": false,
-    // https://github.com/neoclide/coc.nvim/blob/master/doc/coc.txt
 
     "list.previewHighlightGroup": "Statement",
     "signature.target": "float",
