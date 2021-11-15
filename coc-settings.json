@@ -64,6 +64,7 @@
             "maxWidth": 100,
             "focusable": false
     },
+    "diagnostic.enableSign": false,
     "diagnostic.errorSign": "",
     "diagnostic.warningSign": "",
     "diagnostic.infoSign": "",
@@ -71,15 +72,19 @@
     "diagnostic.highlightOffset": 9999999,
     "diagnostic.refreshOnInsertMode": true,
     "diagnostic.displayByAle": false,
-    "diagnostic.checkCurrentLine": false,
     "diagnostic.virtualTextPrefix": " ❯❯❯ ",
     "diagnostic.virtualText": false,
     "diagnostic.separateRelatedInformationAsDiagnostics": true,
     "diagnostic.level": "hint",
-    "diagnostic.enableMessage": "jump",
+    // jump will show messages
+    //"diagnostic.enableMessage": "jump",
+    "diagnostic.messageTarget": "echo",
+    "diagnostic.checkCurrentLine": true,
+    "diagnostic.messageDelay": 100,
 
     // disable coc-ccls "ref"
     "codeLens.enable": false,
+    // https://github.com/neoclide/coc.nvim/blob/master/doc/coc.txt
 
     "list.previewHighlightGroup": "Statement",
     "signature.target": "float",
