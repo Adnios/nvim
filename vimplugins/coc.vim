@@ -71,6 +71,9 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
+" popupmenu transparent
+set pumblend=30
+
 hi CocErrorHighlight gui=undercurl guisp=#902020
 hi CocWarningHighlight gui=undercurl guisp=#909020
 hi CocInfoHighlight gui=undercurl guisp=#209020
