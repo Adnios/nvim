@@ -39,8 +39,10 @@ nmap <silent> [c <Plug>(coc-diagnostic-prev)
 nmap <silent> ]c <Plug>(coc-diagnostic-next)
 nmap <silent> [e <Plug>(coc-diagnostic-prev-error)
 nmap <silent> ]e <Plug>(coc-diagnostic-next-error)
-
 nnoremap <leader>cd :CocDiagnostics<CR>
+" show diagnosticinfo using <CR>
+nnoremap <silent> <CR> :call CocAction('diagnosticInfo')<CR>
+
 
 nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>rf <Plug>(coc-refactor)

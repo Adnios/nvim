@@ -78,12 +78,12 @@
     "diagnostic.separateRelatedInformationAsDiagnostics": true,
     "diagnostic.level": "hint",
     "diagnostic.virtualTextPrefix": " ❯❯❯ ",
-    "diagnostic.virtualText": true,
-    "diagnostic.refreshOnInsertMode": false,
+    "diagnostic.virtualText": false,
+    "diagnostic.refreshOnInsertMode": true,
     // jump will show messages
-    "diagnostic.enableMessage": "never",
+    "diagnostic.enableMessage": "jump",
     //"diagnostic.messageTarget": "echo",
-    "diagnostic.checkCurrentLine": false,
+    "diagnostic.checkCurrentLine": true,
     "diagnostic.messageDelay": 200,
     // https://github.com/neoclide/coc.nvim/blob/master/doc/coc.txt
 
