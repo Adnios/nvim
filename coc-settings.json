@@ -68,7 +68,7 @@
             "focusable": false,
             "winblend": 30
     },
-    "diagnostic.enableSign": false,
+    "diagnostic.enableSign": true,
     "diagnostic.errorSign": "",
     "diagnostic.warningSign": "",
     "diagnostic.infoSign": "",
