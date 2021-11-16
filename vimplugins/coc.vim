@@ -44,10 +44,32 @@ nnoremap <leader>cd :CocDiagnostics<CR>
 nnoremap <silent> <CR> :call CocAction('diagnosticInfo')<CR>
 
 
-nmap <leader>rn <Plug>(coc-rename)
-nmap <leader>rf <Plug>(coc-refactor)
 nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gD <Plug>(coc-declaration)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references-used)
+nmap <silent> gn <Plug>(coc-rename)
+nmap <silent> gA <Plug>(coc-codeaction)
+nmap <silent> gl <Plug>(coc-codeaction-line)
+nmap <silent> ga <Plug>(coc-codeaction-cursor)
+nmap <silent> gk <Plug>(coc-fix-current)
+
+nmap <leader>l  <Plug>(coc-codelens-action)
+nmap <leader>rf <Plug>(coc-refactor)
+
+" Applying codeAction to the selected region.
+" Example: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+
 nnoremap <leader>ca :<C-u>CocList -I grep<cr>
 nnoremap <leader>cf :<C-u>CocList files<cr>
 nnoremap <leader>? :CocSearch <C-R>=expand("<cword>")<CR><CR>
@@ -59,24 +81,27 @@ function! s:show_documentation()
         call CocAction('doHover')
     endif
 endfunction
-nnoremap <silent> <localleader>y  :<C-u>CocList -A --normal yank<cr>
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-vmap <leader>a <Plug>(coc-codeaction-selected)
-nmap <leader>a <Plug>(coc-codeaction-selected)
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+inoremap <silent><expr> <c-space> coc#refresh()
 
 " popupmenu transparent
-set pumblend=30
+" set pumblend=30
 
-hi CocErrorHighlight gui=undercurl guisp=#902020
-hi CocWarningHighlight gui=undercurl guisp=#909020
-hi CocInfoHighlight gui=undercurl guisp=#209020
-hi CocHintHighlight gui=undercurl guisp=#204090
+" hi CocErrorHighlight gui=undercurl guisp=#902020
+" hi CocWarningHighlight gui=undercurl guisp=#909020
+" hi CocInfoHighlight gui=undercurl guisp=#209020
+" hi CocHintHighlight gui=undercurl guisp=#204090
+
+hi CocErrorHighlight gui=undercurl guisp=#ff0000
+hi CocWarningHighlight gui=undercurl guisp=#ff922b
+hi CocInfoHighlight gui=undercurl guisp=#fab005
+hi CocHintHighlight gui=undercurl guisp=#15aabf

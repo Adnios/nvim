@@ -15,3 +15,5 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 
 " autosave
 autocmd CursorHold * silent! update
+
+command! -nargs=0 VSCode        execute ":!code -g %:p\:" . line('.') . ":" . col('.')

@@ -42,6 +42,25 @@
         "operator": "Ψ",
         "typeParameter": ""
     },
+    "hover.floatConfig": {
+            "border": true,
+            "highlight": "Normal",
+            "maxWidth": 100,
+            "focusable": false,
+            "winblend": 20
+    },
+    "signature.floatConfig": {
+            "border": true,
+            "highlight": "Normal",
+            "maxWidth": 100,
+            "focusable": false,
+            "winblend": 20
+    },
+    "suggest.floatConfig": {
+        "border": true,
+        "borderhighlight": "PreProc",
+        "winblend": 0
+    },
     //diagnostic
     "diagnostic.enable": true,
     "diagnostic.floatConfig": {
@@ -49,25 +68,11 @@
             "highlight": "Normal",
             "maxWidth": 100,
             "focusable": false,
-            "winblend": 30
+            "winblend": 20
     },
     "diagnostic.signPriority": 20,
     "diagnostic.enableHighlightLineNumber": false,
     "diagnostic.locationlistUpdate": false,
-    "hover.floatConfig": {
-            "border": true,
-            "highlight": "Normal",
-            "maxWidth": 100,
-            "focusable": false,
-            "winblend": 30
-    },
-    "signature.floatConfig": {
-            "border": true,
-            "highlight": "Normal",
-            "maxWidth": 100,
-            "focusable": false,
-            "winblend": 30
-    },
     "diagnostic.enableSign": true,
     "diagnostic.errorSign": "",
     "diagnostic.warningSign": "",
@@ -79,7 +84,7 @@
     "diagnostic.level": "hint",
     "diagnostic.virtualTextPrefix": " ❯❯❯ ",
     "diagnostic.virtualText": false,
-    "diagnostic.refreshOnInsertMode": true,
+    "diagnostic.refreshOnInsertMode": false,
     // jump will show messages
     "diagnostic.enableMessage": "jump",
     //"diagnostic.messageTarget": "echo",
@@ -122,17 +127,6 @@
     // coc-lua
     //"Lua.runtime.version": "Lua 5.3",
 
-    // coc-spell-checker
-    "cSpell.language": "en",
-    "cSpell.maxNumberOfProblems": 100,
-    "cSpell.numSuggestions": 8,
-    "cSpell.minWordLength": 4,
-    "cSpell.enabledLanguageIds": [
-        "markdown",
-        "tex"
-    ],
-    "cSpell.spellCheckDelayMs": 50,
-
     //"clangd.path": "/home/scrutiny/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd",
     "languageserver": {
         "latex": {
@@ -153,5 +147,24 @@
                 }
             }
         }
-    }
+    },
+
+    // coc-spell-checker
+    "cSpell.language": "en",
+    "cSpell.maxNumberOfProblems": 100,
+    "cSpell.numSuggestions": 8,
+    "cSpell.minWordLength": 4,
+    "cSpell.enabledLanguageIds": [
+        "markdown",
+        "tex"
+    ],
+    "cSpell.spellCheckDelayMs": 50,
+    "cSpell.userWords": [
+      "Neovim",
+      "galaxyline",
+      "glepnir",
+      "neogit",
+      "nvim",
+      "rafi"
+    ]
 }
