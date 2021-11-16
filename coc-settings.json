@@ -5,7 +5,7 @@
 
     "suggest.detailMaxLength": 60,
     "suggest.noselect": false,
-    "suggest.enablePreselect": false,
+    "suggest.enablePreselect": true,
     "suggest.triggerAfterInsertEnter": false,
     "suggest.timeout": 5000,
     "suggest.enablePreview": true,
@@ -57,8 +57,8 @@
             "winblend": 10
     },
     "suggest.floatConfig": {
-            "border": true,
-            "highlight": "Normal",
+            "border": false,
+            "borderhighlight": "PreProc",
             "maxWidth": 100,
             "winblend": 10
     },
