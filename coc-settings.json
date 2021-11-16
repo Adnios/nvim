@@ -4,7 +4,7 @@
     "coc.preferences.extensionUpdateCheck": "weekly",
 
     "suggest.detailMaxLength": 60,
-    "suggest.noselect": true,
+    "suggest.noselect": false,
     "suggest.enablePreselect": false,
     "suggest.triggerAfterInsertEnter": false,
     "suggest.timeout": 5000,
@@ -47,19 +47,20 @@
             "highlight": "Normal",
             "maxWidth": 100,
             "focusable": false,
-            "winblend": 20
+            "winblend": 10
     },
     "signature.floatConfig": {
             "border": true,
             "highlight": "Normal",
             "maxWidth": 100,
             "focusable": false,
-            "winblend": 20
+            "winblend": 10
     },
     "suggest.floatConfig": {
-        "border": true,
-        "borderhighlight": "PreProc",
-        "winblend": 0
+            "border": true,
+            "highlight": "Normal",
+            "maxWidth": 100,
+            "winblend": 10
     },
     //diagnostic
     "diagnostic.enable": true,
@@ -68,7 +69,7 @@
             "highlight": "Normal",
             "maxWidth": 100,
             "focusable": false,
-            "winblend": 20
+            "winblend": 10
     },
     "diagnostic.signPriority": 20,
     "diagnostic.enableHighlightLineNumber": false,
