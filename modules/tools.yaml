@@ -51,8 +51,10 @@
     EOF
 
 - repo: kyazdani42/nvim-tree.lua
+  if: 0
   on_cmd: NvimTreeToggle
-  hook_source: lua require('plugins.nvim-tree')
+  hook_post_source: lua require('plugins.test')
+  # hook_source: lua require('plugins.nvim-tree')
 
 - repo: folke/zen-mode.nvim
   if: 0

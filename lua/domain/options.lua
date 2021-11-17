@@ -126,7 +126,6 @@ function options:load_options()
   for name, value in pairs(self.global_local) do
     -- print(name, value)
     vim.o[name] = value
-    -- vim.o.name = value
   end
   pbind.bind_option(self.bw_local)
 end

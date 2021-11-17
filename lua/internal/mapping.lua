@@ -49,8 +49,9 @@ function mapping:load_plugin_define()
     -- dein
     ["n|<Leader>tr"]     = map_cr("call dein#recache_runtimepath()"):with_noremap(),
     -- Plugin nvim-tree
-    ["n|<Leader>e"]      = map_cr('NvimTreeToggle'):with_noremap():with_silent(),
-    ["n|<Leader>F"]      = map_cr('NvimTreeFindFile'):with_noremap():with_silent(),
+    -- ["n|<Leader>e"]      = map_cr('NvimTreeToggle'):with_noremap():with_silent(),
+    ["n|<Leader>e"]      = map_cr('Defx'):with_noremap():with_silent(),
+    -- ["n|<Leader>F"]      = map_cr('NvimTreeFindFile'):with_noremap():with_silent(),
     -- Plugin MarkdownPreview
     ["n|<Leader>om"]     = map_cu('MarkdownPreview'):with_noremap():with_silent(),
 

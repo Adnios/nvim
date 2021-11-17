@@ -4,7 +4,6 @@ let g:coc_status_error_sign = '•'
 let g:coc_status_warning_sign = '•'
 let g:coc_disable_transparent_cursor = 1
 let g:coc_global_extensions = [
-            \ 'coc-lightbulb',
             \ 'coc-pyright',
             \ 'coc-texlab',
             \ 'coc-spell-checker',
@@ -58,6 +57,10 @@ nmap <silent> gk <Plug>(coc-fix-current)
 
 nmap <leader>l  <Plug>(coc-codelens-action)
 nmap <leader>rf <Plug>(coc-refactor)
+
+" Formatting selected code.
+xmap <leader>cm  <Plug>(coc-format-selected)
+nmap <leader>cm  <Plug>(coc-format-selected)
 
 " Applying codeAction to the selected region.
 " Example: `<leader>aap` for current paragraph

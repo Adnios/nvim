@@ -17,3 +17,6 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 autocmd CursorHold * silent! update
 
 command! -nargs=0 VSCode        execute ":!code -g %:p\:" . line('.') . ":" . col('.')
+
+" 禁用 modeline, 否则 vim 文件 set expandtab 无效 https://github.com/MwumLi/mini-vim/blob/master/vimrc
+set nomodeline

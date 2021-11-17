@@ -11,6 +11,9 @@
     colorscheme onebuddy
 
 - repo: joshdick/onedark.vim
+  hook_add: |
+    " use hook_add, otherwise it will disable after restart
+    let g:onedark_hide_endofbuffer = 1
   hook_source: |
     let g:onedark_color_overrides = {
     \ "special_grey": { "gui": "#818387", "cterm": "170", "cterm16": "5" },
