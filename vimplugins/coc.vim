@@ -4,6 +4,7 @@ let g:coc_status_error_sign = '•'
 let g:coc_status_warning_sign = '•'
 let g:coc_disable_transparent_cursor = 1
 let g:coc_global_extensions = [
+            \ 'coc-lightbulb',
             \ 'coc-pyright',
             \ 'coc-texlab',
             \ 'coc-spell-checker',
@@ -39,7 +40,7 @@ nmap <silent> [c <Plug>(coc-diagnostic-prev)
 nmap <silent> ]c <Plug>(coc-diagnostic-next)
 nmap <silent> [e <Plug>(coc-diagnostic-prev-error)
 nmap <silent> ]e <Plug>(coc-diagnostic-next-error)
-nnoremap <leader>cd :CocDiagnostics<CR>
+nnoremap <leader>cd :CocList diagnostic<CR>
 " show diagnosticinfo using <CR>
 nnoremap <silent> <CR> :call CocAction('diagnosticInfo')<CR>
 

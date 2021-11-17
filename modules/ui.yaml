@@ -1,14 +1,23 @@
 - repo: tjdevries/colorbuddy.vim
   # if: 0
-  on_source: onebuddy
+  # on_source: onebuddy
 
 - repo: Th3Whit3Wolf/onebuddy
-  # if: 0
+  if: 0
   depends: colorbuddy.vim
   hook_add: |
     let g:onebuddy_disable_italics = v:true
   hook_source: |
     colorscheme onebuddy
+
+- repo: joshdick/onedark.vim
+  hook_source: |
+    let g:onedark_color_overrides = {
+    \ "comment_grey": { "gui": "#8b8d91", "cterm": "170", "cterm16": "5" }
+    \}
+    " grey = { '#5c6370', '#535965' , '#546178' , '#455574' , '#646568' , '#5a5b5e' },
+    " light_grey = { '#848b98', '#7a818e' , '#7d899f' , '#6c7d9c' , '#8b8d91' , '#818387' },
+    colorscheme onedark
 
 - repo: sainnhe/edge
   if: 0

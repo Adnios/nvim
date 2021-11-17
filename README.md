@@ -3,9 +3,10 @@
 ## TODO
 
 - [ ] `accelerated_jk` has existing bug in macro.
-- [x] `neogit` `nvim filename` will raise errors.
 - [ ] use lazy load to speed up startup time.
 - [ ] add coc language to galaxyline
+- [ ] try nvim lsp reference: vim-config and tj's configuration
+- [ ] coc.nvim diagnostic slow
 
 ## Acknowledgement
 

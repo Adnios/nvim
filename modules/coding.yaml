@@ -17,3 +17,17 @@
   merged: 0
   rev: 'release'
   hook_source: source $HOME/.config/nvim/vimplugins/coc.vim
+
+- repo: dense-analysis/ale
+  if: 0
+  on_event: FileType
+  hook_add: |
+    let g:ale_disable_lsp = 1
+    " let g:ale_echo_delay = 100
+    let g:ale_lint_delay = 1000
+    " let g:ale_echo_msg_format = '%linter%: %code: %%s [%severity%]'
+    let g:ale_history_enabled = 0
+    let g:ale_sign_error = '✖'
+    let g:ale_sign_warning = 'ⁱ'
+    let g:ale_maximum_file_size = 500000
+    let g:ale_linters = {'go': ['golangci-lint']}
