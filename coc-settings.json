@@ -86,6 +86,7 @@
     "diagnostic.virtualTextPrefix": " ❯❯❯ ",
     "diagnostic.virtualText": false,
     "diagnostic.refreshOnInsertMode": false,
+    //"diagnostic.format": "%message [%source]",
     // jump will show messages
     "diagnostic.enableMessage": "jump",
     //"diagnostic.messageTarget": "echo",
