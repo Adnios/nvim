@@ -13,6 +13,7 @@
 - repo: joshdick/onedark.vim
   hook_source: |
     let g:onedark_color_overrides = {
+    \ "special_grey": { "gui": "#818387", "cterm": "170", "cterm16": "5" },
     \ "comment_grey": { "gui": "#8b8d91", "cterm": "170", "cterm16": "5" }
     \}
     " grey = { '#5c6370', '#535965' , '#546178' , '#455574' , '#646568' , '#5a5b5e' },
