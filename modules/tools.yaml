@@ -57,5 +57,5 @@
   # hook_source: lua require('plugins.nvim-tree')
 
 - repo: folke/zen-mode.nvim
-  if: 0
+  on_cmd: ZenMode
   hook_source: lua require('zen-mode').setup {}

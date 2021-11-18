@@ -1,7 +1,7 @@
-local options = require 'domain.options'
+-- local options = require 'domain.options'
 local global = require 'domain.global'
 local dein = require 'domain.dein'
-local autocmd = require 'internal.event'
+-- local autocmd = require 'internal.event'
 local fs = require 'publibs.plfs'
 
 -- Create cache dir and subs dir
@@ -57,12 +57,12 @@ local load_core =function()
   disable_distribution_plugins()
   leader_map()
 
-  options:load_options()
+  -- options:load_options()
 
   dein:load_repos()
 
-  require('internal.mapping')
-  autocmd.load_autocmds()
+  -- require('internal.mapping')
+  -- autocmd.load_autocmds()
 end
 
 load_core()

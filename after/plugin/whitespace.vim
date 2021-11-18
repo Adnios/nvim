@@ -17,7 +17,7 @@
 " - g:whitespace_pattern_insert overrides insert mode pattern
 
 if exists('g:loaded_pluginwhitespace')
-	finish
+  finish
 endif
 let g:loaded_pluginwhitespace = 1
 
@@ -32,63 +32,63 @@ command! -range=% WhitespacePrev call <SID>WhitespaceJump(-1, <line1>, <line2>)
 
 " Whitespace events
 if v:version >= 702
-	augroup plugin_whitespace
-		autocmd!
-		autocmd InsertEnter * call <SID>ToggleWhitespace('i')
-		autocmd InsertLeave * call <SID>ToggleWhitespace('n')
-	augroup END
+  augroup plugin_whitespace
+    autocmd!
+    autocmd InsertEnter * call <SID>ToggleWhitespace('i')
+    autocmd InsertLeave * call <SID>ToggleWhitespace('n')
+  augroup END
 endif
 
 let s:ws_chars = get(g:, 'whitespace_characters', '\s')
 let s:ws_pattern = get(g:, 'whitespace_pattern', s:ws_chars . '\+$')
 let s:normal_pattern = get(g:, 'whitespace_pattern_normal',
-	\ s:ws_pattern . '\| \+\ze\t')
+  \ s:ws_pattern . '\| \+\ze\t')
 let s:insert_pattern = get(g:, 'whitespace_pattern_insert',
-	\ s:ws_chars . '\+\%#\@<!$')
+  \ s:ws_chars . '\+\%#\@<!$')
 
 let s:blacklist = get(g:, 'whitespace_filetype_blacklist', [
-	\ 'diff', 'git', 'gitcommit', 'help', 'qf', 'denite', 'defx','dashboard' ])
+  \ 'diff', 'git', 'gitcommit', 'help', 'qf', 'denite', 'defx','dashboard' ])
 
 function! s:ToggleWhitespace(mode)
-	if &buftype =~? 'nofile\|help' || index(s:blacklist, &filetype) >= -1
-		return
-	elseif a:mode ==? ''
-		call matchdelete(w:whitespace_match_id)
-		return
-	else
-		let l:pattern = (a:mode ==# 'i') ? s:insert_pattern : s:normal_pattern
-		if exists('w:whitespace_match_id')
-			call matchdelete(w:whitespace_match_id)
-			call matchadd('ExtraWhitespace', l:pattern, 10, w:whitespace_match_id)
-		else
-			highlight! link ExtraWhitespace SpellBad
-			let w:whitespace_match_id = matchadd('ExtraWhitespace', l:pattern)
-		endif
-	endif
+  if &buftype =~? 'nofile\|help' || index(s:blacklist, &filetype) >= -1
+    return
+  elseif a:mode ==? ''
+    call matchdelete(w:whitespace_match_id)
+    return
+  else
+    let l:pattern = (a:mode ==# 'i') ? s:insert_pattern : s:normal_pattern
+    if exists('w:whitespace_match_id')
+      call matchdelete(w:whitespace_match_id)
+      call matchadd('ExtraWhitespace', l:pattern, 10, w:whitespace_match_id)
+    else
+      highlight! link ExtraWhitespace SpellBad
+      let w:whitespace_match_id = matchadd('ExtraWhitespace', l:pattern)
+    endif
+  endif
 endfunction
 
 function! s:WhitespaceErase(line1, line2)
-	let l:save_cursor = getpos('.')
-	silent! execute ':' . a:line1 . ',' . a:line2 . 's/' . s:ws_pattern . '//'
-	call setpos('.', l:save_cursor)
+  let l:save_cursor = getpos('.')
+  silent! execute ':' . a:line1 . ',' . a:line2 . 's/' . s:ws_pattern . '//'
+  call setpos('.', l:save_cursor)
 endfunction
 
 " Search for trailing whitespace
 function! s:WhitespaceJump(direction, from, to)
-	let l:opts = 'wz'
-	let l:until = a:to
-	if a:direction < 1
-		let l:opts .= 'b'
-		let l:until = a:from
-	endif
+  let l:opts = 'wz'
+  let l:until = a:to
+  if a:direction < 1
+    let l:opts .= 'b'
+    let l:until = a:from
+  endif
 
-	" Full file, allow wrapping
-	if a:from == 1 && a:to == line('$')
-		let l:until = 0
-	endif
+  " Full file, allow wrapping
+  if a:from == 1 && a:to == line('$')
+    let l:until = 0
+  endif
 
-	" Go to pattern
-	let l:found = search(s:normal_pattern, l:opts, l:until)
+  " Go to pattern
+  let l:found = search(s:normal_pattern, l:opts, l:until)
 endfunction
 
 " vim: set ts=2 sw=2 tw=80 noet :
