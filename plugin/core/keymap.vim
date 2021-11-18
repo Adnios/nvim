@@ -1,4 +1,5 @@
 " plugins
+nnoremap <leader>nf :Neoformat<CR>
 nnoremap <leader>z :ZenMode<CR>
 nnoremap <leader>tr :call dein#recache_runtimepath()<CR>
 nnoremap <leader>e :Defx<CR>

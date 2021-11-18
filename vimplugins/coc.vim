@@ -55,12 +55,13 @@ nmap <silent> gl <Plug>(coc-codeaction-line)
 nmap <silent> ga <Plug>(coc-codeaction-cursor)
 nmap <silent> gk <Plug>(coc-fix-current)
 
-nmap <leader>l  <Plug>(coc-codelens-action)
+" nmap <leader>l  <Plug>(coc-codelens-action)
 nmap <leader>rf <Plug>(coc-refactor)
 
 " Formatting selected code.
-xmap <leader>cm  <Plug>(coc-format-selected)
-nmap <leader>cm  <Plug>(coc-format-selected)
+" not working for lua files
+" xmap <leader>cm  <Plug>(coc-format-selected)
+" nmap <leader>cm  <Plug>(coc-format-selected)
 
 " Applying codeAction to the selected region.
 " Example: `<leader>aap` for current paragraph
