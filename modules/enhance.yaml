@@ -129,3 +129,10 @@
   hook_add: |
     nmap j <Plug>(accelerated_jk_gj)
     nmap k <Plug>(accelerated_jk_gk)
+
+# speed up vim startup about 40ms in my configuration
+- repo: nathom/filetype.nvim
+  hook_add: |
+    lua <<EOF
+    vim.g.did_load_filetypes = 1
+    EOF
