@@ -5,7 +5,7 @@
 set breakindent
 set breakindentopt=sbr
 " Ensures word-wrap does not split words
-set formatoptions=l
+" set formatoptions=l
 set lbr
 " jump last place
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
