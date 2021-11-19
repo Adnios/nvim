@@ -1,3 +1,4 @@
+" reference thinkvim
 "General settins{{{
 set mouse=a
 set report=0                 " Don't report on line changes
@@ -236,9 +237,10 @@ let &g:titlestring="
       \ %{expand('%:p:~:.')}%(%m%r%w%)
       \ %<\[%{fnamemodify(getcwd(), ':~')}\] - Neovim"
 
-set showmatch           " Jump to matching bracket
-set matchpairs+=<:>     " Add HTML brackets to pair matching
-set matchtime=1         " Tenths of a second to show the matching paren
+" disable for nosize match
+" set showmatch           " Jump to matching bracket
+" set matchpairs+=<:>     " Add HTML brackets to pair matching
+" set matchtime=1         " Tenths of a second to show the matching paren
 
 set showtabline=2       " Always show the tabs line
 set winwidth=30         " Minimum width for active window
