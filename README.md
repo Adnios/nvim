@@ -5,11 +5,13 @@
 - [x] coc.nvim diagnostic slow
 - [x] add coc language to galaxyline(give up)
 - [ ] `accelerated_jk` has existing bug in macro.
-- [ ] use lazy load to speed up startup time.
-- [ ] try nvim lsp reference: vim-config and tj's configuration
-- [ ] refactor the code using lua.
-- [ ] delete unused files
-- [ ] change yaml to toml
+- [x] use lazy load to speed up startup time.
+- [x] try nvim lsp reference: vim-config and tj's configuration
+- [x] refactor the code using lua.
+- [x] delete unused files
+- [x] change yaml to toml
+- [ ] learn each plug
+- [ ] markdown todo space key rerender 2 spaces.
 
 ## Acknowledgement
 
