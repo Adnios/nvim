@@ -12,6 +12,7 @@
 - [x] change yaml to toml
 - [ ] learn each plug
 - [ ] markdown todo space key rerender 2 spaces.
+- [ ] markdown conceallevel problems, such as **bold** text.
 
 ## Acknowledgement
 

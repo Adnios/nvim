@@ -79,6 +79,8 @@ vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(
 nnoremap <leader>ca :<C-u>CocList -I grep<cr>
 nnoremap <leader>cf :<C-u>CocList files<cr>
 nnoremap <leader>? :CocSearch <C-R>=expand("<cword>")<CR><CR>
+nnoremap <leader>cs :CocCommand cSpell.toggleEnableSpellChecker<CR>
+nnoremap <leader>ct call CocAction('diagnosticToggle')<CR>
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
     if (index(['vim','help'], &filetype) >= 0)
