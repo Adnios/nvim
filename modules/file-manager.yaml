@@ -1,9 +1,0 @@
-- repo: Shougo/defx.nvim
-  on_cmd: Defx
-  hook_source: source  ~/.config/nvim/vimplugins/defx.vim
-
-- repo: kristijanhusak/defx-git
-  on_source: defx.nvim
-
-- repo: kristijanhusak/defx-icons
-  on_source: defx.nvim
