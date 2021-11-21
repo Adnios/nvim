@@ -19,11 +19,12 @@ hook_source = '''
 
 [[plugins]]
 repo = 'neoclide/coc.nvim'
-on_event = 'VimEnter'
+# on_event = 'VimEnter'
+on_event = 'BufReadPre'
 merged = true
 rev = 'release'
 hook_source = '''
-  source $HOME/.config/nvim/vimplugins/coc.vim
+  source $VIM_PLUGIN_PATH/coc.vim
 '''
 
 [[plugins]]
@@ -32,7 +33,8 @@ on_cmd = 'Neoformat'
 
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter'
-on_event = 'FileType'
+# on_event = 'FileType'
+on_event = 'BufReadPre'
 hook_post_update = ':TSUpdate'
 on_cmd = ['TSUpdate', 'TSInstall', 'TSInstallInfo', 'TSModuleInfo', 'TSConfigInfo']
 hook_source = '''

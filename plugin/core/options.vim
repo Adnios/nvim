@@ -27,7 +27,8 @@ endif
 
 " What to save for views and sessions:
 set viewoptions=folds,cursor,curdir,slash,unix
-set sessionoptions=curdir,help,tabpages,winsize
+" problems: https://github.com/glepnir/dashboard-nvim/issues/53
+" set sessionoptions=curdir,help,tabpages,winsize
 
 if has('mac')
   let g:clipboard = {

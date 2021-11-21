@@ -14,7 +14,8 @@ hook_add = '''
 
 [[plugins]]
 repo = 'norcalli/nvim-colorizer.lua'
-on_event = 'FileType'
+# on_event = 'FileType'
+on_event = 'BufReadPre'
 hook_source = '''
 lua <<EOF
 require 'colorizer'.setup {
@@ -50,7 +51,8 @@ hook_source = '''
 
 [[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'
-on_event = 'FileType'
+# on_event = 'FileType'
+on_event = 'BufReadPre'
 # hook_post_source: IndentGuidesEnable
 hook_source = '''
   let g:indent_guides_enable_on_vim_startup = 0
@@ -87,7 +89,7 @@ repo = 'gelguy/wilder.nvim'
 on_event = 'CmdlineEnter'
 build = ":UpdateRemotePlugins"
 hook_post_source = '''
-  source $HOME/.config/nvim/vimplugins/wilder.vim
+  source $VIM_PLUGIN_PATH/wilder.vim
 '''
 
 
@@ -106,7 +108,7 @@ hook_add = '''
 repo = 'Shougo/defx.nvim'
 on_cmd = 'Defx'
 hook_source = '''
-source  ~/.config/nvim/vimplugins/defx.vim
+source  $VIM_PLUGIN_PATH/defx.vim
 '''
 
 [[plugins]]
@@ -131,7 +133,19 @@ on_source = 'telescope.nvim'
 
 [[plugins]]
 repo = 'nvim-telescope/telescope.nvim'
-on_event = 'VimEnter'
+on_lua = 'telescope'
+hook_add = '''
+lua <<EOF
+vim.api.nvim_set_keymap('n', '<Leader>ff', '<cmd>Telescope find_files find_command=rg,--hidden,--files<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>.', '<cmd>Telescope find_files find_command=rg,--hidden,--files<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>fb', '<cmd>Telescope file_browser<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>bb', '<cmd>Telescope buffers<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>,', '<cmd>Telescope buffers<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>fa', '<cmd>DashboardFindWord<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>fw', '<cmd>Telescope grep_string<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>fh', '<cmd>DashboardFindHistory<CR>', {noremap = true, silent = true})
+EOF
+'''
 hook_source = '''
 lua <<EOF
 require('plugins.telescope')
@@ -140,7 +154,8 @@ EOF
 
 [[plugins]]
 repo = 'lewis6991/gitsigns.nvim'
-on_event = 'VimEnter'
+# on_event = 'VimEnter'
+on_event = 'BufReadPre'
 depends = 'plenary.nvim'
 hook_source = '''
 lua <<EOF

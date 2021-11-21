@@ -16,11 +16,9 @@ repo = 'roxma/vim-hug-neovim-rpc'
 
 [[plugins]]
 repo = 'joshdick/onedark.vim'
-hook_add = '''
+hook_source = '''
   " use hook_add, otherwise it will disable after restart
   let g:onedark_hide_endofbuffer = 1
-'''
-hook_post_source = '''
   let g:onedark_color_overrides = {
   \ "special_grey": { "gui": "#818387", "cterm": "170", "cterm16": "5" },
   \ "comment_grey": { "gui": "#8b8d91", "cterm": "170", "cterm16": "5" }
@@ -32,19 +30,20 @@ hook_post_source = '''
 
 [[plugins]]
 repo = 'Akin909/nvim-bufferline.lua'
-hook_post_source = '''
+hook_source = '''
   lua require('plugins.bufferline')
 '''
 
 [[plugins]]
 repo = 'glepnir/galaxyline.nvim'
-hook_post_source = '''
+hook_source = '''
   lua require('plugins.eviline')
 '''
 
 [[plugins]]
 repo = 'glepnir/dashboard-nvim'
-hook_add = '''
+on_event = 'VimEnter'
+hook_source = '''
   let g:dashboard_preview_command = 'cat'
   let g:dashboard_preview_pipeline = 'lolcat'
   let g:dashboard_preview_file = getenv('HOME') . '/.config/nvim/static/neovim.cat'
