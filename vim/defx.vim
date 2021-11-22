@@ -76,6 +76,9 @@ function! s:defx_mappings() abort
   " Defx window keyboard mappings
   setlocal signcolumn=no expandtab
 
+  " mouse support(https://github.com/Shougo/defx.nvim/issues/206)
+  nnoremap <silent><buffer><expr> <2-LeftMouse> <sid>defx_toggle_tree()
+
   nnoremap <silent><buffer><expr> <CR>  defx#do_action('drop')
   nnoremap <silent><buffer><expr> l     <sid>defx_toggle_tree()
   nnoremap <silent><buffer><expr> o     <sid>defx_toggle_tree()

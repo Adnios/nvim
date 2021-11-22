@@ -13,5 +13,3 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 autocmd CursorHold * silent! update
 " open with code
 command! -nargs=0 VSCode        execute ":!code -g %:p\:" . line('.') . ":" . col('.')
-" make `set expandtab` work in vim(https://github.com/MwumLi/mini-vim/blob/master/vimrc)
-" set nomodeline

@@ -11,8 +11,9 @@
 - [x] delete unused files
 - [x] change yaml to toml
 - [ ] learn each plug
-- [ ] markdown todo space key rerender 2 spaces.
+- [x] markdown todo space key rerender 2 spaces(Raimondi/delimitMate)
 - [ ] markdown conceallevel problems, such as **bold** text.
+- [ ] vim comment ( doesn't auto pair
 
 ## Acknowledgement
 

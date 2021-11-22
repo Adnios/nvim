@@ -2,10 +2,15 @@
 repo = 'Raimondi/delimitMate'
 on_event = 'InsertEnter'
 hook_source = '''
-  let g:delimitMate_expand_cr = 0
-  let g:delimitMate_expand_space = 1
+  let g:delimitMate_balance_matchpairs = 1
+
+  let g:delimitMate_expand_cr = 1
+  let g:delimitMate_expand_space = 0
   let g:delimitMate_smart_quotes = 1
   let g:delimitMate_expand_inside_quotes = 0
+  " conflict with other plugins, work in vim files but failed in others
+  " anyway, I like use this plugin in comment
+  let g:delimitMate_excluded_regions = ""
   au FileType markdown let b:delimitMate_nesting_quotes = ["`"]
   au FileType cpp let b:delimitMate_matchpairs = "(:),[:],{:}"
 '''
@@ -19,7 +24,8 @@ hook_source = '''
 
 [[plugins]]
 repo = 'neoclide/coc.nvim'
-# on_event = 'VimEnter'
+if = 0
+on_event = 'VimEnter'
 on_event = 'BufReadPre'
 merged = true
 rev = 'release'
