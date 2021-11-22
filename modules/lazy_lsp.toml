@@ -24,7 +24,6 @@ hook_source = '''
 
 [[plugins]]
 repo = 'neoclide/coc.nvim'
-if = 0
 on_event = 'VimEnter'
 on_event = 'BufReadPre'
 merged = true
