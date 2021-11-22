@@ -108,5 +108,5 @@ repo = 'iamcco/markdown-preview.nvim'
 on_ft = ['markdown', 'pandoc', 'markdown', 'rmd']
 build = 'sh -c "cd app & yarn install"'
 hook_source = '''
-  let g:mkdp_auto_start = 0
+  let g:mkdp_auto_close = 0
 '''
