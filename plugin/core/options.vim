@@ -277,7 +277,9 @@ endif
 
 if has('conceal') && v:version >= 703
   " For snippet_complete marker
-  set conceallevel=2 concealcursor=niv
+  " I don't like conceal in markdown, but I'm not sure whether there is bad
+  " impact in other files
+  " set conceallevel=2 concealcursor=niv
 endif
 
 if exists('+previewpopup')
