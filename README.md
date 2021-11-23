@@ -12,9 +12,10 @@
 - [x] change yaml to toml
 - [ ] learn each plug
 - [x] markdown todo space key rerender 2 spaces(Raimondi/delimitMate)
-- [ ] markdown conceallevel problems, such as **bold** text.
+- [x] markdown conceallevel problems, such as **bold** text.
 - [x] vim comment ( doesn't auto pair
-- [ ] nvim-tree difference color for difference dictionary.
+- [x] nvim-tree difference color for difference dictionary.(NTFS)
+- [ ] nvim-tree highlight editing file with cursorline like [this](https://github.com/kyazdani42/nvim-tree.lua/pull/763)
 
 ## Acknowledgement
 
