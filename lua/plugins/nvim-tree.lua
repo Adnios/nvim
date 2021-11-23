@@ -5,7 +5,7 @@ vim.g.nvim_tree_git_hl = 1
 vim.g.nvim_tree_width_allow_resize = 1
 vim.g.nvim_tree_highlight_opened_files = 3
 vim.g.nvim_tree_root_folder_modifier = table.concat { ":t:gs?$?/..", string.rep(" ", 1000), "?:gs?^??" }
-
+vim.g.nvim_tree_gitignore = 1
 
 vim.g.nvim_tree_icons = {
    default = "",
@@ -38,6 +38,7 @@ local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 require('nvim-tree').setup {
     gitignore = true,
     ignore = {'.git', 'node_modules', '.cache'},
+    nvim_tree_ignore = { '.git', 'node_modules', 'dist' },
     open_on_tab = false,
     disable_netrw = true,
     hijack_netrw = true,
@@ -49,6 +50,11 @@ require('nvim-tree').setup {
         enable = true,
         update_cwd = true,
         ignore_list = {}
+    },
+
+    filters = {
+        dotfiles = false,
+        custom = {'.git', '.cache'}
     },
     view = {
         allow_resize = false,

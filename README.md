@@ -13,7 +13,8 @@
 - [ ] learn each plug
 - [x] markdown todo space key rerender 2 spaces(Raimondi/delimitMate)
 - [ ] markdown conceallevel problems, such as **bold** text.
-- [ ] vim comment ( doesn't auto pair
+- [x] vim comment ( doesn't auto pair
+- [ ] nvim-tree difference color for difference dictionary.
 
 ## Acknowledgement
 
