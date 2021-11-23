@@ -3,7 +3,7 @@ vim.g.nvim_tree_indent_markers = 1
 vim.g.nvim_tree_group_empty = 1
 vim.g.nvim_tree_git_hl = 1
 vim.g.nvim_tree_width_allow_resize = 1
-vim.g.nvim_tree_highlight_opened_files = 1
+vim.g.nvim_tree_highlight_opened_files = 3
 vim.g.nvim_tree_root_folder_modifier = table.concat { ":t:gs?$?/..", string.rep(" ", 1000), "?:gs?^??" }
 
 
@@ -20,7 +20,9 @@ vim.g.nvim_tree_icons = {
       untracked = "★",
    },
    folder = {
-      -- disable indent_markers option to get arrows working or if you want both arrows and indent then just add the arrow icons in front            ofthe default and opened folders below!
+      -- disable indent_markers option to get arrows working or 
+      -- if you want both arrows and indent then just add the arrow icons in front
+      -- ofthe default and opened folders below!
       arrow_open = "",
       arrow_closed = "",
       default = "",
@@ -31,7 +33,6 @@ vim.g.nvim_tree_icons = {
       symlink_open = "",
    },
 }
-vim.cmd([[autocmd Filetype NvimTree set cursorline]])
 
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 require('nvim-tree').setup {
