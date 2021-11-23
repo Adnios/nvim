@@ -3,8 +3,10 @@ nnoremap <leader>gn :Neogit<CR>
 nnoremap <leader>nf :Neoformat<CR>
 nnoremap <leader>z :ZenMode<CR>
 nnoremap <leader>tr :call dein#recache_runtimepath()<CR>
-nnoremap <leader>e :Defx<CR>
-nnoremap <leader>f :Defx `escape(expand('%:p:h'), ' :')` -search=`expand('%:p')`<CR>
+nnoremap <leader>e :NvimTreeToggle<CR>
+nnoremap <leader>f :NvimTreeFindFile<CR>
+" nnoremap <leader>e :Defx<CR>
+" nnoremap <leader>f :Defx `escape(expand('%:p:h'), ' :')` -search=`expand('%:p')`<CR>
 nnoremap <leader>om :MarkdownPreview<CR>
 nnoremap <leader>v :Vista!!<CR>
 nnoremap <leader>r :RnvimrToggle<CR>
