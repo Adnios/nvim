@@ -95,6 +95,6 @@ if has('vim_starting')
   syntax enable
 endif
 
-"" Trigger source event hooks
+" Trigger source event hooks
 call dein#call_hook('source')
 call dein#call_hook('post_source')
