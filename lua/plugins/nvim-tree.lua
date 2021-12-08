@@ -5,7 +5,7 @@ vim.g.nvim_tree_git_hl = 1
 vim.g.nvim_tree_width_allow_resize = 1
 vim.g.nvim_tree_highlight_opened_files = 3
 vim.g.nvim_tree_root_folder_modifier = table.concat { ":t:gs?$?/..", string.rep(" ", 1000), "?:gs?^??" }
-vim.g.nvim_tree_gitignore = 1
+-- vim.g.nvim_tree_gitignore = 1
 
 vim.g.nvim_tree_icons = {
    default = "",
@@ -59,7 +59,7 @@ require('nvim-tree').setup {
     },
 
     filters = {
-        dotfiles = false,
+        dotfiles = true,
         custom = {'.git', '.cache'}
     },
     view = {

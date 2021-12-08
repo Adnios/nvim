@@ -22,9 +22,10 @@ hook_source = '''
   lua require('Comment').setup()
 '''
 
+# event reference: https://yianwillis.github.io/vimcdoc/doc/autocmd.html
 [[plugins]]
 repo = 'neoclide/coc.nvim'
-on_event = 'VimEnter'
+on_event = ['VimEnter', 'BufNewFile']
 on_event = 'BufReadPre'
 merged = true
 rev = 'release'

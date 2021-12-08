@@ -5,6 +5,11 @@ func! QuickRun()
   if &filetype == 'c'
     exec "!g++ % -o %<"
     exec "!time ./%<"
+  elseif &filetype == 'cuda'
+    exec "!nvcc % -o %<"
+    :sp
+    :res -15
+    :term ./%<
   elseif &filetype == 'cpp'
     set splitbelow
     exec "!g++ -std=c++11 % -Wall -o %<"
