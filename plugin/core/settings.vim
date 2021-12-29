@@ -7,11 +7,16 @@ set breakindentopt=sbr
 " Ensures word-wrap does not split words
 " set formatoptions=l
 set lbr
+
 " jump last place
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+autocmd BufReadPost * call s:resume_position()
+" au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+" autocmd BufRead * autocmd FileType <buffer> ++once
+"       \ if &ft !~# 'commit\|rebase' && line("'\"") > 1 && line("'\"") <= line("$") | exe 'normal! g`"' | endif
+" autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") && line(".") == 1 |
+"                 \ exe "normal! g'\"" |
+"                 \ endif "jump to last position last open in vim
 " autosave
 autocmd CursorHold * silent! update
-" open with code
-command! -nargs=0 VSCode        execute ":!code -g %:p\:" . line('.') . ":" . col('.')
 
 set cursorline
