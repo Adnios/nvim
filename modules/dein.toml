@@ -20,7 +20,7 @@ hook_source = '''
   " use hook_add, otherwise it will disable after restart
   let g:onedark_hide_endofbuffer = 1
   let g:onedark_color_overrides = {
-  \ "comment_grey": { "gui": "#8b8d91", "cterm": "170", "cterm16": "5" }
+    \ "comment_grey": { "gui": "#8b8d91", "cterm": "170", "cterm16": "5" }
   \}
   " \ "special_grey": { "gui": "#818387", "cterm": "170", "cterm16": "5" }
   " grey = { '#5c6370', '#535965' , '#546178' , '#455574' , '#646568' , '#5a5b5e' },
