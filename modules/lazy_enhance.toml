@@ -133,20 +133,6 @@ hook_add = '''
   nmap j <Plug>(accelerated_jk_gj)
   nmap k <Plug>(accelerated_jk_gk)
 '''
-# [[plugins]]
-# repo = 'Shougo/defx.nvim'
-# on_cmd = 'Defx'
-# hook_source = '''
-# source  $VIM_PLUGIN_PATH/defx.vim
-# '''
-#
-# [[plugins]]
-# repo = 'kristijanhusak/defx-git'
-# on_source = 'defx.nvim'
-#
-# [[plugins]]
-# repo = 'kristijanhusak/defx-icons'
-# on_source = 'defx.nvim'
 
 [[plugins]]
 repo = 'kyazdani42/nvim-tree.lua'
