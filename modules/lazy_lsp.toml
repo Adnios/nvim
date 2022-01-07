@@ -117,7 +117,3 @@ build = 'sh -c "cd app & yarn install"'
 hook_source = '''
   let g:mkdp_auto_close = 0
 '''
-
-[[plugins]]
-repo = 'dstein64/vim-startuptime'
-on_cmd = 'StartupTime'
