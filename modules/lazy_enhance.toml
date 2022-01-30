@@ -276,5 +276,4 @@ hook_source = '''
 # requirement: pip install dbus-python
 [[plugins]]
 repo = 'lilydjwg/fcitx.vim'
-if = 0
 on_event = 'InsertEnter'
