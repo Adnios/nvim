@@ -172,8 +172,9 @@
     "cSpell.numSuggestions": 8,
     "cSpell.minWordLength": 4,
     "cSpell.enabledLanguageIds": [
-        "markdown",
-        "tex"
+        "latex",
+        "tex",
+        "markdown"
     ],
     "cSpell.spellCheckDelayMs": 50,
     "cSpell.userWords": [
