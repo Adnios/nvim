@@ -100,7 +100,7 @@ on_source = 'nvim-treesitter'
 repo = 'lervag/vimtex'
 on_ft = ['tex', 'bib']
 hook_source = '''
-  let g:tex_flavor='xelatex'
+  let g:tex_flavor='latex'
   let g:vimtex_view_general_viewer = 'zathura'
   let g:vimtex_view_method='zathura'
   let g:vimtex_quickfix_mode=0
@@ -116,4 +116,21 @@ on_ft = ['markdown', 'pandoc', 'markdown', 'rmd']
 build = 'sh -c "cd app & yarn install"'
 hook_source = '''
   let g:mkdp_auto_close = 0
+'''
+
+[[plugins]]
+repo = 'godlygeek/tabular'
+on_ft = ['markdown', 'pandoc', 'markdown', 'rmd']
+
+[[plugins]]
+repo = 'preservim/vim-markdown'
+on_ft = ['markdown', 'pandoc', 'markdown', 'rmd']
+
+[[plugins]]
+repo = 'ferrine/md-img-paste.vim'
+on_ft = ['markdown', 'pandoc', 'markdown', 'rmd']
+hook_source = '''
+  let g:mdip_imgdir = 'pic'
+  let g:mdip_imgname = 'image'
+  autocmd FileType markdown nnoremap <silent> <C-p> :call mdip#MarkdownClipboardImage()<CR>
 '''

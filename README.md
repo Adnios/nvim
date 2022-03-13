@@ -16,6 +16,7 @@
 - [x] vim comment ( doesn't auto pair
 - [x] nvim-tree difference color for difference dictionary.(NTFS)
 - [ ] nvim-tree highlight editing file with cursorline like [this](https://github.com/kyazdani42/nvim-tree.lua/pull/763)
+- [ ] vim-markdown [see issue](https://github.com/preservim/vim-markdown/issues/575)
 
 ## Acknowledgement
 
