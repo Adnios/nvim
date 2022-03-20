@@ -12,6 +12,8 @@ hook_source = '''
   let g:delimitMate_excluded_regions = ""
   au FileType markdown let b:delimitMate_nesting_quotes = ["`"]
   au FileType cpp let b:delimitMate_matchpairs = "(:),[:],{:}"
+  " sometimes I need to write cpp code in markdown
+  au FileType markdown let b:delimitMate_matchpairs = "(:),[:],{:}"
 '''
 
 [[plugins]]
@@ -48,7 +50,7 @@ vim.api.nvim_command('set foldmethod=expr')
 vim.api.nvim_command('set foldexpr=nvim_treesitter#foldexpr()')
 require'nvim-treesitter.configs'.setup {
     ensure_installed = 'maintained',
-    highlight = {enable = true, disable = {'vim'}},
+    highlight = {enable = true, disable = {'vim', 'markdown'}},
     textobjects = {
         select = {
             enable = true,
@@ -118,13 +120,13 @@ hook_source = '''
   let g:mkdp_auto_close = 0
 '''
 
-[[plugins]]
-repo = 'godlygeek/tabular'
-on_ft = ['markdown', 'pandoc', 'markdown', 'rmd']
+# [[plugins]]
+# repo = 'godlygeek/tabular'
+# on_ft = ['markdown', 'pandoc', 'markdown', 'rmd']
 
-[[plugins]]
-repo = 'preservim/vim-markdown'
-on_ft = ['markdown', 'pandoc', 'markdown', 'rmd']
+# [[plugins]]
+# repo = 'preservim/vim-markdown'
+# on_ft = ['markdown', 'pandoc', 'markdown', 'rmd']
 
 [[plugins]]
 repo = 'ferrine/md-img-paste.vim'
@@ -133,4 +135,13 @@ hook_source = '''
   let g:mdip_imgdir = 'pic'
   let g:mdip_imgname = 'image'
   autocmd FileType markdown nnoremap <silent> <C-p> :call mdip#MarkdownClipboardImage()<CR>
+'''
+
+[[plugins]]
+repo = 'tpope/vim-markdown'
+on_ft = ['markdown', 'pandoc', 'markdown', 'rmd']
+hook_source = '''
+let g:markdown_fenced_languages = ['cpp', 'python', 'bash=sh']
+let g:markdown_syntax_conceal = 0
+let g:markdown_minlines = 100
 '''

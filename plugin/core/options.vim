@@ -144,7 +144,8 @@ set shiftwidth=2    " Number of spaces to use in auto(indent)
 set softtabstop=-1  " Automatically keeps in sync with shiftwidth
 set smarttab        " Tab insert blanks according to 'shiftwidth'
 set autoindent      " Use same indenting on new lines
-set smartindent     " Smart autoindenting on new lines
+" make markdown {<CR>} weird --> disable
+" set smartindent     " Smart autoindenting on new lines
 set shiftround      " Round indent to multiple of 'shiftwidth'
 
 if exists('&breakindent')
