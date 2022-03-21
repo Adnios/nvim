@@ -17,6 +17,7 @@
 - [x] markdown conceallevel problems, such as **bold** text.
 - [x] vim comment ( doesn't auto pair `code`
 - [x] nvim-tree difference color for difference dictionary.(NTFS)
+- [ ] vim-bullets and coc.nvim have conflicts in <CR>
 
 ## Acknowledgement
 
