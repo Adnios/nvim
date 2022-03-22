@@ -124,6 +124,7 @@ hook_post_source = '''
 
 [[plugins]]
 repo = 'junegunn/vim-peekaboo'
+if = 0
 on_event = 'BufRead'
 
 [[plugins]]

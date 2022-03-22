@@ -5,7 +5,7 @@
 
     "suggest.detailMaxLength": 60,
     "suggest.noselect": false,
-    "suggest.enablePreselect": true,
+    "suggest.enablePreselect": false,
     "suggest.triggerAfterInsertEnter": false,
     "suggest.timeout": 5000,
     "suggest.enablePreview": true,
@@ -124,7 +124,7 @@
 
     // coc-tabnine
     "tabnine.priority": 0,
-    "tabnine.disable_filetypes": ["cpp","lua"],
+    "tabnine.disable_filetypes": ["cpp","lua", "python"],
     "tabnine.limit": 3,
 
     // coc-lua
@@ -173,8 +173,7 @@
     "cSpell.minWordLength": 4,
     "cSpell.enabledLanguageIds": [
         "latex",
-        "tex",
-        "markdown"
+        "tex"
     ],
     "cSpell.spellCheckDelayMs": 50,
     "cSpell.userWords": [

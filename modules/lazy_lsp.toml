@@ -148,6 +148,7 @@ let g:markdown_minlines = 100
 
 [[plugins]]
 repo = 'dkarter/bullets.vim'
+if = 0
 on_ft = ['markdown', 'pandoc', 'markdown', 'rmd']
 hook_source = '''
   let g:bullets_enabled_file_types = [
@@ -157,4 +158,5 @@ hook_source = '''
       \ 'scratch'
       \]
   let g:bullets_outline_levels = ['num', 'std-', 'std*', 'std+']
+  let g:bullets_set_mappings = 0
 '''
