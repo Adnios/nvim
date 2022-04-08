@@ -1,6 +1,6 @@
 " Compile function
-" noremap <leader><CR> :call QuickRun()<CR>
-noremap <leader><CR> :QuickRun<CR>
+noremap <leader><CR> :call QuickRun()<CR>
+" noremap <leader><CR> :QuickRun<CR>
 func! QuickRun()
   exec "w"
   if &filetype == 'c'

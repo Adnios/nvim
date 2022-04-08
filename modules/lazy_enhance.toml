@@ -71,8 +71,8 @@ require("indent_blankline").setup {
     "^object", "^table", "block", "arguments", "if_statement", "else_clause", "jsx_element",
     "jsx_self_closing_element", "try_statement", "catch_clause", "import_statement",
     "operation_type"
-  },
-  bufname_exclude = {"README.md"}
+  }
+  -- bufname_exclude = {"README.md"}
 }
 EOF
 '''
@@ -257,14 +257,7 @@ hook_source = '''
 repo = 'akinsho/nvim-toggleterm.lua'
 on_cmd = 'ToggleTerm'
 hook_source = '''
-lua <<EOF
-local large_screen = vim.o.columns > 200
-require("toggleterm").setup {
-  size = (large_screen and vim.o.columns * 0.5 or 15),
-  open_mapping = [[<c-\>]],
-  direction = large_screen and "vertical" or "horizontal"
-}
-EOF
+lua require ('plugins.toogleterm')
 '''
 
 [[plugins]]
