@@ -34,6 +34,7 @@ hook_source = '''
   source $VIM_PLUGIN_PATH/coc.vim
 '''
 
+# for lua files, install stylua
 [[plugins]]
 repo = 'sbdchd/neoformat'
 on_cmd = 'Neoformat'
