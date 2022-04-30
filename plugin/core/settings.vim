@@ -19,3 +19,5 @@ autocmd BufRead * autocmd FileType <buffer> ++once
 autocmd CursorHold * silent! update
 
 set cursorline
+" neovim 0.7 feature https://github.com/neovim/neovim/pull/17266
+set laststatus=3

@@ -1,3 +1,5 @@
+-- note:
+-- 2<C-\> to open another terminal
 local large_screen = vim.o.columns > 200
 require("toggleterm").setup {
   size = (large_screen and vim.o.columns * 0.5 or 15),

@@ -4,25 +4,30 @@ noremap <leader><CR> :call QuickRun()<CR>
 func! QuickRun()
   exec "w"
   if &filetype == 'c'
-    exec "!g++ % -o %<"
-    exec "!time ./%<"
+    TermExec cmd='g++ -std=c++17 % -o run && ./run'
+    " exec "!g++ % -o %<"
+    " exec "!time ./%<"
   elseif &filetype == 'cuda'
-    exec "!nvcc % -o %<"
-    :sp
-    :res -15
-    :term ./%<
+    TermExec cmd='nvcc % -o run && ./run'
+    " exec "!nvcc % -o %<"
+    " :sp
+    " :res -15
+    " :term ./%<
   elseif &filetype == 'cpp'
-    set splitbelow
-    exec "!g++ -std=c++11 % -Wall -o %<"
-    :sp
-    :res -15
-    :term ./%<
+    TermExec cmd='g++ -std=c++17 % -o run && ./run'
+    " set splitbelow
+    " exec "!g++ -std=c++11 % -Wall -o %<"
+    " :sp
+    " :res -15
+    " :term ./%<
   elseif &filetype == 'sh'
-    :!time bash %
+    TermExec cmd='bash %'
+    " :!time bash %
   elseif &filetype == 'python'
-    set splitbelow
-    :sp
-    :term python3 %
+    TermExec cmd='python %'
+    " set splitbelow
+    " :sp
+    " :term python3 %
   elseif &filetype == 'markdown'
     exec "InstantMarkdownPreview"
   elseif &filetype == 'tex'

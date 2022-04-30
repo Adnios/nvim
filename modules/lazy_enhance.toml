@@ -255,7 +255,7 @@ hook_source = '''
 
 [[plugins]]
 repo = 'akinsho/nvim-toggleterm.lua'
-on_cmd = 'ToggleTerm'
+on_cmd = ['ToggleTerm', 'TermExec']
 hook_source = '''
 lua require ('plugins.toogleterm')
 '''
