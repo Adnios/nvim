@@ -122,14 +122,6 @@ hook_source = '''
   let g:mkdp_page_title = '${name}'
 '''
 
-# [[plugins]]
-# repo = 'godlygeek/tabular'
-# on_ft = ['markdown', 'pandoc', 'markdown', 'rmd']
-
-# [[plugins]]
-# repo = 'preservim/vim-markdown'
-# on_ft = ['markdown', 'pandoc', 'markdown', 'rmd']
-
 [[plugins]]
 repo = 'ferrine/md-img-paste.vim'
 on_ft = ['markdown', 'pandoc', 'markdown', 'rmd']
