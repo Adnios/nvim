@@ -1,4 +1,5 @@
 {
+    "clangd.inlayHints.enable": false,
     "coc.preferences.enableFloatHighlight": true,
     "coc.preferences.snippetStatusText": "Ⓢ ",
     "coc.preferences.extensionUpdateCheck": "weekly",

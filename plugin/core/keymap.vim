@@ -13,8 +13,6 @@ nnoremap <leader>r :RnvimrToggle<CR>
 nnoremap <C-\> :ToggleTerm<CR>
 nnoremap <leader>ss :SessionSave<CR>
 nnoremap <leader>sl :SessionLoad<CR>
-" replace visual seclect
-xmap p <Plug>(operator-replace)
 
 " vim mapping
 nnoremap <C-x>h :set hls!<CR>
