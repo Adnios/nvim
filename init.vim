@@ -63,11 +63,14 @@ if has('vim_starting')
 
   let g:dein#auto_recache = 1
   let g:dein#install_max_processes = 12
-  let g:dein#install_progress_type = 'title'
+  " let g:dein#install_progress_type = 'title'
+  let g:dein#install_progress_type = 'floating'
   let g:dein#enable_notification = v:true
   let g:dein#install_check_diff = v:true
   let g:dein#lazy_rplugins = v:true
   let g:dein#install_log_filename = $DATA_PATH . '/dein.log'
+
+  let g:dein#install_check_remote_threshold = 24 * 60 * 60
 endif
 
 let s:dein_dir = $DATA_PATH . '/dein'

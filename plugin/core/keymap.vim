@@ -1,12 +1,9 @@
 " plugins
 nnoremap <leader>gn :Neogit<CR>
 nnoremap <leader>nf :Neoformat<CR>
-nnoremap <leader>z :ZenMode<CR>
 nnoremap <leader>tr :call dein#recache_runtimepath()<CR>
 nnoremap <leader>e :NvimTreeToggle<CR>
 nnoremap <leader>f :NvimTreeFindFile<CR>
-" nnoremap <leader>e :Defx<CR>
-" nnoremap <leader>f :Defx `escape(expand('%:p:h'), ' :')` -search=`expand('%:p')`<CR>
 nnoremap <leader>om :MarkdownPreview<CR>
 nnoremap <leader>v :Vista!!<CR>
 nnoremap <leader>r :RnvimrToggle<CR>
@@ -24,9 +21,9 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-nnoremap <M-k>    :resize +2<CR>
-nnoremap <M-j>  :resize -2<CR>
-nnoremap <M-h>  :vertical resize +2<CR>
+nnoremap <M-k> :resize +2<CR>
+nnoremap <M-j> :resize -2<CR>
+nnoremap <M-h> :vertical resize +2<CR>
 nnoremap <M-l> :vertical resize -2<CR>
 
 " replace tab with space
