@@ -22,3 +22,9 @@ hook_source = '''
   lua require('plugins.eviline')
 '''
 
+[[plugins]]
+repo = 'glepnir/dashboard-nvim'
+hook_source = '''
+  lua require('plugins.dashboard')
+'''
+

@@ -78,12 +78,14 @@ let s:base_dir = fnamemodify(expand('<sfile>'), ':h') . '/modules/'
 let s:dein_toml = s:base_dir . 'dein.toml'
 let s:lazy_enhance = s:base_dir . 'lazy_enhance.toml'
 let s:lazy_lsp = s:base_dir . 'lazy_lsp.toml'
+let s:completion = s:base_dir . 'completion.toml'
 
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
     call dein#load_toml(s:dein_toml, {'lazy': 0})
     call dein#load_toml(s:lazy_enhance, {'lazy' : 1})
     call dein#load_toml(s:lazy_lsp, {'lazy' : 1})
+    call dein#load_toml(s:completion, {'lazy' : 1})
   call dein#end()
   call dein#save_state()
 endif
