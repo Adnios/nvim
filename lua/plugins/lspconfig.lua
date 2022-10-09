@@ -3,9 +3,7 @@ local lspconfig = require('lspconfig')
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
--- if not packer_plugins['cmp-nvim-lsp'].loaded then
 vim.cmd([[packadd cmp-nvim-lsp]])
--- end
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 local signs = {
@@ -39,7 +37,7 @@ local on_attach = function(client, bufnr)
         if current_path:find('Workspace/neovim') or current_path:find('lspconfig') then
           return
         end
-        -- vim.lsp.buf.format()
+        vim.lsp.buf.format()
       end,
     })
   end
@@ -74,12 +72,7 @@ lspconfig.clangd.setup({
 
 local servers = {
   'pyright',
-  'bashls',
 }
-
-lspconfig.tsserver.setup({
-  on_attach = on_attach,
-})
 
 for _, server in ipairs(servers) do
   lspconfig[server].setup({

@@ -5,6 +5,13 @@ hook_post_source = '''
   lua require('plugins.lspconfig')
 '''
 
+[[plugins]]
+repo = 'glepnir/lspsaga.nvim'
+on_event = 'VimEnter'
+on_source = 'nvim-lspconfig'
+hook_post_source = '''
+  lua require('plugins.lspsaga')
+'''
 
 [[plugins]]
 repo = 'hrsh7th/nvim-cmp'
