@@ -1,5 +1,7 @@
+# will be removed soon
 [[plugins]]
 repo = 'itchyny/vim-cursorword'
+if = 0
 on_event = ['BufReadPre', 'BufNewFile']
 hook_source = '''
   augroup user_plugin_cursorword

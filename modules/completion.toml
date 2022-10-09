@@ -1,30 +1,27 @@
 [[plugins]]
 repo = 'neovim/nvim-lspconfig'
-on_event = 'BufReadPre'
-hook_source = '''
+on_event = 'VimEnter'
+hook_post_source = '''
   lua require('plugins.lspconfig')
 '''
 
-[[plugins]]
-repo = 'glepnir/lspsaga.nvim'
-on_event = 'BufReadPre'
-hook_source = '''
-  lua require('plugins.lspsaga')
-'''
 
 [[plugins]]
 repo = 'hrsh7th/nvim-cmp'
-on_event = 'BufReadPre'
-depends = ['cmp-nvim-lsp', 'cmp-path', 'cmp-buffer']
+on_event = 'VimEnter'
+on_source = 'nvim-lspconfig'
 hook_source = '''
   lua require('plugins.nvim-cmp')
 '''
 
 [[plugins]]
+on_source = 'nvim-cmp'
 repo = 'hrsh7th/cmp-nvim-lsp'
 
 [[plugins]]
+on_source = 'nvim-cmp'
 repo = 'hrsh7th/cmp-path'
 
 [[plugins]]
+on_source = 'nvim-cmp'
 repo = 'hrsh7th/cmp-buffer'

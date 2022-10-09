@@ -4,7 +4,7 @@ local lspconfig = require('lspconfig')
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 -- if not packer_plugins['cmp-nvim-lsp'].loaded then
---   vim.cmd([[packadd cmp-nvim-lsp]])
+vim.cmd([[packadd cmp-nvim-lsp]])
 -- end
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
@@ -39,21 +39,11 @@ local on_attach = function(client, bufnr)
         if current_path:find('Workspace/neovim') or current_path:find('lspconfig') then
           return
         end
-        vim.lsp.buf.format()
+        -- vim.lsp.buf.format()
       end,
     })
   end
 end
-
-lspconfig.gopls.setup({
-  on_attach = on_attach,
-  cmd = { 'gopls', '--remote=auto' },
-  capabilities = capabilities,
-  init_options = {
-    usePlaceholders = true,
-    completeUnimported = true,
-  },
-})
 
 lspconfig.sumneko_lua.setup({
   on_attach = on_attach,
@@ -82,32 +72,9 @@ lspconfig.clangd.setup({
   },
 })
 
-lspconfig.rust_analyzer.setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
-  settings = {
-    imports = {
-      granularity = {
-        group = 'module',
-      },
-      prefix = 'self',
-    },
-    cargo = {
-      buildScripts = {
-        enable = true,
-      },
-    },
-    procMacro = {
-      enable = true,
-    },
-  },
-})
-
 local servers = {
-  'dockerls',
   'pyright',
   'bashls',
-  'zls',
 }
 
 lspconfig.tsserver.setup({
