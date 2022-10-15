@@ -11,7 +11,6 @@ vim.api.nvim_set_keymap(
 	"<cmd>Telescope find_files find_command=rg,--hidden,--files<CR>",
 	{ noremap = true, silent = true }
 )
-vim.api.nvim_set_keymap("n", "<Leader>fb", "<cmd>Telescope file_browser<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>bb", "<cmd>Telescope buffers<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>,", "<cmd>Telescope buffers<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>fa", "<cmd>Telescope live_grep<CR>", { noremap = true, silent = true })
@@ -41,10 +40,10 @@ keymap("n", "gr", "<cmd>Lspsaga rename<CR>", { silent = true })
 keymap("n", "gd", "<cmd>Lspsaga peek_definition<CR>", { silent = true })
 
 -- Show line diagnostics
-keymap("n", "<leader>cd", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = true })
+keymap("n", "<leader>d", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = true })
 
 -- Show cursor diagnostic
-keymap("n", "<leader>cd", "<cmd>Lspsaga show_cursor_diagnostics<CR>", { silent = true })
+keymap("n", "<leader>c", "<cmd>Lspsaga show_cursor_diagnostics<CR>", { silent = true })
 
 -- Diagnsotic jump can use `<c-o>` to jump back
 keymap("n", "[e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true })

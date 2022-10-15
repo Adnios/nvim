@@ -6,11 +6,13 @@
 require('telescope').setup {
   defaults = {
     prompt_prefix = '🔭 ',
-    -- prompt_position = 'top',
+    prompt_position = 'top',
     selection_caret = " ",
     sorting_strategy = 'ascending',
-    -- preview_cutoff = 20,-- bugs when there is no preview windows
-    -- results_width = 0.6,
+    layout_config = {
+      horizontal = { prompt_position = 'top', results_width = 0.6 },
+      vertical = { mirror = false },
+    },
     file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
     grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
     qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,

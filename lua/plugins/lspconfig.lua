@@ -4,7 +4,7 @@ local lspconfig = require('lspconfig')
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 vim.cmd([[packadd cmp-nvim-lsp]])
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 local signs = {
   Error = ' ',
@@ -19,28 +19,32 @@ end
 
 vim.diagnostic.config({
   signs = true,
-  update_in_insert = false,
+  update_in_insert = true,
   underline = true,
   severity_sort = true,
-  virtual_text = {
-    prefix = '🔥',
-    source = true,
-  },
+  -- virtual_text = false,
+  -- virtual_text = {
+  --   source = true,
+  -- },
 })
 
-local on_attach = function(client, bufnr)
-  if client.server_capabilities.documentFormattingProvider then
-    api.nvim_create_autocmd('BufWritePre', {
-      buffer = bufnr,
-      callback = function()
-        local current_path = vim.fn.expand('%:p')
-        if current_path:find('Workspace/neovim') or current_path:find('lspconfig') then
-          return
-        end
-        vim.lsp.buf.format()
-      end,
-    })
+-- Toogle diagnostics
+local diagnostics_active = true
+local toggle_diagnostics = function()
+  diagnostics_active = not diagnostics_active
+  if diagnostics_active then
+    vim.api.nvim_echo({ { "Show diagnostics" } }, false, {})
+    vim.diagnostic.enable()
+  else
+    vim.api.nvim_echo({ { "Disable diagnostics" } }, false, {})
+    vim.diagnostic.disable()
   end
+end
+
+local on_attach = function(client, bufnr)
+  api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+  local bufopts = { noremap=true, silent=true, buffer=bufnr }
+  vim.keymap.set('n', '<space>l', toggle_diagnostics, bufopts)
 end
 
 lspconfig.sumneko_lua.setup({

@@ -1,3 +1,4 @@
+-- This file is from: https://github.com/glepnir/nvim/blob/main/plugin/cursorword.lua
 local function highlight_cursorword()
   if vim.g.cursorword_highlight ~= false then
     vim.cmd('highlight CursorWord term=underline cterm=underline gui=underline')
