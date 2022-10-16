@@ -3,6 +3,7 @@ nnoremap <leader>gn :Neogit<CR>
 nnoremap <leader>nf :Neoformat<CR>
 nnoremap <leader>tr :call dein#recache_runtimepath()<CR>
 nnoremap <leader>tc :call map(dein#check_clean(), "delete(v:val, 'rf')")<CR>
+nnoremap <leader>tu :call dein#update()<CR>
 nnoremap <leader>e :NvimTreeToggle<CR>
 nnoremap <leader>f :NvimTreeFindFile<CR>
 nnoremap <leader>om :MarkdownPreview<CR>
