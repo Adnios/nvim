@@ -1,23 +1,17 @@
 -- telescope
 vim.api.nvim_set_keymap(
 	"n",
-	"<Leader>ff",
-	"<cmd>Telescope find_files find_command=rg,--hidden,--files<CR>",
-	{ noremap = true, silent = true }
-)
-vim.api.nvim_set_keymap(
-	"n",
 	"<Leader>.",
 	"<cmd>Telescope find_files find_command=rg,--hidden,--files<CR>",
 	{ noremap = true, silent = true }
 )
-vim.api.nvim_set_keymap("n", "<Leader>bb", "<cmd>Telescope buffers<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>,", "<cmd>Telescope buffers<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>fa", "<cmd>Telescope live_grep<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>fw", "<cmd>Telescope grep_string<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<Leader>fh", "<cmd>DashboardFindHistory<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>fh", "<cmd>Telescope oldfiles<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>fr", "<cmd>Telescope resume<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>fp", "<cmd>Telescope pickers<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>fb", "<cmd>Telescope file_browser<CR>", { noremap = true, silent = true })
 
 -- lspsaga
 -- Lsp finder find the symbol definition implement reference
@@ -28,7 +22,7 @@ local keymap = vim.keymap.set
 keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
 
 -- Code action
-keymap({"n","v"}, "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true })
+keymap({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true })
 
 -- Rename
 keymap("n", "gr", "<cmd>Lspsaga rename<CR>", { silent = true })
@@ -51,14 +45,14 @@ keymap("n", "]e", "<cmd>Lspsaga diagnostic_jump_next<CR>", { silent = true })
 
 -- Only jump to error
 keymap("n", "[E", function()
-  require("lspsaga.diagnostic").goto_prev({ severity = vim.diagnostic.severity.ERROR })
+	require("lspsaga.diagnostic").goto_prev({ severity = vim.diagnostic.severity.ERROR })
 end, { silent = true })
 keymap("n", "]E", function()
-  require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR })
+	require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR })
 end, { silent = true })
 
 -- Outline
-keymap("n","<leader>o", "<cmd>LSoutlineToggle<CR>",{ silent = true })
+keymap("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", { silent = true })
 
 -- Hover Doc
 keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })

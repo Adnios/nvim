@@ -46,14 +46,15 @@ local on_attach = function(client, bufnr)
   local bufopts = { noremap = true, silent = true, buffer = bufnr }
   vim.keymap.set("n", "<space>l", toggle_diagnostics, bufopts)
   -- https://github.com/neovim/nvim-lspconfig/wiki/UI-Customization#show-source-in-diagnostics-neovim-06-only%E2%86%B2
+  require('plugins.simple-diagnostics').setup({
+    virtual_text = true,
+    message_area = false,
+    signs = true,
+  })
   vim.api.nvim_create_autocmd("CursorHold", {
     buffer = bufnr,
     callback = function()
-      require('plugins.simple-diagnostics').setup({
-        virtual_text = true,
-        message_area = false,
-        signs = true,
-      })
+
     end
   })
   -- show diagnostics in qlist

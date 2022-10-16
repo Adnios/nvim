@@ -26,6 +26,10 @@ repo = 'nvim-telescope/telescope-fzy-native.nvim'
 on_source = 'telescope.nvim'
 
 [[plugins]]
+repo = 'nvim-telescope/telescope-file-browser.nvim'
+on_source = 'telescope.nvim'
+
+[[plugins]]
 repo = 'nvim-lua/popup.nvim'
 on_source = 'telescope.nvim'
 
