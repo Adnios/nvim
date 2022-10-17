@@ -45,12 +45,12 @@ local on_attach = function(client, bufnr)
   api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
   local bufopts = { noremap = true, silent = true, buffer = bufnr }
   vim.keymap.set("n", "<space>l", toggle_diagnostics, bufopts)
-  -- https://github.com/neovim/nvim-lspconfig/wiki/UI-Customization#show-source-in-diagnostics-neovim-06-only%E2%86%B2
   require('plugins.simple-diagnostics').setup({
     virtual_text = true,
     message_area = false,
     signs = true,
   })
+  -- https://github.com/neovim/nvim-lspconfig/wiki/UI-Customization#show-source-in-diagnostics-neovim-06-only%E2%86%B2
   vim.api.nvim_create_autocmd("CursorHold", {
     buffer = bufnr,
     callback = function()

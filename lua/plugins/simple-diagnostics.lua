@@ -1,5 +1,6 @@
 -- https://github.com/casonadams/simple-diagnostics.nvim
 -- https://github.com/LunarVim/LunarVim/issues/1712
+
 local prev_line_nr = vim.api.nvim_win_get_cursor(0)[1] - 1
 local prev_bufnr = vim.api.nvim_get_current_buf()
 local set = false
