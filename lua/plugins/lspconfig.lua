@@ -42,7 +42,8 @@ local toggle_diagnostics = function()
 end
 
 local on_attach = function(client, bufnr)
-  api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+  -- Enable completion triggered by <c-x><c-o>
+  -- api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
   local bufopts = { noremap = true, silent = true, buffer = bufnr }
   vim.keymap.set("n", "<space>l", toggle_diagnostics, bufopts)
   require('plugins.simple-diagnostics').setup({

@@ -64,7 +64,7 @@ augroup user_plugin_filetype "{{{
   autocmd FileType dashboard set showtabline=0 | autocmd WinLeave <buffer> set showtabline=2
 
   " yank
-  au TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=700}
+  au TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=100}
 
 augroup END "}}}
 
