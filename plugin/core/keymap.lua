@@ -1,14 +1,8 @@
 -- telescope
---[[ vim.api.nvim_set_keymap(
+vim.api.nvim_set_keymap(
 	"n",
 	"<Leader>.",
 	"<cmd>Telescope find_files find_command=rg,--hidden,--files<CR>",
-	{ noremap = true, silent = true }
-) ]]
-vim.api.nvim_set_keymap(
-	"n",
-	"<leader>.",
-	"<Cmd>lua require('telescope').extensions.frecency.frecency({ workspace = 'CWD' })<CR>",
 	{ noremap = true, silent = true }
 )
 vim.api.nvim_set_keymap("n", "<Leader>,", "<cmd>Telescope buffers<CR>", { noremap = true, silent = true })

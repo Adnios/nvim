@@ -34,13 +34,7 @@ require('telescope').setup {
         },
       },
     },
-    frecency = {
-      show_scores = false,
-      show_unindexed = true,
-      ignore_patterns = { "*.git/*", "*/tmp/*" },
-    }
   },
 }
 require('telescope').load_extension('fzy_native')
 require("telescope").load_extension('file_browser')
-require("telescope").load_extension('frecency')
