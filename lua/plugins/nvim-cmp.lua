@@ -97,6 +97,9 @@ cmp.setup({
   }, {
     { name = "buffer" },
   }),
+  experimental = {
+    ghost_text = true,
+  },
 })
 vim.cmd("hi CmpFloatBorder guifg=red")
 
