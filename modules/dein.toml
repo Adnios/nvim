@@ -28,3 +28,9 @@ hook_source = '''
   lua require('plugins.dashboard')
 '''
 
+[[plugins]]
+repo = 'edluffy/hologram.nvim'
+if = 0
+hook_source = '''
+  lua require('plugins.hologram')
+'''

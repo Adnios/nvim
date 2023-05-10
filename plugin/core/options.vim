@@ -261,7 +261,7 @@ set cmdwinheight=5      " Command-line lines
 set noequalalways       " Don't resize windows on split or close
 set laststatus=2        " Always show a status line
 " set colorcolumn=+0      " Column highlight at textwidth's max character-limit
-set colorcolumn=80
+set colorcolumn=100
 set display=lastline
 
 if has('folding') && has('vim_starting')
