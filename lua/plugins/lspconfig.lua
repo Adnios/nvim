@@ -63,7 +63,7 @@ local on_attach = function(client, bufnr)
 end
 
 -- languages server: sumneko_lua, clangd, and pyright
-lspconfig.sumneko_lua.setup({
+lspconfig.lua_ls.setup({
   on_attach = on_attach,
   settings = {
     Lua = {

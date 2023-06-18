@@ -22,15 +22,8 @@ hook_source = '''
   lua require('plugins.eviline')
 '''
 
-[[plugins]]
-repo = 'glepnir/dashboard-nvim'
-hook_source = '''
-  lua require('plugins.dashboard')
-'''
-
-[[plugins]]
-repo = 'edluffy/hologram.nvim'
-if = 0
-hook_source = '''
-  lua require('plugins.hologram')
-'''
+# [[plugins]]
+# repo = 'nvimdev/dashboard-nvim'
+# hook_source = '''
+#   lua require('plugins.dashboard')
+# '''
