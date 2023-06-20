@@ -1,18 +1,3 @@
-" plugins
-nnoremap <leader>gn :Neogit<CR>
-nnoremap <leader>nf :Neoformat<CR>
-nnoremap <leader>tr :call dein#recache_runtimepath()<CR>
-nnoremap <leader>tc :call map(dein#check_clean(), "delete(v:val, 'rf')")<CR>
-nnoremap <leader>tu :call dein#update()<CR>
-nnoremap <leader>e :NvimTreeToggle<CR>
-nnoremap <leader>f :NvimTreeFindFile<CR>
-nnoremap <leader>om :MarkdownPreview<CR>
-nnoremap <leader>v :Vista!!<CR>
-nnoremap <leader>r :RnvimrToggle<CR>
-nnoremap <C-\> :ToggleTerm<CR>
-nnoremap <leader>ss :SessionSave<CR>
-nnoremap <leader>sl :SessionLoad<CR>
-
 " vim mapping
 nnoremap <C-x>h :set hls!<CR>
 nnoremap <C-x>k :Bdelete<CR>

@@ -233,13 +233,13 @@ set fillchars+=vert:\|  " add a bar for vertical splits
 set fcs=eob:\           " hide ~ tila
 set list
 set listchars=tab:»·,eol:↲,nbsp:+,trail:▫,extends:→,precedes:←
-set title
+" set title
 " Title length.
-set titlelen=95
+" set titlelen=95
 " Title string.
-let &g:titlestring="
-      \ %{expand('%:p:~:.')}%(%m%r%w%)
-      \ %<\[%{fnamemodify(getcwd(), ':~')}\] - Neovim"
+" let &g:titlestring="
+"       \ %{expand('%:p:~:.')}%(%m%r%w%)
+"       \ %<\[%{fnamemodify(getcwd(), ':~')}\] - Neovim"
 
 " disable for nosize match
 " set showmatch           " Jump to matching bracket
@@ -259,7 +259,6 @@ set showcmd             " Show command in status line
 set cmdheight=1         " Height of the command line
 set cmdwinheight=5      " Command-line lines
 set noequalalways       " Don't resize windows on split or close
-set laststatus=2        " Always show a status line
 " set colorcolumn=+0      " Column highlight at textwidth's max character-limit
 set colorcolumn=100
 set display=lastline
