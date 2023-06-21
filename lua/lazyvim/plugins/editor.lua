@@ -47,6 +47,7 @@ return {
       window = {
         mappings = {
           ["<space>"] = "none",
+          ["o"] = "open",
         },
       },
       default_component_configs = {
@@ -206,6 +207,7 @@ return {
   -- easily jump to any location and enhanced f/t motions for Leap
   {
     "ggandor/flit.nvim",
+    enabled = false,
     keys = function()
       ---@type LazyKeys[]
       local ret = {}
@@ -218,6 +220,7 @@ return {
   },
   {
     "ggandor/leap.nvim",
+    enabled = false,
     keys = {
       { "s", mode = { "n", "x", "o" }, desc = "Leap forward to" },
       { "S", mode = { "n", "x", "o" }, desc = "Leap backward to" },
@@ -237,7 +240,7 @@ return {
   -- which-key
   {
     "folke/which-key.nvim",
-    event = "VeryLazy",
+    -- event = "VeryLazy",
     opts = {
       plugins = { spelling = true },
       defaults = {
@@ -344,6 +347,7 @@ return {
   -- buffer remove
   {
     "echasnovski/mini.bufremove",
+    enabled = false,
     -- stylua: ignore
     keys = {
       { "<leader>bd", function() require("mini.bufremove").delete(0, false) end, desc = "Delete Buffer" },
@@ -395,6 +399,7 @@ return {
   -- todo comments
   {
     "folke/todo-comments.nvim",
+    enabled = false,
     cmd = { "TodoTrouble", "TodoTelescope" },
     event = { "BufReadPost", "BufNewFile" },
     config = true,

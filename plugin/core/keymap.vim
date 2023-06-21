@@ -1,6 +1,6 @@
 " vim mapping
 nnoremap <C-x>h :set hls!<CR>
-nnoremap <C-x>k :Bdelete<CR>
+nnoremap <C-x>k :bdelete<CR>
 nnoremap Y y$
 nnoremap ]b :bn<CR>
 nnoremap [b :bp<CR>

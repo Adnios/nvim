@@ -48,7 +48,8 @@ return {
       -- LSP Server Settings
       ---@type lspconfig.options
       servers = {
-        jsonls = {},
+        -- jsonls = {},
+        clangd = {},
         lua_ls = {
           -- mason = false, -- set to false if you don't want this server to be installed with mason
           settings = {
@@ -169,6 +170,7 @@ return {
   -- formatters
   {
     "jose-elias-alvarez/null-ls.nvim",
+    enabled = false,
     event = { "BufReadPre", "BufNewFile" },
     dependencies = { "mason.nvim" },
     opts = function()
@@ -176,10 +178,11 @@ return {
       return {
         root_dir = require("null-ls.utils").root_pattern(".null-ls-root", ".neoconf.json", "Makefile", ".git"),
         sources = {
-          nls.builtins.formatting.fish_indent,
-          nls.builtins.diagnostics.fish,
+          -- nls.builtins.formatting.fish_indent,
+          -- nls.builtins.diagnostics.fish,
           nls.builtins.formatting.stylua,
-          nls.builtins.formatting.shfmt,
+          nls.builtins.diagnostics.clang_check,
+          -- nls.builtins.formatting.shfmt,
           -- nls.builtins.diagnostics.flake8,
         },
       }
@@ -195,7 +198,9 @@ return {
     opts = {
       ensure_installed = {
         "stylua",
-        "shfmt",
+        "clangd",
+        "clang-format",
+        -- "shfmt",
         -- "flake8",
       },
     },
