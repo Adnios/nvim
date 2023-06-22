@@ -344,6 +344,16 @@ return {
     },
   },
 
+  {
+    "tpope/vim-fugitive",
+    event = { "BufReadPost", "BufNewFile" },
+  },
+
+  {
+    "'tpope/vim-rhubarb',",
+    event = { "BufReadPost", "BufNewFile" },
+  },
+
   -- buffer remove
   {
     "echasnovski/mini.bufremove",
