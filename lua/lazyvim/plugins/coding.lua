@@ -36,6 +36,7 @@ return {
     version = false, -- last release is way too old
     event = "InsertEnter",
     dependencies = {
+      'onsails/lspkind-nvim',
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
@@ -73,13 +74,17 @@ return {
           { name = "path" },
         }),
         formatting = {
-          format = function(_, item)
-            local icons = require("lazyvim.config").icons.kinds
-            if icons[item.kind] then
-              item.kind = icons[item.kind] .. item.kind
-            end
-            return item
-          end,
+          format = require('lspkind').cmp_format {
+              with_text = false, -- do not show text alongside icons
+              maxwidth = 50, -- prevent the popup from showing more than provided characters
+          },
+          -- format = function(_, item)
+          --   local icons = require("lazyvim.config").icons.kinds
+          --   if icons[item.kind] then
+          --     item.kind = icons[item.kind] .. item.kind
+          --   end
+          --   return item
+          -- end,
         },
         experimental = {
           ghost_text = {

@@ -3,8 +3,12 @@ return {
   -- tokyonight
   {
     "folke/tokyonight.nvim",
+    -- enabled = false,
     lazy = true,
     opts = { style = "moon" },
+    -- config = function ()
+    --   vim.cmd("colorscheme tokyonight")
+    -- end
   },
 
   -- catppuccin
@@ -44,7 +48,9 @@ return {
   },
 
   -- gruvbox
-  { "ellisonleao/gruvbox.nvim",
+  {
+    "ellisonleao/gruvbox.nvim",
+    -- enabled = false,
     priority = 1000,
     config = function ()
       vim.cmd("colorscheme gruvbox")

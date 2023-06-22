@@ -1,5 +1,5 @@
 " reference thinkvim
-"General settins{{{
+" General settins{{{
 set mouse=a
 set report=0                 " Don't report on line changes
 set errorbells               " Trigger bell on error
@@ -263,11 +263,12 @@ set noequalalways       " Don't resize windows on split or close
 set colorcolumn=100
 set display=lastline
 
-if has('folding') && has('vim_starting')
-  set foldenable
-  set foldmethod=indent
-  set foldlevelstart=99
-endif
+set nofoldenable
+" if has('folding') && has('vim_starting')
+"   set foldenable
+"   set foldmethod=indent
+"   set foldlevelstart=99
+" endif
 
 if has('nvim-0.4')
   set signcolumn=yes:1
