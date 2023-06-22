@@ -147,3 +147,4 @@ map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 
 map("n", "<leader>ql", "<cmd>SessionLoad<cr>", { desc = "Session Load" })
 map("n", "<leader>qs", "<cmd>SessionSave<cr>", { desc = "Session Save" })
+
