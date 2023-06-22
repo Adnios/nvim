@@ -350,7 +350,7 @@ return {
   },
 
   {
-    "'tpope/vim-rhubarb',",
+    "tpope/vim-rhubarb",
     event = { "BufReadPost", "BufNewFile" },
   },
 
