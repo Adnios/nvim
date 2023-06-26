@@ -1,8 +1,5 @@
 return {
   -- lspconfig
-  -- TODO kickstart.nvim
-  -- TODO pairs hightlight
-  -- TODO lazy.nvim install number disapper
   {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
