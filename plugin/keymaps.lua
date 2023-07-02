@@ -93,7 +93,6 @@ end
 -- stylua: ignore start
 
 -- toggle options
-map("n", "<leader>uf", require("lazyvim.plugins.lsp.format").toggle, { desc = "Toggle format on Save" })
 map("n", "<leader>us", function() Util.toggle("spell") end, { desc = "Toggle Spelling" })
 map("n", "<leader>uw", function() Util.toggle("wrap") end, { desc = "Toggle Word Wrap" })
 map("n", "<leader>ul", function() Util.toggle("relativenumber", true) Util.toggle("number") end, { desc = "Toggle Line Numbers" })
@@ -147,4 +146,5 @@ map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 
 map("n", "<leader>ql", "<cmd>SessionLoad<cr>", { desc = "Session Load" })
 map("n", "<leader>qs", "<cmd>SessionSave<cr>", { desc = "Session Save" })
+
 
