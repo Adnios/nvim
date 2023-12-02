@@ -7,7 +7,7 @@ augroup highlight_yank
     autocmd TextYankPost * silent! lua vim.highlight.on_yank { higroup="IncSearch", timeout=200 }
 augroup END
 
-nnoremap p pgvy
+vnoremap p pgvy
 
 nnoremap ]b <Cmd>lua require('vscode-neovim').action('workbench.action.nextEditor')<CR>
 nnoremap [b <Cmd>lua require('vscode-neovim').action('workbench.action.previousEditor')<CR>
