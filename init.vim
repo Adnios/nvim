@@ -1,4 +1,6 @@
 set clipboard& clipboard+=unnamedplus
+set ignorecase
+set smartcase
 
 augroup highlight_yank
     autocmd!
