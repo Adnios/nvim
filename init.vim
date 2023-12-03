@@ -25,3 +25,10 @@ nnoremap [g <Cmd>lua require('vscode-neovim').action('workbench.action.editor.pr
 
 nnoremap <space>z <Cmd>lua require('vscode-neovim').action('editor.action.toggleWordWrap')<CR>
 xnoremap <space>z <Cmd>lua require('vscode-neovim').action('editor.action.toggleWordWrap')<CR>
+
+" nnoremap [c <Cmd>call VSCodeNotify('workbench.action.editor.previousChange')<CR>
+
+nnoremap <silent> <delete> <Cmd>lua require('vscode-neovim').call('editor.debug.action.toggleBreakpoint')<CR>
+
+nnoremap <space>pp <Cmd>call VSCodeNotify('copyFilePath')<CR>
+nnoremap <space>p <Cmd>call VSCodeNotify('copyRelativeFilePath')<CR>
