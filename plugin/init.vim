@@ -7,6 +7,7 @@ set ignorecase
 set smartcase
 set whichwrap+=h,l,<,>,[,],~    " Move to following line on certain keys
 set nohlsearch
+set showcmd
 
 augroup highlight_yank
     autocmd!
@@ -21,15 +22,22 @@ vnoremap $ $h
 
 nnoremap ]b <Cmd>lua require('vscode-neovim').action('workbench.action.nextEditor')<CR>
 nnoremap [b <Cmd>lua require('vscode-neovim').action('workbench.action.previousEditor')<CR>
+xnoremap ]b <Cmd>lua require('vscode-neovim').action('workbench.action.nextEditor')<CR>
+xnoremap [b <Cmd>lua require('vscode-neovim').action('workbench.action.previousEditor')<CR>
 
 nnoremap ?? <Cmd>lua require('vscode-neovim').action('workbench.action.findInFiles', { args = { { query = vim.fn.expand('<cword>') } } })<CR>
 vnoremap ?? <Cmd>lua require('vscode-neovim').action('workbench.action.findInFiles')<CR>
 nnoremap ? <Cmd>lua require('vscode-neovim').action('editor.actions.findWithArgs')<CR>
 vnoremap ? <Cmd>lua require('vscode-neovim').action('editor.action.startFindReplaceAction')<CR>
 nnoremap <leader>s <Cmd>lua require('vscode-neovim').action('workbench.action.gotoSymbol')<CR>
+xnoremap <leader>s <Cmd>lua require('vscode-neovim').action('workbench.action.gotoSymbol')<CR>
+nnoremap <leader>f <Cmd>lua require('vscode-neovim').action('breadcrumbs.focusAndSelect')<CR>
+xnoremap <leader>f <Cmd>lua require('vscode-neovim').action('breadcrumbs.focusAndSelect')<CR>
 
 nnoremap ]g <Cmd>lua require('vscode-neovim').action('workbench.action.editor.nextChange')<CR>
 nnoremap [g <Cmd>lua require('vscode-neovim').action('workbench.action.editor.previousChange')<CR>
+xnoremap ]g <Cmd>lua require('vscode-neovim').action('workbench.action.editor.nextChange')<CR>
+xnoremap [g <Cmd>lua require('vscode-neovim').action('workbench.action.editor.previousChange')<CR>
 
 " nnoremap <C-w> <Cmd>lua require('vscode-neovim').action('workbench.action.closeActiveEditor')<CR>
 " xnoremap <C-w> <Cmd>lua require('vscode-neovim').action('workbench.action.closeActiveEditor')<CR>
@@ -43,29 +51,53 @@ nnoremap <silent> <delete> <Cmd>lua require('vscode-neovim').call('editor.debug.
 
 " [ also send to vscode
 " https://github.com/vscode-neovim/vscode-neovim/blob/f875e23190fa7a7187d7c1148838795e37cf30e8/package.json
-nnoremap <leader>f <cmd>call VSCodeNotify('workbench.action.quickOpenPreviousEditor')<cr>
+nnoremap <leader><leader> <cmd>call VSCodeNotify('workbench.action.quickOpenPreviousEditor')<cr>
+xnoremap <leader><leader> <cmd>call VSCodeNotify('workbench.action.quickOpenPreviousEditor')<cr>
 " nnoremap <leader><leader> <cmd>call VSCodeNotify('workbench.action.showAllEditorsByMostRecentlyUsed')<cr>
-nnoremap <leader><leader> <cmd>call VSCodeNotify('multiCommand.showbuffer')<cr>
-nnoremap <leader>b <cmd>call VSCodeNotify('workbench.action.quickOpenPreviousRecentlyUsedEditor')<cr>
+" nnoremap <leader><leader> <cmd>call VSCodeNotify('multiCommand.showbuffer')<cr>
+" xnoremap <leader><leader> <cmd>call VSCodeNotify('multiCommand.showbuffer')<cr>
+" nnoremap <leader>b <cmd>call VSCodeNotify('workbench.action.quickOpenPreviousRecentlyUsedEditor')<cr>
+" xnoremap <leader>b <cmd>call VSCodeNotify('workbench.action.quickOpenPreviousRecentlyUsedEditor')<cr>
+nnoremap <leader>b <cmd>call VSCodeNotify('multiCommand.showbuffer')<cr>
+xnoremap <leader>b <cmd>call VSCodeNotify('multiCommand.showbuffer')<cr>
 nnoremap <leader>rq <cmd>call VSCodeNotify('workbench.action.openView')<cr>
+xnoremap <leader>rq <cmd>call VSCodeNotify('workbench.action.openView')<cr>
 " nnoremap <leader>qq <cmd>call VSCodeNotify('workbench.action.quickOpenView')<cr>
 nnoremap <leader>rr <cmd>call VSCodeNotify('workbench.action.openRecent')<cr>
+xnoremap <leader>rr <cmd>call VSCodeNotify('workbench.action.openRecent')<cr>
+nnoremap <leader>rt <cmd>call VSCodeNotify('workbench.action.switchWindow')<cr>
+xnoremap <leader>rt <cmd>call VSCodeNotify('workbench.action.switchWindow')<cr>
+nnoremap <leader>t <cmd>call VSCodeNotify('workbench.action.quickSwitchWindow')<cr>
+xnoremap <leader>t <cmd>call VSCodeNotify('workbench.action.quickSwitchWindow')<cr>
 nnoremap <leader>rw <cmd>call VSCodeNotify('workbench.action.reloadWindow')<cr>
+xnoremap <leader>rw <cmd>call VSCodeNotify('workbench.action.reloadWindow')<cr>
 " not working when vscode opened without explorer
 nnoremap <leader>e <Cmd>call VSCodeNotify('workbench.files.action.showActiveFileInExplorer')<CR>
-" nnoremap <leader>e <cmd>call VSCodeNotify('workbench.explorer.fileView.focus')<cr>
-" nnoremap <leader>g <cmd>call VSCodeNotify('workbench.view.scm')<cr>
+xnoremap <leader>e <Cmd>call VSCodeNotify('workbench.files.action.showActiveFileInExplorer')<CR>
 
 nnoremap <leader>pp <Cmd>call VSCodeNotify('copyFilePath')<CR>
 nnoremap <leader>pr <Cmd>call VSCodeNotify('copyRelativeFilePath')<CR>
+xnoremap <leader>pp <Cmd>call VSCodeNotify('copyFilePath')<CR>
+xnoremap <leader>pr <Cmd>call VSCodeNotify('copyRelativeFilePath')<CR>
 
 " windows
-nnoremap <leader>ww <cmd>call VSCodeNotify('workbench.action.closeActiveEditor')<cr>
 nnoremap <leader>q <cmd>call VSCodeNotify('workbench.action.closeActiveEditor')<cr>
-nnoremap <leader>wa <cmd>call VSCodeNotify('workbench.action.closeAllEditors')<cr>
+xnoremap <leader>q <cmd>call VSCodeNotify('workbench.action.closeActiveEditor')<cr>
+xnoremap <leader>q <cmd>call VSCodeNotify('workbench.action.closeActiveEditor')<cr>
+" nnoremap <leader>wq <cmd>call VSCodeNotify('workbench.action.closeActiveEditor')<cr>
+" xnoremap <leader>wq <cmd>call VSCodeNotify('workbench.action.closeActiveEditor')<cr>
+nnoremap <leader>wa <cmd>call VSCodeNotify('workbench.action.closeEditorsInGroup')<cr>
+xnoremap <leader>wa <cmd>call VSCodeNotify('workbench.action.closeEditorsInGroup')<cr>
 nnoremap <leader>wo <cmd>call VSCodeNotify('workbench.action.closeOtherEditors')<cr>
+xnoremap <leader>wo <cmd>call VSCodeNotify('workbench.action.closeOtherEditors')<cr>
 nnoremap <leader>wk <cmd>call VSCodeNotify('workbench.action.pinEditor')<cr>
+xnoremap <leader>wk <cmd>call VSCodeNotify('workbench.action.pinEditor')<cr>
 nnoremap <leader>wK <cmd>call VSCodeNotify('workbench.action.unpinEditor')<cr>
+xnoremap <leader>wK <cmd>call VSCodeNotify('workbench.action.unpinEditor')<cr>
+nnoremap <leader>wm <cmd>call VSCodeNotify('workbench.action.toggleMaximizeEditorGroup')<cr>
+xnoremap <leader>wm <cmd>call VSCodeNotify('workbench.action.toggleMaximizeEditorGroup')<cr>
+nnoremap <leader>wq <cmd>call VSCodeNotify('workbench.action.quit')<cr>
+xnoremap <leader>wq <cmd>call VSCodeNotify('workbench.action.quit')<cr>
 " ]
 
 nnoremap <leader>mm <cmd>call VSCodeNotify('editor.action.formatDocument')<CR>
