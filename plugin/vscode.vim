@@ -6,7 +6,7 @@ set number
 set ignorecase
 set smartcase
 set whichwrap+=h,l,<,>,[,],~    " Move to following line on certain keys
-set nohlsearch
+set nohlsearch " testing, still has issue, disabled
 set showcmd
 
 augroup highlight_yank
@@ -14,8 +14,10 @@ augroup highlight_yank
     autocmd TextYankPost * silent! lua vim.highlight.on_yank { higroup="IncSearch", timeout=300 }
 augroup END
 
+" for vscode-neovim wired highlight
 autocmd! TextYankPost * call feedkeys("\<Cmd>noh\<cr>" , 'n')
 autocmd! InsertEnter * call feedkeys("\<Cmd>noh\<cr>" , 'n')
+" autocmd! CursorHold * call feedkeys("\<Cmd>call VSCodeNotify('workbench.action.files.save')\<cr>" , 'n')
 
 vnoremap p pgvy
 vnoremap $ $h
@@ -25,22 +27,24 @@ nnoremap [b <Cmd>lua require('vscode-neovim').action('workbench.action.previousE
 xnoremap ]b <Cmd>lua require('vscode-neovim').action('workbench.action.nextEditor')<CR>
 xnoremap [b <Cmd>lua require('vscode-neovim').action('workbench.action.previousEditor')<CR>
 
-nnoremap ?? <Cmd>lua require('vscode-neovim').action('workbench.action.findInFiles', { args = { { query = vim.fn.expand('<cword>') } } })<CR>
-vnoremap ?? <Cmd>lua require('vscode-neovim').action('workbench.action.findInFiles')<CR>
-nnoremap ? <Cmd>lua require('vscode-neovim').action('editor.actions.findWithArgs')<CR>
-vnoremap ? <Cmd>lua require('vscode-neovim').action('editor.action.startFindReplaceAction')<CR>
+" nnoremap ?? <Cmd>lua require('vscode-neovim').action('workbench.action.findInFiles', { args = { { query = vim.fn.expand('<cword>') } } })<CR>
+" vnoremap ?? <Cmd>lua require('vscode-neovim').action('workbench.action.findInFiles')<CR>
+" nnoremap ? <Cmd>lua require('vscode-neovim').action('editor.actions.findWithArgs')<CR>
+" vnoremap ? <Cmd>lua require('vscode-neovim').action('editor.action.startFindReplaceAction')<CR>
 nnoremap <leader>s <Cmd>lua require('vscode-neovim').action('workbench.action.gotoSymbol')<CR>
 xnoremap <leader>s <Cmd>lua require('vscode-neovim').action('workbench.action.gotoSymbol')<CR>
 nnoremap <leader>f <Cmd>lua require('vscode-neovim').action('breadcrumbs.focusAndSelect')<CR>
 xnoremap <leader>f <Cmd>lua require('vscode-neovim').action('breadcrumbs.focusAndSelect')<CR>
 
-nnoremap ]g <Cmd>lua require('vscode-neovim').action('workbench.action.editor.nextChange')<CR>
-nnoremap [g <Cmd>lua require('vscode-neovim').action('workbench.action.editor.previousChange')<CR>
-xnoremap ]g <Cmd>lua require('vscode-neovim').action('workbench.action.editor.nextChange')<CR>
-xnoremap [g <Cmd>lua require('vscode-neovim').action('workbench.action.editor.previousChange')<CR>
+" nnoremap ]g <Cmd>lua require('vscode-neovim').action('workbench.action.editor.nextChange')<CR>
+" xnoremap ]g <Cmd>lua require('vscode-neovim').action('workbench.action.editor.nextChange')<CR>
+" nnoremap [g <Cmd>lua require('vscode-neovim').action('workbench.action.editor.previousChange')<CR>
+" xnoremap [g <Cmd>lua require('vscode-neovim').action('workbench.action.editor.previousChange')<CR>
 
-" nnoremap <C-w> <Cmd>lua require('vscode-neovim').action('workbench.action.closeActiveEditor')<CR>
-" xnoremap <C-w> <Cmd>lua require('vscode-neovim').action('workbench.action.closeActiveEditor')<CR>
+nnoremap ]e <Cmd>lua require('vscode-neovim').action('editor.action.marker.nextInFiles')<CR>
+xnoremap ]e <Cmd>lua require('vscode-neovim').action('editor.action.marker.nextInFiles')<CR>
+nnoremap [e <Cmd>lua require('vscode-neovim').action('editor.action.marker.prevInFiles')<CR>
+xnoremap [e <Cmd>lua require('vscode-neovim').action('editor.action.marker.prevInFiles')<CR>
 
 nnoremap <leader>z <Cmd>lua require('vscode-neovim').action('editor.action.toggleWordWrap')<CR>
 xnoremap <leader>z <Cmd>lua require('vscode-neovim').action('editor.action.toggleWordWrap')<CR>
@@ -51,15 +55,13 @@ nnoremap <silent> <delete> <Cmd>lua require('vscode-neovim').call('editor.debug.
 
 " [ also send to vscode
 " https://github.com/vscode-neovim/vscode-neovim/blob/f875e23190fa7a7187d7c1148838795e37cf30e8/package.json
-nnoremap <leader><leader> <cmd>call VSCodeNotify('workbench.action.quickOpenPreviousEditor')<cr>
-xnoremap <leader><leader> <cmd>call VSCodeNotify('workbench.action.quickOpenPreviousEditor')<cr>
+" nnoremap <leader>; <cmd>call VSCodeNotify('workbench.action.quickOpenPreviousEditor')<cr>
+" xnoremap <leader>; <cmd>call VSCodeNotify('workbench.action.quickOpenPreviousEditor')<cr>
 " nnoremap <leader><leader> <cmd>call VSCodeNotify('workbench.action.showAllEditorsByMostRecentlyUsed')<cr>
 " nnoremap <leader><leader> <cmd>call VSCodeNotify('multiCommand.showbuffer')<cr>
 " xnoremap <leader><leader> <cmd>call VSCodeNotify('multiCommand.showbuffer')<cr>
 " nnoremap <leader>b <cmd>call VSCodeNotify('workbench.action.quickOpenPreviousRecentlyUsedEditor')<cr>
 " xnoremap <leader>b <cmd>call VSCodeNotify('workbench.action.quickOpenPreviousRecentlyUsedEditor')<cr>
-nnoremap <leader>b <cmd>call VSCodeNotify('multiCommand.showbuffer')<cr>
-xnoremap <leader>b <cmd>call VSCodeNotify('multiCommand.showbuffer')<cr>
 nnoremap <leader>rq <cmd>call VSCodeNotify('workbench.action.openView')<cr>
 xnoremap <leader>rq <cmd>call VSCodeNotify('workbench.action.openView')<cr>
 " nnoremap <leader>qq <cmd>call VSCodeNotify('workbench.action.quickOpenView')<cr>
@@ -96,12 +98,21 @@ nnoremap <leader>wK <cmd>call VSCodeNotify('workbench.action.unpinEditor')<cr>
 xnoremap <leader>wK <cmd>call VSCodeNotify('workbench.action.unpinEditor')<cr>
 nnoremap <leader>wm <cmd>call VSCodeNotify('workbench.action.toggleMaximizeEditorGroup')<cr>
 xnoremap <leader>wm <cmd>call VSCodeNotify('workbench.action.toggleMaximizeEditorGroup')<cr>
+nnoremap <leader>wh <cmd>call VSCodeNotify('workbench.action.closeEditorsToTheLeft')<cr>
+xnoremap <leader>wh <cmd>call VSCodeNotify('workbench.action.closeEditorsToTheLeft')<cr>
+nnoremap <leader>wl <cmd>call VSCodeNotify('workbench.action.closeEditorsToTheRight')<cr>
+xnoremap <leader>wl <cmd>call VSCodeNotify('workbench.action.closeEditorsToTheRight')<cr>
 nnoremap <leader>wq <cmd>call VSCodeNotify('workbench.action.quit')<cr>
 xnoremap <leader>wq <cmd>call VSCodeNotify('workbench.action.quit')<cr>
+nnoremap <leader>wg <cmd>call VSCodeNotify('git.closeAllDiffEditors')<cr>
+xnoremap <leader>wg <cmd>call VSCodeNotify('git.closeAllDiffEditors')<cr>
+nnoremap <leader>wn <Cmd>lua require('vscode-neovim').action('workbench.action.togglePanel')<CR>
+xnoremap <leader>wn <Cmd>lua require('vscode-neovim').action('workbench.action.togglePanel')<CR>
 " ]
 
-nnoremap <leader>mm <cmd>call VSCodeNotify('editor.action.formatDocument')<CR>
-vnoremap <leader>mm <cmd>call VSCodeNotifyVisual('editor.action.formatSelection')<CR>
+" default binding: =
+" nnoremap <leader>mm <cmd>call VSCodeNotify('editor.action.formatDocument')<CR>
+" vnoremap <leader>mm <cmd>call VSCodeNotifyVisual('editor.action.formatSelection')<CR>
 
 nnoremap <silent> <C-j> :call VSCodeNotify('workbench.action.navigateDown')<CR>
 xnoremap <silent> <C-j> :call VSCodeNotify('workbench.action.navigateDown')<CR>

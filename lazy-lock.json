@@ -1,5 +1,5 @@
 {
-  "accelerated-jk": { "branch": "master", "commit": "156c5158b72059404f6b8aaf15b59f87dd0aaa88" },
+  "fast-cursor-move.nvim": { "branch": "main", "commit": "1923b37b26066b5d00d88c5bc9997ec0dad4da3c" },
   "flash.nvim": { "branch": "main", "commit": "48817af25f51c0590653bbc290866e4890fe1cbe" },
   "lazy.nvim": { "branch": "main", "commit": "96584866b9c5e998cbae300594d0ccfd0c464627" },
   "nvim-treesitter": { "branch": "master", "commit": "5037721ec5870990db16dcbf06513a78a6a81641" }
