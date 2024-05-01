@@ -36,6 +36,10 @@ vim.keymap.set({"n", "x"}, "<space>b", function()
   vscode.action("workbench.action.quickOpenNavigateNext")
 end, { desc = "Open Recent" })
 
+vim.keymap.set({"n", "x"}, "<space>;", function()
+  vscode.action("workbench.action.experimental.quickTextSearch")
+end, { desc = "text search" })
+
 -- search
 vim.keymap.set("n", "<space>/", function()
   vscode.action('editor.actions.findWithArgs')
@@ -60,12 +64,12 @@ vim.keymap.set("n", "zm", function() vscode.action("editor.foldAll") end, { sile
 vim.keymap.set("n", "zr", function() vscode.action("editor.unfoldAll") end, { silent = true })
 
 -- send command to terminal
-vim.keymap.set("n", "<cr><cr>", function()
-  -- vscode.action("workbench.action.terminal.new")
-  -- vscode.action("workbench.action.toggleMaximizedPanel")
-  vscode.action("workbench.action.terminal.focus")
-  vscode.action("workbench.action.terminal.sendSequence", {
-    args = { text = "!!\n\n" },
-  })
-end, { desc = "run last cmdline in terminal" })
+-- vim.keymap.set("n", "<cr><cr>", function()
+--   -- vscode.action("workbench.action.terminal.new")
+--   -- vscode.action("workbench.action.toggleMaximizedPanel")
+--   vscode.action("workbench.action.terminal.focus")
+--   vscode.action("workbench.action.terminal.sendSequence", {
+--     args = { text = "!!\n\n" },
+--   })
+-- end, { desc = "run last cmdline in terminal" })
 
