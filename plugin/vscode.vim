@@ -8,6 +8,7 @@ set smartcase
 set whichwrap+=h,l,<,>,[,],~    " Move to following line on certain keys
 " set nohlsearch " testing, still has issue, disabled
 set showcmd
+" set shortmess+=s
 
 augroup highlight_yank
     autocmd!
@@ -15,7 +16,7 @@ augroup highlight_yank
 augroup END
 
 " for vscode-neovim wired highlight
-" autocmd! TextYankPost * call feedkeys("\<Cmd>noh\<cr>" , 'n')
+autocmd! TextYankPost * call feedkeys("\<Cmd>set hlsearch\<cr>" , 'n')
 " autocmd! InsertEnter * call feedkeys("\<Cmd>noh\<cr>" , 'n')
 " autocmd! CursorHold * call feedkeys("\<Cmd>call VSCodeNotify('workbench.action.files.save')\<cr>" , 'n')
 

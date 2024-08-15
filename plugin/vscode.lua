@@ -37,20 +37,21 @@ vim.keymap.set({"n", "x"}, "<space>b", function()
 end, { desc = "Open Recent" })
 
 vim.keymap.set({"n", "x"}, "<space>;", function()
-  vscode.action("workbench.action.experimental.quickTextSearch")
+  vscode.action("workbench.action.quickTextSearch")
 end, { desc = "text search" })
 
 -- search
-vim.keymap.set("n", "<space>/", function()
+vim.keymap.set("n", "<space>,", function()
   vscode.action('editor.actions.findWithArgs')
+  -- vscode.action('editor.action.startFindReplaceAction')
 end, { desc = "find"})
-vim.keymap.set("x", "<space>/", function()
+vim.keymap.set("x", "<space>,", function()
   vscode.action('editor.action.startFindReplaceAction')
 end, { desc = "find"})
-vim.keymap.set("n", "<space>?", function()
+vim.keymap.set("n", "<space>.", function()
   vscode.action('workbench.action.findInFiles', { args = { query = vim.fn.expand('<cword>') } })
 end, { desc = "findInFiles"})
-vim.keymap.set("x", "<space>?", function()
+vim.keymap.set("x", "<space>.", function()
   vscode.action('workbench.action.findInFiles')
 end, { desc = "findInFiles"})
 
@@ -63,6 +64,11 @@ vim.keymap.set("n", "za", function() vscode.action("editor.toggleFold") end, { s
 vim.keymap.set("n", "zm", function() vscode.action("editor.foldAll") end, { silent = true })
 vim.keymap.set("n", "zr", function() vscode.action("editor.unfoldAll") end, { silent = true })
 
+-- code
+vim.keymap.set({"n", "x"}, "<space>cc", function()
+  vscode.action('editor.actions.rename')
+end, { desc = "symbol rename"})
+
 -- send command to terminal
 -- vim.keymap.set("n", "<cr><cr>", function()
 --   -- vscode.action("workbench.action.terminal.new")
@@ -73,3 +79,7 @@ vim.keymap.set("n", "zr", function() vscode.action("editor.unfoldAll") end, { si
 --   })
 -- end, { desc = "run last cmdline in terminal" })
 
+
+vim.keymap.set({"n", "x"}, "<C-\\>", function()
+  vscode.action("workbench.action.toggleAuxiliaryBar")
+end, { desc = "search" })
