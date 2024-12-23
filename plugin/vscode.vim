@@ -8,7 +8,12 @@ set smartcase
 set whichwrap+=h,l,<,>,[,],~    " Move to following line on certain keys
 " set nohlsearch " testing, still has issue, disabled
 set showcmd
+set autoindent
+set smartindent
 " set shortmess+=s
+
+" not working
+" highlight Cursor ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=bold
 
 augroup highlight_yank
     autocmd!
@@ -17,8 +22,9 @@ augroup END
 
 " for vscode-neovim wired highlight
 autocmd! TextYankPost * call feedkeys("\<Cmd>set hlsearch\<cr>" , 'n')
-" autocmd! InsertEnter * call feedkeys("\<Cmd>noh\<cr>" , 'n')
+autocmd! InsertEnter * call feedkeys("\<Cmd>noh\<cr>" , 'n')
 " autocmd! CursorHold * call feedkeys("\<Cmd>call VSCodeNotify('workbench.action.files.save')\<cr>" , 'n')
+au TextChanged * silent! lua vim.treesitter.get_parser():parse()
 
 vnoremap p pgvy
 vnoremap $ $h

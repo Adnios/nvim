@@ -26,17 +26,17 @@ vim.keymap.set("n", "[g", function()
 end, { desc = "Prev Git Diff" })
 
 -- file
-vim.keymap.set({"n", "x"}, "<space><space>", function()
+vim.keymap.set({ "n", "x" }, "<space><space>", function()
   vscode.action("workbench.action.quickOpen")
   vscode.action("workbench.action.quickOpenNavigateNext")
 end, { desc = "search" })
 
-vim.keymap.set({"n", "x"}, "<space>b", function()
+vim.keymap.set({ "n", "x" }, "<space>b", function()
   vscode.action("workbench.action.showAllEditorsByMostRecentlyUsed")
   vscode.action("workbench.action.quickOpenNavigateNext")
 end, { desc = "Open Recent" })
 
-vim.keymap.set({"n", "x"}, "<space>;", function()
+vim.keymap.set({ "n", "x" }, "<space>;", function()
   vscode.action("workbench.action.quickTextSearch")
 end, { desc = "text search" })
 
@@ -44,16 +44,16 @@ end, { desc = "text search" })
 vim.keymap.set("n", "<space>,", function()
   vscode.action('editor.actions.findWithArgs')
   -- vscode.action('editor.action.startFindReplaceAction')
-end, { desc = "find"})
+end, { desc = "find" })
 vim.keymap.set("x", "<space>,", function()
   vscode.action('editor.action.startFindReplaceAction')
-end, { desc = "find"})
+end, { desc = "find" })
 vim.keymap.set("n", "<space>.", function()
   vscode.action('workbench.action.findInFiles', { args = { query = vim.fn.expand('<cword>') } })
-end, { desc = "findInFiles"})
+end, { desc = "findInFiles" })
 vim.keymap.set("x", "<space>.", function()
   vscode.action('workbench.action.findInFiles')
-end, { desc = "findInFiles"})
+end, { desc = "findInFiles" })
 
 -- fold
 vim.keymap.set("n", "zc", function() vscode.action("editor.fold") end, { silent = true })
@@ -65,9 +65,9 @@ vim.keymap.set("n", "zm", function() vscode.action("editor.foldAll") end, { sile
 vim.keymap.set("n", "zr", function() vscode.action("editor.unfoldAll") end, { silent = true })
 
 -- code
-vim.keymap.set({"n", "x"}, "<space>cc", function()
+vim.keymap.set({ "n", "x" }, "<space>cc", function()
   vscode.action('editor.actions.rename')
-end, { desc = "symbol rename"})
+end, { desc = "symbol rename" })
 
 -- send command to terminal
 -- vim.keymap.set("n", "<cr><cr>", function()
@@ -79,7 +79,12 @@ end, { desc = "symbol rename"})
 --   })
 -- end, { desc = "run last cmdline in terminal" })
 
+-- vim has built-in support for trimming whitespace, but it doesn't work with vscode-neovim
+-- vim.api.nvim_create_autocmd({ "InsertLeave" }, {
+--   pattern = "*",
+--   command = [[lua require('vscode-neovim').call('editor.action.trimTrailingWhitespace')]],
+-- })
 
-vim.keymap.set({"n", "x"}, "<C-\\>", function()
-  vscode.action("workbench.action.toggleAuxiliaryBar")
-end, { desc = "search" })
+vim.keymap.set('n', '<Leader>o', function ()
+    vscode.action('workbench.action.gotoSymbol')
+end)
