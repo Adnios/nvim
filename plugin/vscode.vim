@@ -126,13 +126,3 @@ nnoremap <silent> <C-h> :call VSCodeNotify('workbench.action.navigateLeft')<CR>
 xnoremap <silent> <C-h> :call VSCodeNotify('workbench.action.navigateLeft')<CR>
 nnoremap <silent> <C-l> :call VSCodeNotify('workbench.action.navigateRight')<CR>
 xnoremap <silent> <C-l> :call VSCodeNotify('workbench.action.navigateRight')<CR>
-
-" cannot nnoremap see https://github.com/vscode-neovim/vscode-neovim/issues/259
-" nmap j gj
-" nmap k gk
-" not working
-" vmap j gj
-" vmap k gk
-
-nmap j <Plug>(accelerated_jk_gj)
-nmap k <Plug>(accelerated_jk_gk)
