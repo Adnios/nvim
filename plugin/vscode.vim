@@ -12,11 +12,6 @@ set autoindent
 set smartindent
 " set shortmess+=s
 
-augroup highlight_yank
-    autocmd!
-    autocmd TextYankPost * silent! lua vim.highlight.on_yank { higroup="IncSearch", timeout=300 }
-augroup END
-
 " for vscode-neovim wired highlight
 autocmd! TextYankPost * call feedkeys("\<Cmd>set hlsearch\<cr>" , 'n')
 autocmd! InsertEnter * call feedkeys("\<Cmd>noh\<cr>" , 'n')
@@ -31,14 +26,8 @@ nnoremap [b <Cmd>lua require('vscode-neovim').action('workbench.action.previousE
 xnoremap ]b <Cmd>lua require('vscode-neovim').action('workbench.action.nextEditor')<CR>
 xnoremap [b <Cmd>lua require('vscode-neovim').action('workbench.action.previousEditor')<CR>
 
-" nnoremap ?? <Cmd>lua require('vscode-neovim').action('workbench.action.findInFiles', { args = { { query = vim.fn.expand('<cword>') } } })<CR>
-" vnoremap ?? <Cmd>lua require('vscode-neovim').action('workbench.action.findInFiles')<CR>
-" nnoremap ? <Cmd>lua require('vscode-neovim').action('editor.actions.findWithArgs')<CR>
-" vnoremap ? <Cmd>lua require('vscode-neovim').action('editor.action.startFindReplaceAction')<CR>
-nnoremap <leader>s <Cmd>lua require('vscode-neovim').action('workbench.action.gotoSymbol')<CR>
-xnoremap <leader>s <Cmd>lua require('vscode-neovim').action('workbench.action.gotoSymbol')<CR>
-nnoremap <leader>f <Cmd>lua require('vscode-neovim').action('breadcrumbs.focusAndSelect')<CR>
-xnoremap <leader>f <Cmd>lua require('vscode-neovim').action('breadcrumbs.focusAndSelect')<CR>
+" nnoremap <leader>f <Cmd>lua require('vscode-neovim').action('breadcrumbs.focusAndSelect')<CR>
+" xnoremap <leader>f <Cmd>lua require('vscode-neovim').action('breadcrumbs.focusAndSelect')<CR>
 
 " nnoremap ]g <Cmd>lua require('vscode-neovim').action('workbench.action.editor.nextChange')<CR>
 " xnoremap ]g <Cmd>lua require('vscode-neovim').action('workbench.action.editor.nextChange')<CR>
@@ -73,13 +62,13 @@ nnoremap <leader>rr <cmd>call VSCodeNotify('workbench.action.openRecent')<cr>
 xnoremap <leader>rr <cmd>call VSCodeNotify('workbench.action.openRecent')<cr>
 nnoremap <leader>rt <cmd>call VSCodeNotify('workbench.action.switchWindow')<cr>
 xnoremap <leader>rt <cmd>call VSCodeNotify('workbench.action.switchWindow')<cr>
-nnoremap <leader>t <cmd>call VSCodeNotify('workbench.action.quickSwitchWindow')<cr>
-xnoremap <leader>t <cmd>call VSCodeNotify('workbench.action.quickSwitchWindow')<cr>
+" nnoremap <leader>t <cmd>call VSCodeNotify('workbench.action.quickSwitchWindow')<cr>
+" xnoremap <leader>t <cmd>call VSCodeNotify('workbench.action.quickSwitchWindow')<cr>
 nnoremap <leader>rw <cmd>call VSCodeNotify('workbench.action.reloadWindow')<cr>
 xnoremap <leader>rw <cmd>call VSCodeNotify('workbench.action.reloadWindow')<cr>
 " not working when vscode opened without explorer
-nnoremap <leader>e <Cmd>call VSCodeNotify('workbench.files.action.showActiveFileInExplorer')<CR>
-xnoremap <leader>e <Cmd>call VSCodeNotify('workbench.files.action.showActiveFileInExplorer')<CR>
+" nnoremap <leader>e <Cmd>call VSCodeNotify('workbench.files.action.showActiveFileInExplorer')<CR>
+" xnoremap <leader>e <Cmd>call VSCodeNotify('workbench.files.action.showActiveFileInExplorer')<CR>
 
 nnoremap <leader>pp <Cmd>call VSCodeNotify('copyFilePath')<CR>
 nnoremap <leader>pr <Cmd>call VSCodeNotify('copyRelativeFilePath')<CR>

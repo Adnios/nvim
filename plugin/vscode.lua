@@ -1,6 +1,7 @@
 -- nice reference: https://github.com/mrbeardad/nvim
 -- https://github.com/vscode-neovim/vscode-neovim/blob/68f056b4c9cb6b2559baa917f8c02166abd86f11/vim/vscode-code-actions.vim#L93-L95
 -- https://github.com/vscode-neovim/vscode-neovim
+-- For keymap of <C-x>, need manually add e.g.{ "key": "ctrl+6", "command": "vscode-neovim.send", "args": "<C-^>" },
 if not vim.g.vscode then
   return
 end
@@ -26,6 +27,13 @@ vim.keymap.set("n", "[g", function()
   vscode.action("workbench.action.compareEditor.previousChange")
 end, { desc = "Prev Git Diff" })
 
+-- explorer
+vim.keymap.set({ "n", "x" }, "<Leader>e", function()
+  vscode.action("workbench.view.explorer")
+  vscode.action("workbench.files.action.showActiveFileInExplorer")
+end, { desc = "search" })
+
+
 -- file
 vim.keymap.set({ "n", "x" }, "<Leader><Leader>", function()
   vscode.action("workbench.action.quickOpen")
@@ -42,17 +50,21 @@ vim.keymap.set({ "n", "x" }, "<Leader>;", function()
 end, { desc = "text search" })
 
 -- search
-vim.keymap.set("n", "c/", function()
-  vscode.action('editor.actions.findWithArgs', { args = { query = vim.fn.expand('<cword>') } })
-  -- vscode.action('editor.action.startFindReplaceAction')
-end, { desc = "find" })
-vim.keymap.set("x", "c/", function()
+vim.keymap.set(
+  "n",
+  "<Leader>ff",
+  [[<Cmd>call VSCodeNotify('editor.actions.findWithArgs', { 'searchString': expand('<cword>'), 'replaceString': '' })<CR>]],
+  { noremap = true, silent = true }
+)
+
+vim.keymap.set("x", "<Leader>ff", function()
   vscode.action('editor.action.startFindReplaceAction')
 end, { desc = "find" })
-vim.keymap.set("n", "c?", function()
+
+vim.keymap.set("n", "<Leader>fw", function()
   vscode.action('workbench.action.findInFiles', { args = { query = vim.fn.expand('<cword>') } })
 end, { desc = "findInFiles" })
-vim.keymap.set("x", "c?", function()
+vim.keymap.set("x", "<Leader>fw", function()
   vscode.action('workbench.action.findInFiles')
 end, { desc = "findInFiles" })
 
@@ -82,7 +94,7 @@ vim.keymap.set("n", "zr", function() vscode.action("editor.unfoldAll") end, { si
 --   command = [[lua require('vscode-neovim').call('editor.action.trimTrailingWhiteLeader')]],
 -- })
 
-vim.keymap.set('n', '<Leader>o', function()
+vim.keymap.set('n', '<Leader>s', function()
   vscode.action('workbench.action.gotoSymbol')
 end)
 
@@ -96,7 +108,7 @@ vim.keymap.set("n", "ch", function()
   vscode.action("clangd.switchheadersource")
 end)
 
-vim.keymap.set({ "n", "x" }, "<Leader>cc", function()
+vim.keymap.set("n", "cn", function()
   vscode.action('editor.action.rename')
 end, { desc = "symbol rename" })
 
@@ -121,11 +133,26 @@ vim.keymap.set({ "n" }, "j", "<Plug>(accelerated_jk_gj)", { nowait = true, silen
 vim.keymap.set({ "n" }, "k", "<Plug>(accelerated_jk_gk)", { nowait = true, silent = true })
 
 -- ctrl+tab
-vim.keymap.set({ "n", "x" }, "<space>j", function()
+vim.keymap.set({ "n", "x" }, "<Leader>j", function()
   vscode.action("workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup")
 end, { desc = "ctrl+tab" })
 
-vim.keymap.set({ "n", "x" }, "<space>k", function()
+vim.keymap.set({ "n", "x" }, "<Leader>k", function()
   vscode.action("workbench.action.quickOpenLeastRecentlyUsedEditorInGroup")
 end, { desc = "ctrl+shift+tab" })
 
+vim.keymap.set({ "n", "x" }, "<C-^>", function()
+  vscode.action("workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup")
+  vscode.action("list.select")
+end, { desc = "ctrl+^" })
+
+
+-- vim.keymap.set('n', '<Leader>t', function()
+--   vscode.eval_async([[
+--     if (vscode.window.tabGroups.activeTabGroup.activeTab.isPinned) {
+--       await vscode.commands.executeCommand('workbench.action.unpinEditor');
+--     } else {
+--         await vscode.commands.executeCommand('workbench.action.pinEditor');
+--     }
+--   ]])
+-- end)
