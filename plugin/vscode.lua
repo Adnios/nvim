@@ -108,6 +108,10 @@ vim.keymap.set("n", "ch", function()
   vscode.action("clangd.switchheadersource")
 end)
 
+vim.keymap.set("n", "ck", function()
+  vscode.action("clangd.inlayHints.toggle")
+end)
+
 vim.keymap.set("n", "cn", function()
   vscode.action('editor.action.rename')
 end, { desc = "symbol rename" })

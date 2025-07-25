@@ -1,0 +1,170 @@
+{
+    "[c][cpp][cuda-cpp]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "[latex]": {
+        "editor.wordWrap": "on"
+    },
+    "[python]": {
+        "editor.tabSize": 4,
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "files.associations": {
+        "*.inc": "cpp"
+    },
+    "[shellscript]": {
+        "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode"
+    },
+    "[cuda-cpp]": {
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+    },
+    "cmake.configureOnOpen": false,
+    "cmake.showOptionsMovedNotification": false,
+    "cmake.pinnedCommands": [
+        "workbench.action.tasks.configureTaskRunner",
+        "workbench.action.tasks.runTask"
+    ],
+    "diffEditor.maxComputationTime": 0,
+    "editor.fontFamily": "JetBrainsMono Nerd Font, 'Fira Code', Cascadia Code, Consolas, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "editor.formatOnSave": true,
+    "editor.detectIndentation": true,
+    "editor.cursorBlinking": "solid",
+    "editor.cursorStyle": "line",
+    "editor.cursorSurroundingLines": 5,
+    "editor.cursorSurroundingLinesStyle": "all",
+    "editor.lineNumbers": "on",
+    "editor.mouseWheelZoom": true,
+    "editor.occurrencesHighlight": "multiFile",
+    "editor.quickSuggestions": {
+        "comments": true,
+        "other": true,
+        "strings": true
+    },
+    "editor.stickyScroll.enabled": false,
+    "editor.renderWhitespace": "trailing",
+    "editor.minimap.enabled": false,
+    "editor.fontSize": 12,
+    "editor.tabSize": 2,
+    "explorer.autoReveal": false,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1,
+        "vscodevim.vim": 1
+    },
+    "vscode-neovim.revealCursorScrollLine": true,
+    "vscode-neovim.highlightGroups.highlights": {
+        "IncSearch": {
+            "backgroundColor": "theme.editor.findMatchBackground"
+        },
+        "CurSearch": {
+            "backgroundColor": "theme.editor.findMatchBackground"
+        },
+        "Search": {
+            "backgroundColor": "theme.editor.findMatchHighlightBackground"
+        },
+        "Cursor": {
+            "backgroundColor": "theme.editorCursor.foreground",
+            "color": "theme.editorCursor.background"
+        },
+        "Substitute": {
+            "backgroundColor": "theme.editor.foreground",
+            "color": "theme.editor.background"
+        }
+    },
+    "extensions.ignoreRecommendations": true,
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 100,
+    "perforce.command": "/home/utils/bin/p4",
+    "perforce.swarmHost": "https://p4sw-swarm.nvidia.com",
+    "remote.SSH.remotePlatform": {
+        "10.19.180.193": "linux",
+        "a1u1g-mil-0623": "linux",
+        "cl1-2506": "linux",
+        "computelab": "linux",
+        "computelab-frontend-3": "linux",
+        "cudnn-dev-barrier-22-04": "linux",
+        "cudnn-dev-fortification-18-04": "linux",
+        "ipp1-3198": "linux",
+        "ipp1-3208": "linux",
+        "ipp2-0150": "linux",
+        "ipp2-0161": "linux",
+        "ipp2-0324": "linux",
+        "ipp2-1949": "linux",
+        "ipp2-1950": "linux",
+        "yanxu-ws0": "linux",
+        "cudnn-dev-vessel-22-04": "linux"
+    },
+    "remote.SSH.serverInstallPath": {},
+    "remote.SSH.useLocalServer": true,
+    "security.workspace.trust.enabled": false,
+    "security.workspace.trust.startupPrompt": "never",
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
+    "terminal.integrated.fontSize": 12,
+    "terminal.integrated.scrollback": 50000,
+    "terminal.integrated.localEchoLatencyThreshold": -1,
+    "terminal.integrated.profiles.linux": {
+        "tmux": {
+            "args": [
+                "-c",
+                "tmux new -As0"
+            ],
+            "icon": "terminal-tmux",
+            "path": "bash"
+        }
+    },
+    "vsicons.dontShowNewVersionMessage": true,
+    "vsicons.presets.hideExplorerArrows": true,
+    "window.confirmSaveUntitledWorkspace": false,
+    "window.density.editorTabHeight": "compact",
+    "window.title": "${rootName}",
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "clang-format.executable": "/home/scratch.barretw_sw/opt/clang_format_archive/clang-format",
+    "mlir.onSettingsChanged": "restart",
+    "workbench.settings.editor": "json",
+    "workbench.editor.doubleClickTabToToggleEditorGroupSizes": "maximize",
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.splitInGroupLayout": "vertical",
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.startupEditor": "none",
+    "workbench.tree.indent": 12,
+    "workbench.tree.renderIndentGuides": "always",
+    "workbench.tree.enableStickyScroll": false,
+    "workbench.colorCustomizations": {
+        "editorCursor.background": "#151515",
+        "editorCursor.foreground": "#f85149",
+        "terminalCursor.foreground": "#ff0000",
+    },
+    "editor.tokenColorCustomizations": {
+        "comments": "#9c9c9c"
+    },
+    "gitlens.gitCommands.skipConfirmations": [
+        "fetch:command",
+        "stash-apply:command",
+        "switch:command",
+        "stash-push:command"
+    ],
+    "errorLens.enabled": true,
+    "errorLens.delay": 10,
+    "errorLens.followCursor": "activeLine",
+    "diffEditor.ignoreTrimWhitespace": true,
+    "git.autofetch": true,
+    "editor.inlayHints.enabled": "on",
+    "editor.wordWrap": "off",
+    "window.commandCenter": false,
+    "cursor.preferNotificationsSameAsChat": true,
+    "git.confirmSync": false,
+    "diffEditor.hideUnchangedRegions.enabled": true,
+    "workbench.activityBar.orientation": "vertical",
+    "workbench.activityBar.location": "top",
+    // WAR for https://github.com/getcursor/cursor/issues/771
+    "custom-ui-style.stylesheet": {
+        ".monaco-workbench .pane-composite-part>.header-or-footer>.composite-bar-container>.composite-bar>.monaco-action-bar .action-item.icon .badge.compact .badge-content": "top: 9px",
+        ".monaco-workbench .composite-bar .monaco-action-bar .action-item .action-label:before": "font-size:16px !important"
+    },
+    "workbench.colorTheme": "Default Dark Modern",
+    "cursor.composer.shouldAutoScrollToBottom": false,
+    "cursor.cpp.enablePartialAccepts": true,
+}

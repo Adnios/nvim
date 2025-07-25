@@ -1,0 +1,291 @@
+[
+    // For Cursor
+    // {
+    //     "key": "ctrl+h",
+    //     "command": "workbench.action.navigateLeft"
+    // },
+    // {
+    //     "key": "ctrl+l",
+    //     "command": "workbench.action.navigateRight"
+    // },
+    // {
+    //     "key": "ctrl+k",
+    //     "command": "workbench.action.navigateUp"
+    // },
+    // {
+    //     "key": "ctrl+j",
+    //     "command": "workbench.action.navigateDown"
+    // },
+    {
+        "key": "ctrl+i",
+        "command": "-composer.startComposerPrompt"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "-aipopup.action.modal.generate",
+        "when": "editorFocus && !composerBarIsVisible"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "-aichat.newchataction"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "-cursorai.action.generateInTerminal",
+        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "ctrl+shift+l",
+        "command": "aichat.newchataction"
+    },
+    // not need? vscode-neovim has mapped
+    // { "key": "ctrl+n", "command": "selectNextSuggestion", "when": "suggestWidgetVisible" },
+    // { "key": "ctrl+p", "command": "selectPrevSuggestion", "when": "suggestWidgetVisible" },
+    // make neovim cmdline/search ctrl-n/p not working
+    // { "key": "ctrl+n", "command": "workbench.action.quickOpenSelectNext", "when": "inQuickOpen" },
+    // { "key": "ctrl+p", "command": "workbench.action.quickOpenSelectPrevious", "when": "inQuickOpen" },
+    // { "key": "ctrl+;", "command": "workbench.action.quickOpenPreviousEditor" },
+    // { "key": "ctrl+'", "command": "multiCommand.showbuffer" },
+    // { "key": "ctrl+space", "command": "workbench.action.showCommands" },
+    // { "key": "ctrl+enter", "command": "workbench.action.openView" },
+    // { "key": "ctrl+shift+t", "command": "workbench.action.reloadWindow" },
+    // { "key": "ctrl+shift+r", "command": "workbench.action.openRecent" },
+    // {
+    //     "key": "ctrl+9",
+    //     "ctoggleSidebarVisibilityommand": "workbench.action.togglePanel",
+    // },
+    // {
+    //     "key": "ctrl+\\",
+    //     "command": "workbench.action.toggleSidebarVisibility",
+    // },
+    // terminal and panels and sidebar
+    {
+        "key": "ctrl+\\",
+        "command": "workbench.action.terminal.toggleTerminal"
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "vscode-neovim.restart"
+    },
+    {
+        "key": "ctrl+shift+\\",
+        "command": "workbench.action.reloadWindow"
+    },
+    // {
+    //     "key": "ctrl+\\",
+    //     "command": "workbench.action.openRecent"
+    // },
+    // { "key": "ctrl+\\", "command": "workbench.action.terminal.focus", "when": "editorTextFocus" },
+    // { "key": "ctrl+\\", "command": "workbench.action.focusActiveEditorGroup", "when": "!editorTextFocus" },
+    // { "key": "ctrl+]", "when": "terminalFocus", "command": "workbench.action.terminal.focusNext", },
+    // { "key": "ctrl+[", "when": "terminalFocus", "command": "workbench.action.terminal.focusPrevious", },
+    // { "key": "ctrl+m", "when": "terminalFocus", "command": "workbench.action.toggleMaximizedPanel", },
+    // remove default keymap
+    // { "key": "ctrl+r", "command": "-workbench.action.openRecent" },
+    // { "key": "ctrl+n", "command": "-workbench.action.files.newUntitledFile" },
+    {
+        "key": "ctrl+e",
+        "command": "-workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "-workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "-workbench.action.togglePanel"
+    },
+    {
+        "key": "ctrl+h",
+        "command": "-editor.action.startFindReplaceAction",
+        "when": "editorFocus || editorIsOpen"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "-workbench.action.files.newUntitledFile"
+    },
+    // { "key": "ctrl+`", "command": "-workbench.action.terminal.toggleTerminal", "when": "terminal.active" },
+    // { "key": "ctrl+v", "command": "-editor.action.clipboardPasteAction" },
+    {
+        "key": "ctrl+v",
+        "command": "-workbench.action.terminal.paste",
+        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "ctrl+\\",
+        "command": "-workbench.action.splitEditor"
+    },
+    // ctrl-tab
+    // {
+    //     "key": "ctrl+;",
+    //     "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
+    //     "when": "!activeEditorGroupEmpty && !terminalFocus"
+    // },
+    // {
+    //     "key": "ctrl+;",
+    //     "command": "workbench.action.quickOpenNavigateNextInEditorPicker",
+    //     "when": "!inputFouse && inEditorsPicker && inQuickOpen"
+    // },
+    // {
+    //     "key": "ctrl+'",
+    //     "command": "workbench.action.quickOpenLeastRecentlyUsedEditorInGroup",
+    //     "when": "!activeEditorGroupEmpty && !terminalFocus"
+    // },
+    // {
+    //     "key": "ctrl+'",
+    //     "command": "workbench.action.quickOpenNavigatePreviousInEditorPicker",
+    //     "when": "inEditorsPicker && inQuickOpen"
+    // },
+    // toggle fonts
+    // {
+    //     "key": "alt+shift+t",
+    //     "command": "toggle",
+    //     "when": "editorTextFocus",
+    //     "args": {
+    //         "id": "fontSize",
+    //         "value": [
+    //             {
+    //                 "editor.fontSize": 11,
+    //                 // "editor.lineHeight": 15,
+    //                 // "editor.suggestFontSize": 18,
+    //                 // "editor.suggestLineHeight": 32,
+    //                 "terminal.integrated.fontSize": 11,
+    //             },
+    //             {
+    //                 "editor.fontSize": 12,
+    //                 // "editor.lineHeight": 15,
+    //                 // "editor.suggestFontSize": 15,
+    //                 // "editor.suggestLineHeight": 26,
+    //                 "terminal.integrated.fontSize": 12,
+    //             }
+    //         ]
+    //     }
+    // },
+    // --------
+    // neovim
+    // my thought: only terminal, explorer and editorText are belong to neovim, others (like scm) is not handled by neovim
+    // --------
+    // make neovim keymaping work in sidebar
+    // https://code.visualstudio.com/api/references/when-clause-contexts#conditional-operators
+    {
+        "key": "space",
+        "command": "vscode-neovim.send",
+        "when": "!inputFocus",
+        "args": "<space>"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "vscode-neovim.send",
+        "when": "sideBarFocus",
+        "args": "<C-l>"
+    },
+    // { "key": "ctrl+;", "command": "vscode-neovim.send", "args": "<C-;>" },
+    {
+        "key": "ctrl+k",
+        "when": "panelFocus",
+        "command": "workbench.action.navigateUp"
+    },
+    {
+        "key": "ctrl+h",
+        "when": "panelFocus",
+        "command": "workbench.action.navigateLeft"
+    },
+    // copy staff
+    // https://github.com/theol0403/dotfiles/blob/master/.config/Code/User/keybindings.json
+    {
+        "command": "editor.action.clipboardCopyAction",
+        "key": "ctrl+shift+c"
+    },
+    {
+        "command": "problems.action.copy",
+        "key": "ctrl+shift+c",
+        "when": "problemFocus"
+    },
+    {
+        "command": "-workbench.action.terminal.openNativeConsole",
+        "key": "ctrl+shift+c",
+        "when": "!terminalFocus"
+    },
+    // https://github.com/vscode-neovim/vscode-neovim?tab=readme-ov-file#keybinding-passthroughs
+    {
+        "key": "ctrl+d",
+        "command": "vscode-neovim.send",
+        "when": "editorTextFocus && neovim.init",
+        "args": "<C-d>"
+    },
+    {
+        "key": "ctrl+u",
+        "command": "vscode-neovim.send",
+        "when": "editorTextFocus && neovim.init",
+        "args": "<C-u>"
+    },
+    {
+        "key": "ctrl+f",
+        "command": "vscode-neovim.send",
+        "when": "editorTextFocus && neovim.init",
+        "args": "<C-f>"
+    },
+    {
+        "key": "ctrl+b",
+        "command": "vscode-neovim.send",
+        "when": "editorTextFocus && neovim.init",
+        "args": "<C-b>"
+    },
+    //
+    // use ':' key for commands even if no editor tab is opened (not working)
+    //
+    {
+        "key": "Shift+.",
+        "command": "vscode-neovim.send",
+        "when": "!inputFocus && !editorTextFocus",
+        "args": ":"
+    },
+    // war for ctrl+^. vscode-neovim.send has bugs
+    {
+        "key": "ctrl+6",
+        "command": "vscode-neovim.send",
+        "args": "<C-^>"
+    },
+    // end
+    {
+        "key": "q",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "filesExplorerFocus && listFocus && !inputFocus"
+    },
+    // { "key": "ctrl+6", "command": "-workbench.action.focusSixthEditorGroup" },
+    // {
+    //     "key": "ctrl+6",
+    //     "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
+    //     "when": "!activeEditorGroupEmpty"
+    // },
+    // try to get same key as neotree. tab == o (vscode-neovim), o == enter(vscode-neovim)
+    {
+        "key": "tab",
+        "command": "list.toggleExpand",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "o",
+        "command": "list.select",
+        "when": "filesExplorerFocus && listFocus && !inputFocus && !notebookCellListFocused"
+    },
+    {
+        "key": "shift+r",
+        "command": "workbench.files.action.refreshFilesExplorer",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "h",
+        "command": "breadcrumbs.focusPreviousWithPicker",
+        "when": "breadcrumbsActive && breadcrumbsVisible && listFocus && !inputFocus && !treestickyScrollFocused"
+    },
+    {
+        "key": "l",
+        "command": "breadcrumbs.focusNextWithPicker",
+        "when": "breadcrumbsActive && breadcrumbsVisible && listFocus && !inputFocus && !treestickyScrollFocused"
+    },
+    // hacky :)
+    // { "key": "escape", "command": "workbench.action.focusActiveEditorGroup", "when": "!inputFocus && !editorTextFocus" }
+    // mark
+    // { "key": "alt+m", "command": "search.action.focusSearchList" }
+]
