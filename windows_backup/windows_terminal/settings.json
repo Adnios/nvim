@@ -1,0 +1,125 @@
+{
+    "$help": "https://aka.ms/terminal-documentation",
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "actions": 
+    [
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "id": "User.splitPane.A6751878"
+        },
+        {
+            "command": "find",
+            "id": "User.find"
+        }
+    ],
+    "confirmCloseAllTabs": false,
+    "copyFormatting": "none",
+    "copyOnSelect": false,
+    "defaultProfile": "{ab412598-9238-4498-a0de-a8f95bca16ca}",
+    "firstWindowPreference": "persistedWindowLayout",
+    "focusFollowMouse": false,
+    "keybindings": 
+    [
+        {
+            "id": "User.find",
+            "keys": "ctrl+shift+f"
+        },
+        {
+            "id": "User.splitPane.A6751878",
+            "keys": "alt+shift+d"
+        }
+    ],
+    "newTabMenu": 
+    [
+        {
+            "type": "remainingProfiles"
+        }
+    ],
+    "profiles": 
+    {
+        "defaults": 
+        {
+            "colorScheme": "One Half Dark",
+            "cursorShape": "filledBox",
+            "font": 
+            {
+                "face": "JetBrainsMono Nerd Font",
+                "size": 9
+            },
+            "opacity": 100,
+            "padding": "4"
+        },
+        "list": 
+        [
+            {
+                "closeOnExit": "never",
+                "commandline": "ssh barretw@cudnn-dev-vessel-22-04 -t tmux -u attach -t 0",
+                "guid": "{ab412598-9238-4498-a0de-a8f95bca16ca}",
+                "hidden": false,
+                "historySize": 10321,
+                "name": "cudnn-dev-vessel-22-04(tmux)",
+                "startingDirectory": null
+            },
+            {
+                "closeOnExit": "never",
+                "commandline": "ssh barretw@cudnn-dev-vessel-22-04 -t \"zsh --login\"",
+                "guid": "{ab412598-9222-4398-a0de-a8f95bca16ca}",
+                "hidden": false,
+                "historySize": 10321,
+                "name": "barretw@cudnn-dev-vessel-22-04(zsh)",
+                "startingDirectory": null
+            },
+            {
+                "commandline": "ssh ipp2-1949",
+                "guid": "{ab412598-9238-4398-a0de-a8f95bca16cb}",
+                "hidden": false,
+                "name": "ipp2-1949"
+            },
+            {
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": false,
+                "name": "Windows PowerShell"
+            },
+            {
+                "commandline": "%SystemRoot%\\System32\\cmd.exe",
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "hidden": false,
+                "name": "Command Prompt"
+            },
+            {
+                "commandline": "ssh barretw@computelab-build",
+                "guid": "{f0c5e457-18c6-462f-864b-a21147aee9a6}",
+                "hidden": false,
+                "name": "computelab-build"
+            },
+            {
+                "commandline": "ssh barretw@computelab",
+                "guid": "{f0c5e457-18c6-462f-864b-a21147aea9a6}",
+                "hidden": false,
+                "name": "computelab"
+            },
+            {
+                "commandline": "ssh barretw@a1u1g-mil-0623",
+                "guid": "{f0c5e457-18c6-462f-864b-a21147a1a9a7}",
+                "hidden": false,
+                "name": "a1u1g-mil-0623"
+            },
+            {
+                "commandline": "ssh barretw@cudnn-dev-barrier-22-04",
+                "guid": "{f0c5e457-18c6-462f-864b-a21147aea9a7}",
+                "hidden": false,
+                "name": "cudnn-dev-barrier-22-04"
+            }
+        ]
+    },
+    "schemes": [],
+    "startOnUserLogin": true,
+    "themes": [],
+    "windowingBehavior": "useExisting"
+}
